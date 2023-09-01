@@ -625,7 +625,7 @@ textarea {
     float: none;
     display: block;
     position: relative;
-    margin-bottom:5.72vh;
+    margin-bottom: 5.72vh;
 }
 
 .main-navigation a {
@@ -1364,8 +1364,10 @@ input[type="number"]::-webkit-outer-spin-button {
     --primary-color: #2c4b2e;
     --secondary-color: #cb7f33;
     --light-green: #a1b398;
-    --dark-color: #000000;
+    --light-yellow: #ede2cc;
+    --dark-color: #102111;
     --common-color: #777777;
+    --body-color: #fffdfa;
     --white-color: #ffffff;
     --black-color: #000000;
     --red-color: #ff0000;
@@ -1380,19 +1382,22 @@ input[type="number"]::-webkit-outer-spin-button {
     --title-font: "Lora";
     --gutter: 30px;
     --transition: 0.3s;
+    --header-width: clamp(300px, 18vw, 335px);
 }
 
 body {
     font-size: 16px;
     line-height: 26px;
     color: var(--common-color);
+    background-color: var(--body-color);
     font-family: var(--body-font);
 }
 
 p {
     font-size: 16px;
-    line-height: 26px;
+    line-height: 30px;
     margin-bottom: 16px;
+    color: var(--dark-color);
 }
 
 p:last-child {
@@ -1424,30 +1429,29 @@ a:hover {
 
 .h1-title {
     font-size: 68px;
-    line-height:82px;
-    font-weight:700;
+    line-height: 82px;
+    font-weight: 700;
     font-family: var(--title-font);
     color: var(--white-color);
-    margin-bottom: 26px;
+    margin-bottom: 21px;
 }
 
 .h2-title {
     font-size: 42px;
     line-height: 54px;
-    font-weight:700;
+    font-weight: 700;
     color: var(--primary-color);
     font-family: var(--title-font);
-    text-transform: uppercase;
     margin-bottom: 14px;
 }
 
 .h3-title {
     font-family: var(--title-font);
-    font-size:26px;
-    line-height:36px;
-    font-weight:700;
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 700;
     color: var(--white-color);
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .grecaptcha-badge {
@@ -1638,9 +1642,9 @@ a:hover {
     padding: 5px;
     cursor: pointer;
     outline: none !important;
-    transition: 0.3s;
     overflow: hidden;
     position: relative;
+    transition: var(--transition);
     z-index: 2;
 }
 
@@ -2063,7 +2067,7 @@ button.close:hover {
     position: fixed;
     top: 0;
     left: 0;
-    max-width: clamp(300px, 18vw, 335px);
+    width: var(--header-width);
     height: 100vh;
     overflow: hidden;
     background: var(--white-color);
@@ -2075,10 +2079,11 @@ button.close:hover {
 
 .main-header-sidebar-wp {
     max-height: 100%;
-    /* padding-top: clamp(40px, 8vh, 70px); */
-    /* padding-bottom: clamp(40px, 7vh, 60px); */
+    padding-top: clamp(40px, 8vh, 70px);
+    padding-bottom: clamp(40px, 7vh, 60px);
     padding-right: clamp(30px, 7vh, 60px);
     padding-left: clamp(40px, 7vh, 60px);
+    width: 100%;
 }
 
 .header-menu {
@@ -2107,16 +2112,16 @@ button.close:hover {
     color: var(--secondary-color);
 }
 
-.main-navigation ul ul li a:hover{
+.main-navigation ul ul li a:hover {
     color: var(--primary-color);
 }
 
 .site-branding:not(.mobile-header .site-branding) {
-    padding-bottom:2.6vh;
+    padding-bottom: 2.6vh;
 }
 
 .site-contact {
-    padding:1.87vh 0 4.155vh;
+    padding: 1.87vh 0 4.155vh;
 }
 
 .site-contact ul {
@@ -2160,26 +2165,49 @@ button.close:hover {
     letter-spacing: 0.18px;
     width: 215px;
 }
+
+div#primary {
+    padding-left: var(--header-width);
+}
+
+.sec-wp {
+    padding-inline: 4.4vw;
+}
 /*==========Header CSS End==========*/
 
 /*==========banner CSS start==========*/
-.main-banner{
+.main-banner {
     position: relative;
-    padding-top:26.8vh;
+    padding-top: 26.8vh;
     height: 100vh;
 }
 
-.main-banner::before{
-    content: '';
+.main-banner:not(.inner-banner):before {
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+    background: linear-gradient(
+        126deg,
+        rgba(0, 0, 0, 1),
+        rgba(11, 11, 11, 1),
+        rgba(255, 255, 255, 1)
+    );
+    opacity: 0.65;
+    mix-blend-mode: multiply;
 }
 
-.banner-content .h3-title{
+.banner-btn {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.banner-content .h3-title {
     font-weight: 600;
+    margin-bottom: 57px;
 }
 
 .sec-btn.white-outline-btn {
@@ -2188,7 +2216,200 @@ button.close:hover {
     border: 2px solid var(--white-color);
     transition: var(--transition);
 }
+
+.sec-btn.white-outline-btn:hover {
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
 /*==========banner CSS End==========*/
+
+/*==========about CSS start==========*/
+.sec-about-us {
+    position: relative;
+    padding: 180px 0 254px;
+}
+
+.sec-wp {
+    position: relative;
+}
+
+.about-path {
+    position: absolute;
+    top: -180px;
+    left: 0;
+    width: 1675px;
+    height: 630px;
+    opacity: 0.05;
+}
+
+.about-brand {
+    position: absolute;
+    top: -85px;
+    right: -15px;
+    z-index: 2;
+}
+
+.about-us-img {
+    position: relative;
+    z-index: 1;
+}
+
+.about-us-img .back-img {
+    width: calc(100% - 70px);
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--primary-color);
+}
+
+.about-us-content .h2-title {
+    margin-bottom: 10px;
+}
+
+.about-us-content .h3-title {
+    color: var(--dark-color);
+    font-weight: 500;
+    margin-bottom: 29px;
+}
+
+.about-us-content a {
+    position: relative;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.about-us-content a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: -10px;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.about-box {
+    position: relative;
+    margin-top: 120px;
+    height: 212px;
+    border-radius: 20px;
+    background-color: var(--light-yellow);
+    padding: 38px 30px 61px;
+}
+
+.about-box::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/images/box-shape.svg);
+    background-repeat: no-repeat;
+    background-size: 196px;
+    background-position: bottom right;
+    opacity: 0.05;
+}
+
+.about-box .h3-title {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+/*==========about CSS End==========*/
+
+/*==========service CSS start==========*/
+.main-service {
+    position: relative;
+    background-color: var(--primary-color);
+    padding: 100px 0;
+}
+
+.sec-about-us::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:76px;
+    bottom:-1px;
+    left: 0;
+    background-image: url(assets/images/service-path.svg);
+}
+
+.main-service::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:76px;
+    bottom:-76px;
+    left: 0;
+    background-image: url(assets/images/service-bottom-path.svg);
+}
+
+.service-title .h2-title {
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+}
+
+.service-tab {
+    padding-top: 90px;
+}
+
+.service-tab li {
+    color: var(--white-color);
+    font-family: var(--title-font);
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 500;
+    padding-bottom: 17px;
+    cursor: pointer;
+}
+
+.service-tab li:last-child {
+    padding-bottom: 0px;
+}
+
+.service-img{
+    margin-bottom:79px;
+}
+
+.service-img .back-img {
+    width: 100%;
+    height: 470px;
+    border-radius: 20px;
+    box-shadow: -20px 20px 0 var(--light-green);
+}
+
+.service-title{
+    margin-bottom: 78px;
+}
+
+.service-content a {
+    position: relative;
+    color: var(--white-color);
+}
+
+.service-content .h3-title{
+    margin-bottom: 15px;
+}
+
+.service-content a:hover{
+    color: var(--black-color);
+}
+
+.service-content p{
+    color: var(--white-color);
+    margin-bottom: 30px;
+}
+
+.service-content a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: -10px;
+    border-bottom: 3px solid var(--secondary-color);
+}
+/*==========service CSS End==========*/
 
 /*==========Footer CSS Start==========*/
 .footer-bottom-box {
@@ -2949,6 +3170,7 @@ a.prev.page-numbers {
 @media screen and (min-width: 1500px) {
     .container {
         max-width: 1200px;
+        margin-left: 0;
     }
 }
 
@@ -3227,4 +3449,11 @@ a.prev.page-numbers {
         right: 10px;
     }
     .popup-title {
-        padding: 10px 65px 10px
+        padding: 10px 65px 10px 15px;
+    }
+    .common-popup-text {
+        padding: 20px 15px !important;
+        max-height: 75vh;
+    }
+}
+/*==========Responsive End==========*/
