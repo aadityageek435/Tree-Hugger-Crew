@@ -3,26 +3,28 @@ jQuery(document).ready(function($) {
     var window_size = jQuery(window).width();
     new WOW().init();
     var currentRequest = null;
-    jQuery(".gallery-tab li").on("click", function() {
-        var slug = jQuery(this).attr('data-id');
-        jQuery(".gallery-tab li").removeClass('active-gallery-tab');
+
+    //Home Page - Service Tabbing
+    jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
+    jQuery(".service-tab li").on("click", function() {
+
+        var index = jQuery(this).attr('data-index');
+        console.log(index);
+        jQuery(".service-tab li").removeClass('active-gallery-tab');
         jQuery(this).addClass('active-gallery-tab');
-        jQuery(".gallery-loader").css("display", "flex");
+        jQuery(".service-loader").css("display", "flex");
 
         currentRequest = $.ajax({
             type: 'POST',
             url: custom_call.ajaxurl,
             data: {
-                'action': 'gallery_tabbing',
-                'id': slug,
+                'action': 'service_tabbing',
+                'index': index,
             },
             dataType: 'text',
             success: function(data) {
-                console.log(data);
-                jQuery(".main-slider").slick('unslick');
-                jQuery(".gallery-box").html(data);
-                jQuery(".gallery-loader").css("display", "none");
-                gallery_slider();
+                jQuery("#service_ajax_response").html(data);                                
+                jQuery(".service-loader").css("display", "none");
             }
         });
     });
@@ -43,6 +45,7 @@ jQuery(document).ready(function($) {
         slidesToShow:1,
         slidesToScroll: 1,
         infinite: true,
+        rows: 0,
         dots: false,
         arrows: true,
         autoplay: true,
@@ -120,6 +123,7 @@ jQuery(document).ready(function($) {
         infinite: true,
         dots: false,
         arrows: true,
+        rows: 0,
         autoplay: true,
         autoplaySpeed: 2000,
         prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',

@@ -1,17 +1,46 @@
+<?php  
+$home_banner_image             = (get_field("home_banner_image")) ? get_field("home_banner_image") : home_url()."/wp-content/uploads/2023/09/banner-bg.jpg";
+$home_banner_title             = get_field("home_banner_title");
+$home_banner_sub_title         = get_field("home_banner_sub_title");
+$home_banner_free_quote_url    = get_field("home_banner_free_quote_url");
+$home_tree_hugger_phone_number = get_field("tree_hugger_phone_number","option");
+$home_conv_number              = preg_replace('/[^0-9.]/', '', $home_tree_hugger_phone_number); 
+?>
 <!-- banner-start -->
-<section class="main-banner back-img" style="background-image: url(<?php echo home_url(); ?>/wp-content/uploads/2023/09/banner-bg.jpg);">
+<section class="main-banner back-img" style="background-image: url(<?php echo $home_banner_image; ?>);">
     <div class="sec-wp">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="banner-content">
-                        <h1 class="h1-title">We Cut Because We Care</h1>
-                        <h3 class="h3-title">Central Iowa’s Premier Tree Service</h3>
-                        <div class="banner-btn">
-                            <a href="javascript:void(0);" title="Get a Free Quote" class="sec-btn">Get a Free Quote</a>
-                            <a href="javascript:void(0);" title="Call (515) 520-0971" class="sec-btn  white-outline-btn">Call &nbsp;<span class="for-des callus">(515) 520-0971</span><span class="for-mob">Now!</span></a>
+                    <?php
+                    if($home_banner_title || $home_banner_sub_title || $home_banner_free_quote_url || $home_tree_hugger_phone_number ){?>
+                        <div class="banner-content">
+                            <?php 
+                            if($home_banner_title){?>
+                                <h1 class="h1-title"><?php echo $home_banner_title; ?></h1>
+                                <?php
+                            }
+                            if($home_banner_sub_title){?>
+                                <h3 class="h3-title"><?php echo $home_banner_sub_title; ?></h3>
+                                <?php
+                            }
+                            if($home_banner_free_quote_url || $home_tree_hugger_phone_number || $home_conv_number){?>
+                                <div class="banner-btn">
+                                    <?php
+                                    if($home_banner_free_quote_url){?>
+                                        <a href="<?php echo $home_banner_free_quote_url['url']; ?>" title="<?php echo $home_banner_free_quote_url['title']; ?>" class="sec-btn"><?php echo $home_banner_free_quote_url['title']; ?></a>
+                                        <?php
+                                    }
+                                    if($home_tree_hugger_phone_number && $home_conv_number ){?>
+                                        <a href="tel:<?php echo $home_conv_number; ?>" title="Call <?php echo $home_tree_hugger_phone_number; ?>" class="sec-btn  white-outline-btn">Call &nbsp;<span class="for-des callus"><?php echo $home_tree_hugger_phone_number; ?></span><span class="for-mob">Now!</span></a>
+                                        <?php
+                                    }?>
+                                </div>
+                                <?php
+                            }?>
                         </div>
-                    </div>
+                        <?php
+                    }?>
                 </div>
             </div>
         </div>
@@ -27,43 +56,87 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-brand">
-                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/about-brand.png" alt="about-brand" width="170" height="170">
+                <?php  
+                $home_about_image            = get_field("home_about_image");
+                $home_about_accredited_image = get_field("home_about_accredited_image");
+                if($home_about_accredited_image || $home_about_image){?>
+                    <div class="col-lg-6">
+                        <?php  
+                        if($home_about_accredited_image){?>
+                            <div class="about-brand">
+                                <img src="<?php echo $home_about_accredited_image['url']; ?>" alt="About Accredied Image" width="<?php echo $home_about_accredited_image['width']; ?>" height="<?php echo $home_about_accredited_image['height']; ?>">
+                            </div>
+                            <?php
+                        }
+                        if($home_about_image){?>
+                            <div class="about-us-img">
+                                <div class="back-img" style="background-image: url('<?php echo $home_about_image; ?>');"></div>
+                            </div>
+                            <?php
+                        }?>
                     </div>
-                    <div class="about-us-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/about-img.jpg');"></div>
+                    <?php
+                }
+
+                $home_about_title     = get_field("home_about_title"); 
+                $home_about_sub_title = get_field("home_about_sub_title");
+                $home_about_page_url  = get_field("home_about_sub_title");
+                $home_about_content   = get_field("home_about_content");
+                if($home_about_title || $home_about_sub_title || $home_about_page_url || $home_about_content){?>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="about-us-content">
+                            <?php  
+                            if($home_about_title){?>
+                                <h2 class=" h2-title"><?php echo $home_about_title; ?></h2>
+                                <?php
+                            }
+                            if($home_about_sub_title){?>                                
+                                <h3 class="h3-title"><?php echo $home_about_sub_title; ?></h3>
+                                <?php
+                            }
+                            if($home_about_content){
+                                //About main content
+                                echo $home_about_content;
+                            }
+                            if($home_about_page_url){?>
+                                <a href="<?php echo $home_about_page_url; ?>" title="About Us, Learn More">Learn More</a>
+                                <?php
+                            }?>                                                       
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="about-us-content">
-                        <h2 class=" h2-title">About Us</h2>
-                        <h3 class="h3-title">We Work on Behalf of Your Tree </h3>
-                        <p>At TreeHugger Complete Tree Care, we are a local family owned business that upholds honesty, integrity, and shows the utmost respect and care for your property. Our tree pruning and removal services are tailored to meet the unique needs of both homeowners and business owners. We take pride in the high standard of our work, and we are committed to maintaining the health and wellness of your trees and property.</p>
-                        <a href="javascript:void(0);" class="" title="About Us, Learn More">Learn More</a>
-                    </div>
-                </div>
+                    <?php
+                }?>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="about-box">
-                        <h3 class="h3-title">Experience</h3>
-                        <p>Certified Arborists serving the Ankeny and Des Moines Area since 2014.</p>
-                    </div>
+            <?php 
+            if(have_rows("home_about_points")){?>
+                <div class="row">
+                    <?php  
+                    while(have_rows("home_about_points")){ the_row(); 
+                        
+                        $points_title   = get_sub_field("points_title");
+                        $points_content = get_sub_field("points_content");
+                        
+                        if($points_title || $points_content){ ?>
+                            <div class="col-lg-4">
+                                <div class="about-box">
+                                    <?php  
+                                    if($points_title){?>
+                                        <h3 class="h3-title"><?php echo $points_title; ?></h3>
+                                        <?php
+                                    }
+                                    if($points_content){
+                                        //About points content
+                                        echo $points_content;
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }?>
                 </div>
-                <div class="col-lg-4">
-                    <div class="about-box">
-                        <h3 class="h3-title">Stewardship</h3>
-                        <p>We work honestly, are committed to safety, respect for homeowners and the properties and trees we work with.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="about-box">
-                        <h3 class="h3-title">Service</h3>
-                        <p>Our standard is simple. Exceptional service in professional tree care.</p>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }?>
         </div>
     </div>
 </section>
@@ -73,35 +146,86 @@
 <section class="main-service">
     <div class="sec-wp">
         <div class="container">
-            <div class="service-title">
-                <h2 class="h2-title">Our Services</h2>
-                <h3 class="h3-title">We Have a Solution for Your Trees</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="service-tab">
-                        <ul>
-                            <li>Tree Removal</li>
-                            <li>Lot Clearing</li>
-                            <li>Tree Pruning</li>
-                        </ul>
-                    </div>
+            <?php  
+            $our_services_title     = get_field("our_services_title");
+            $our_services_sub_title = get_field("our_services_sub_title");
+            if($our_services_title || $our_services_sub_title){?>
+                <div class="service-title"> 
+                    <?php  
+                    if($our_services_title){?>
+                        <h2 class="h2-title">Our Services</h2>
+                        <?php
+                    }
+                    if($our_services_title){?>
+                        <h3 class="h3-title"><?php echo $our_services_sub_title; ?></h3>
+                        <?php
+                    }?>
                 </div>
+                <?php
+            }
+            //main services repeater
+            if(have_rows("our_services")){?>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="service-tab">
+                            <ul>
+                            <?php 
+                            while(have_rows("our_services")){ the_row(); 
+                                $home_our_services_title = get_sub_field("home_our_services_title");
+                                if($home_our_services_title){?>
+                                    <li data-index="<?php echo get_row_index(); ?>"><?php echo $home_our_services_title; ?></li>
+                                    <?php
+                                }
+                            }?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-8" id="service_ajax_response">
+                        <?php  
+                        while(have_rows("our_services")){ the_row(); 
 
-                <div class="col-lg-8">
-                    <div class="service-content">
-                        <div class="about-brand">
-                            <img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/tab-brand.png" alt="tab-brand.png" width="230" height="230">
-                        </div>
-                        <div class="service-img">
-                            <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/service-tab-img.jpg');"></div>
-                        </div>
-                        <h3 class="h3-title">Tree Removal</h3>
-                        <p>TreeHugger utilizes specialized equipment and our expertise to provide tree removal services for any tree, any size, any location. Whether due to storm damage, disease, or your preference, we are here to remove your tree for a clean finish.</p>
-                        <a href="javascript:void(0);" class="" title="About Us, Learn More">Learn More</a>
+                            $home_our_services_title    = get_sub_field("home_our_services_title");
+                            $home_our_services_page_url = get_sub_field("home_our_services_page_url");
+                            $home_our_services_image    = get_sub_field("home_our_services_image");
+                            $home_our_services_icon     = get_sub_field("home_our_services_icon");
+                            $home_our_services_content  = get_sub_field("home_our_services_content");
+
+                            if( get_row_index() == 1 ){?>
+                                <div class="service-content">
+                                    <?php  
+                                    if($home_our_services_icon){?>
+                                        <div class="about-brand">
+                                            <img src="<?php echo $home_our_services_icon['url']; ?>" alt="<?php echo $home_our_services_title." Image";  ?>" width="<?php echo $home_our_services_icon['width']; ?>" height="<?php echo $home_our_services_icon['height']; ?>">
+                                        </div>
+                                        <?php
+                                    }
+                                    if($home_our_services_image){?>
+                                        <div class="service-img">
+                                            <div class="back-img" style="background-image: url('<?php echo $home_our_services_image; ?>');"></div>
+                                        </div>
+                                        <?php
+                                    }
+                                    if($home_our_services_title){?>
+                                        <h3 class="h3-title"><?php echo $home_our_services_title; ?></h3>
+                                        <?php
+                                    }
+                                    if($home_our_services_content){
+                                        //our service main content
+                                        echo $home_our_services_content;
+                                    }
+                                    if($home_our_services_page_url){?>
+                                        <a href="<?php echo $home_our_services_page_url; ?>" title="<?php echo $home_our_services_title.", Learn More"; ?>">Learn More</a>
+                                        <?php
+                                    }?>
+                                </div>
+                                <?php
+                            }
+                        }?>    
                     </div>
+                    <div class="service-loader"><i class="fas fa-spinner"></i></div>
                 </div>
-            </div>
+                <?php
+            }?>
         </div>
     </div>
 </section>
@@ -112,178 +236,328 @@
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-brand">
-                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/store-brand.png" alt="store-brand" width="230" height="230">
+                <?php  
+                $home_tree_award_image  = get_field("home_tree_award_image");
+                $home_tree_hugger_image = get_field("home_tree_hugger_image");
+                if($home_tree_award_image || $home_tree_hugger_image){?>
+                    <div class="col-lg-6">
+                        <?php
+                        if($home_tree_award_image){?>
+                            <div class="about-brand">
+                                <img src="<?php echo $home_tree_award_image['url']; ?>" alt="Tree Wood Store Image" width="<?php echo $home_tree_award_image['width']; ?>" height="<?php echo $home_tree_award_image['height']; ?>">
+                            </div>
+                            <?php
+                        }
+                        if($home_tree_hugger_image){?>
+                            <div class="store-img">
+                                <div class="back-img" style="background-image: url('<?php echo $home_tree_hugger_image; ?>');"></div>
+                            </div>
+                            <?php
+                        }?>
                     </div>
-                    <div class="store-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/urbon-wood-img.jpg');"></div>
+                    <?php
+                }
+                $home_tree_hugger_title         = get_field("home_tree_hugger_title");
+                $home_tree_hugger_content       = get_field("home_tree_hugger_content");
+                $home_tree_hugger_page_url      = get_field("home_tree_hugger_page_url");
+                $home_tree_hugger_inventory_url = (get_field("home_tree_hugger_inventory_url")) ? get_field("home_tree_hugger_inventory_url") : "javascript:void(0);";
+                if($home_tree_hugger_title || $home_tree_hugger_page_url || $home_tree_hugger_inventory_url || $home_tree_hugger_content){?>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="about-us-content store-content">
+                            <?php  
+                            if($home_tree_hugger_title){?>
+                                <h2 class="h2-title"><?php echo $home_tree_hugger_title; ?></h2>
+                                <?php
+                            }
+                            if($home_tree_hugger_content){
+                                //tree hugger II content
+                                echo $home_tree_hugger_content;
+                            }
+                            if($home_tree_hugger_page_url){?>
+                                <a href="<?php echo $home_tree_hugger_page_url; ?>" title="Tree Hugger II, Learn More">Learn More</a>
+                                <?php
+                            }?>
+                            <a href="<?php echo $home_tree_hugger_inventory_url; ?>" title="See Our Inventory">See Our Inventory</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="about-us-content store-content">
-                        <h2 class="h2-title">TreeHugger II Urban Wood Store</h2>
-                        <p>To help lessen the impact on our environment without contributing to landfill waste, our locally sourced tree removal debris is recycled into carbon smart material; logs are milled and iDry Vacuum Kiln dried for slabs and dimensional lumber available to local woodworkers, craftsmen, artisans and homebuilders. View our inventory here. Our chipped material is delivered to nearby landscape companies to be used as mulch and local farms and equipment test plot locations utilizes our chip material to stabilize the ground and help avoid erosion.</p>
-                        <a href="javascript:void(0);" title="About Us, Learn More">Learn More</a>
-                        <a href="javascript:void(0);" title="About Us, See Our Inventory">See Our Inventory</a>
-                    </div>
-                </div>
+                    <?php
+                }?>
             </div>
         </div>
     </div>
 </section>
 <!-- store-end -->
 
-<!-- health-start -->
-<section class="health">
-    <div class="sec-wp">
-        <div class="container">
-            <div class="health-wp">
-                <div class="row">
-                    <div class="col-lg-6 align-self-center">
-                        <div class="about-us-content store-content health-content">
-                            <h2 class="h2-title">Tree Health in Central Iowa</h2>
-                            <p>Healthy trees offer many benefits and must be well-cared for in order to provide them. From regular maintenance like pruning and fertilization, to managing threats such as disease and pests, trees need our support. Our arborists are passionate about trees and believe that proper tree care pays off.</p>
-                            <p>Trees in urban environments face extra stressors when it comes to their health with top concerns generally falling into these categories:</p>
-                            <ul class="health-list">
-                                <li>Insects</li>
-                                <li>Disease</li>
-                            </ul>
+<?php 
+if(have_rows("health_care_details")){?>
+    <!-- health-start -->
+    <section class="health">
+        <div class="sec-wp">
+            <div class="container">
+                <?php 
+                while(have_rows("health_care_details")){ the_row(); 
 
-                            <ul class="health-list health-list-wp">
-                                <li>Fertilization and Soil Health </li>
-                                <li>Growth Control</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="health-img">
-                            <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/health-1.jpg');"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    $home_health_care_title   = get_sub_field("home_health_care_title");
+                    $home_health_care_image   = get_sub_field("home_health_care_image");
+                    $home_health_care_content = get_sub_field("home_health_care_content");
+                    $health_care_points       = get_sub_field("health_care_points");
 
-            <div class="health-wp">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="health-img">
-                            <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/about-img.jpg');"></div>
+                    if(get_row_index() % 2 == 0){?>
+                        <div class="health-wp">
+                            <div class="row">
+                                <?php  
+                                if($home_health_care_image){?>
+                                    <div class="col-lg-6">
+                                        <div class="health-img">
+                                            <div class="back-img" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                if($home_health_care_title || $home_health_care_content){?>
+                                    <div class="col-lg-6 align-self-center">
+                                        <div class="about-us-content store-content health-content even">
+                                            <?php 
+                                            if($home_health_care_title){?>
+                                                <h2 class="h2-title"><?php echo $home_health_care_title; ?></h2>
+                                                <?php
+                                            }
+                                            if($home_health_care_content){
+                                                // health care content
+                                                echo $home_health_care_content;
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 align-self-center">
-                        <div class="about-us-content store-content health-content even">
-                            <h2 class="h2-title">Tree Care Can Reduce the Risk of Disease</h2>
-                            <p>Healthy trees are better equipped to withstand stress from things like drought, insects, and disease better than trees that are already struggling, taking steps to optimize good health and preventative care gives us the best chance at fighting an illness or minimizing the negative effects that residential trees face. Risk factors can worsen the impact of illness or disease for trees and then have an additional stressor added, and are more able to respond to treatment. Risk factors can worsen the impact of illness or disease for trees. Fortunately, Contact us for your tree diagnosis and treatment.</p>
-                            <p> We Cut Because We Care</p>
+                        <?php
+                    }else{?>
+                        <div class="health-wp">
+                            <div class="row">
+                                <?php 
+                                if($home_health_care_title || $home_health_care_content || $health_care_points){?>
+                                    <div class="col-lg-6 align-self-center">
+                                        <div class="about-us-content store-content health-content">
+                                            <?php  
+                                            if($home_health_care_title){?>
+                                                <h2 class="h2-title"><?php echo $home_health_care_title; ?></h2>
+                                                <?php
+                                            }
+                                            // health care content
+                                            echo $home_health_care_content;
+                                            if($health_care_points){?>
+                                                <ul class="health-list">
+                                                    <?php
+                                                    foreach($health_care_points as $points){ 
+                                                        $health_points_list_title = $points['health_care_points_list_title'];
+                                                        if($health_points_list_title){?>
+                                                            <li><?php echo $health_points_list_title; ?></li>
+                                                            <?php
+                                                        }
+                                                    }?>
+                                                </ul>                                
+                                                <?php
+                                            }?>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                if($home_health_care_image){?>
+                                    <div class="col-lg-6">
+                                        <div class="health-img">
+                                            <div class="back-img" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }?>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <?php
+                    }
+                }?>
             </div>
         </div>
-    </div>
-</section>
-<!-- health-end-->
+    </section>
+    <!-- health-end-->
+    <?php
+}?>
 
 <!-- testimonial-start-->
 <section class="testimonial">
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-title">
-                        <h2 class="h2-title">Testimonials</h2>
-                        <h3 class="h3-title">What Our Clients Are Saying</h3>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="testimonial-box">
-                        <div class="about-brand">
-                            <img src="<?php echo home_url(); ?>/wp-content/themes/tree-hugger-crew/assets/images/testimonial-brand.svg" alt="testi-brand" width="110" height="120">
+                <?php  
+                $home_testimonials_title     = get_field("home_testimonials_title");
+                $home_testimonials_sub_title = get_field("home_testimonials_sub_title");
+                if($home_testimonials_title || $home_testimonials_sub_title){?>
+                    <div class="col-lg-4">
+                        <div class="testimonial-title">
+                            <?php 
+                            if($home_testimonials_title){?>
+                                <h2 class="h2-title"><?php echo $home_testimonials_title; ?></h2>
+                                <?php
+                            }
+                            if($home_testimonials_sub_title){?>
+                                <h3 class="h3-title"><?php echo $home_testimonials_sub_title; ?></h3>
+                                <?php
+                            }?>
                         </div>
-                        <div class="testimonial-slider">
-                            <div class="testimonial-content">
-                                <p>TreeHugger’s skillful and well-equipped crew professionally, efficiently, & carefully removed a hazardous nearly 2-decades-old Soft Maple from tight quarters, respecting surrounding trees, fence, overall property & us personally at a fair price. This included removal of a concrete-filled stump, filling the hole & removal of debris, leaving a clean site. We definitely recommend them.</p>
-                                <h3>Gerald & Delores D.</h3>
-                                <span>Tree Removal</span>
-                            </div>
+                    </div>
+                    <?php
+                }
+                $testimonials_query = new WP_Query(array("post_type"=>"testimonials","post_status"=>"publish","posts_per_page"=>-1));
 
-                            <div class="testimonial-content">
-                                <p>TreeHugger’s skillful and well-equipped crew professionally, efficiently, & carefully removed a hazardous nearly 2-decades-old Soft Maple from tight quarters, respecting surrounding trees, fence, overall property & us personally at a fair price. This included removal of a concrete-filled stump, filling the hole & removal of debris, leaving a clean site. We definitely recommend them.</p>
-                                <h3>Gerald & Delores D.</h3>
-                                <span>Tree Removal</span>
+                if($testimonials_query->have_posts()){?>
+                    <div class="col-lg-8">
+                        <div class="testimonial-box">
+                            <div class="about-brand">
+                                <img src="<?php echo home_url(); ?>/wp-content/themes/tree-hugger-crew/assets/images/testimonial-brand.svg" alt="testi-brand" width="110" height="120">
+                            </div>
+                            <div class="testimonial-slider">
+                                <?php
+                                while($testimonials_query->have_posts()){ $testimonials_query->the_post(); 
+                                    
+                                    $testimonial_title = get_the_title();
+                                    $testimonial_content = get_the_content();
+                                    $testimonial_project = get_field("testimonial_project_name");
+                                    
+                                    if($testimonial_title || $testimonial_content || $testimonial_project){?>
+                                        <div class="testimonial-content">
+                                            <?php  
+                                            if($testimonial_content){?>
+                                                <p><?php echo $testimonial_content; ?></p>
+                                                <?php
+                                            }
+                                            if($testimonial_title){?>
+                                                <h3><?php echo $testimonial_title; ?></h3>
+                                                <?php
+                                            }
+                                            if($testimonial_project){?>
+                                                <span><?php echo $testimonial_project; ?></span>
+                                                <?php
+                                            }?>    
+                                        </div>
+                                        <?php   
+                                    }
+                                    wp_reset_postdata();
+                                }?>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <?php                    
+                }?>
             </div>
         </div>
     </div>
 </section>
 <!-- testimonial-end-->
-
-<!-- gallery-start -->
-<section class="gallery">
-    <div class="sec-wp">
-        <div class="container">
-            <div class="gallery-img-slider">
-                <div class="gallery-img">
-                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/gallery-1.jpg');"></div>
-                </div>
-                <div class="gallery-img">
-                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/gallery-2.jpg');"></div>
-                </div>
-                <div class="gallery-img">
-                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/gallery-3.jpg');"></div>
+<?php  
+$home_gallery_images = get_field("home_gallery_images");
+if($home_gallery_images){?>
+    <!-- gallery-start -->
+    <section class="gallery">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="gallery-img-slider">
+                    <?php 
+                    $gallery_index = 1;
+                    foreach($home_gallery_images as $image){?>
+                        <div class="gallery-img">
+                            <a href="<?php echo $image; ?>" data-fancybox="gallery-img" title="<?php echo "Gallery Image ".$gallery_index; ?>">
+                                <div class="back-img" style="background-image: url('<?php echo $image; ?>');"></div>
+                            </a>
+                        </div>
+                        <?php
+                        $gallery_index++;
+                    }?>
                 </div>
             </div>
-        </div>
-</section>
-<!-- gallery-end -->
-
-
+    </section>
+    <!-- gallery-end -->
+    <?php
+}?>
 <!-- career-start -->
 <section class="career">
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-us-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/career-img.jpg');"></div>
+                <?php  
+                $home_careers_image = get_field("home_careers_image");
+                if($home_careers_image){?>
+                    <div class="col-lg-6">
+                        <div class="about-us-img">
+                            <div class="back-img" style="background-image: url('<?php echo $home_careers_image; ?>');"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="about-us-content">
-                        <h2 class=" h2-title">Careers</h2>
-                        <h3 class="h3-title">TreeHugger Complete Tree Care is Hiring!</h3>
-                        <p>We are looking for talented individuals to join our team. At TreeHugger, we offer competitive compensation, benefits packages, and opportunities for professional growth and development. Join our team and be a part of a company that values sustainability, community, and excellence in tree care.</p>
-                        <a href="javascript:void(0);" class="" title="About Us, Learn More">Learn More</a>
+                    <?php
+                }
+                $home_careers_title     = get_field("home_careers_title");
+                $home_careers_sub_title = get_field("home_careers_sub_title");
+                $home_careers_page_url  = get_field("home_careers_page_url");
+                $home_careers_image     = get_field("home_careers_image");
+                $home_careers_content   = get_field("home_careers_content");
+                   
+                if($home_careers_title || $home_careers_sub_title || $home_careers_page_url || $home_careers_image || $home_careers_content){?>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="about-us-content">
+                            <?php  
+                            if($home_careers_title){?>
+                                <h2 class=" h2-title"><?php echo $home_careers_title; ?></h2>
+                                <?php
+                            }
+                            if($home_careers_sub_title){?>
+                                <h3 class="h3-title"><?php echo $home_careers_sub_title; ?></h3>
+                                <?php
+                            }
+                            if($home_careers_content){
+                                //main careers content
+                                echo $home_careers_content;
+                            }
+                            if($home_careers_page_url){?>
+                                <a href="<?php echo $home_careers_page_url; ?>" title="Careers, Learn More">Learn More</a>
+                                <?php
+                            }?>
+                        </div>
                     </div>
-                </div>
+                    <?php
+                }?>
             </div>
         </div>
     </div>
 </section>
 <!--career-end-->
+<?php 
+if(have_rows("awards_certificatons","option")){?>
+    <!-- awards-start -->
+    <section class="awards">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="awards-img">
+                    <?php 
+                    $awards_index = 1;
+                    while(have_rows("awards_certificatons","option")){ the_row(); 
 
-<!-- awards-start -->
-<section class="awards">
-    <div class="sec-wp">
-        <div class="container">
-            <div class="awards-img">
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/TCIA_Member.png" alt="award" width="143" height="116"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/CTSP_Logo.png" alt="award" width="120" height="120"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/bbb-a-plus.png" alt="award" width="145" height="94"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/CertifiedArborist_ISA.jpg" alt="award" width="100" height="175"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/ISA_Member.jpg" alt="award" width="100" height="158"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/BestOf2021.jpg" alt="award" width="100" height="144"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/BestOf2022.jpg" alt="award" width="100" height="144"></a>
+                        $award_certification_image = get_sub_field("award_certification_image");
+                        $award_certification_redirect_url = (get_sub_field("award_certification_redirect_url")) ? get_sub_field("award_certification_redirect_url") : "javascript:void(0);";
+                        if($award_certification_image){?>
+                            <a href="<?php echo $award_certification_redirect_url; ?>">
+                                <img src="<?php echo $award_certification_image['url']; ?>" alt="Awards Image <?php echo $awards_index; ?>" width="<?php echo $award_certification_image['width']; ?>" height="<?php echo $award_certification_image['height']; ?>">
+                            </a>
+                            <?php
+                        }
+                        $awards_index++;
+                    }?>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- awards-end -->
-
+    </section>
+    <!-- awards-end -->
+    <?php
+}?>
 <!-- ig-start -->
 <section class="instagram">
     <div class="sec-wp">
@@ -295,40 +569,11 @@
                     <li><a class="mail" href="mailto:@treehuggercrew">@treehuggercrew</a></li>
                 </ul>
             </div>
+            
             <div class="row">
                 <?php echo
                 do_shortcode("[instagram-feed feed=1]");
                 ?>
-                <div class="col-lg-2">
-                    <div class="ig-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/ig-1.jpg');"></div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="ig-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/ig-2.jpg');"></div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="ig-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/urbon-wood-img.jpg');"></div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="ig-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/ig-4.jpg');"></div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="ig-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/ig-5.jpg');"></div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="ig-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/ig-6.jpg');"></div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

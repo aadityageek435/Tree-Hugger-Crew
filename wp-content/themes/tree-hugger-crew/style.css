@@ -1,8 +1,8 @@
 /*!
 Theme Name: Tree Huggers
-Theme URI: https://gro.consulting/
+Theme URI: https://gro.consulting/social/
 Author: Underscores.me
-Author URI: https://gro.consulting/
+Author URI: https://gro.consulting/social/
 Description: Description
 Version: 1.0.0
 Tested up to: 5.4
@@ -1095,16 +1095,17 @@ select::-ms-expand {
     .select2-selection__rendered,
 select {
     width: 100%;
-    height: 46px;
-    border: none;
+    height: 37px;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     outline: none !important;
-    padding: 0 15px;
+    padding: 19px 0;
     font-size: 16px;
     line-height: 26px;
-    color: var(--dark-color);
-    background: var(--white-color);
+    color: var(--white-color);
+    background: transparent;
     -webkit-appearance: none;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 select,
@@ -1116,9 +1117,9 @@ select.form-input {
 }
 
 .form-input.wpcf7-textarea {
-    height: 120px;
+    height: 101px;
     resize: none;
-    padding: 15px;
+    padding: 15px 0;
     display: block;
 }
 
@@ -1401,7 +1402,7 @@ p {
 }
 
 p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 h1,
@@ -1452,6 +1453,15 @@ a:hover {
     font-weight: 700;
     color: var(--white-color);
     margin-bottom: 10px;
+}
+
+.h4-title {
+    font-family: var(--title-font);
+    font-size: 54px;
+    line-height: 72px;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 14px;
 }
 
 .grecaptcha-badge {
@@ -1617,6 +1627,11 @@ a:hover {
     font-size: 16px;
     line-height: 26px;
     transition: 0.3s;
+}
+
+.main-navigation ul ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
 
 .sec-btn,
@@ -2107,17 +2122,23 @@ button.close:hover {
 }
 
 .main-navigation ul li.current-menu-item a:not(.main-navigation ul ul li a),
-.main-navigation ul li a:hover,
-.main-navigation ul ul li.current-menu-item a {
+.main-navigation ul li a:hover {
     color: var(--secondary-color);
 }
 
-.main-navigation ul ul li a:hover {
-    color: var(--primary-color);
+.main-navigation ul ul li.current-menu-item a {
+    color: var(--white-color);
+    background-color: var(--primary-color);
 }
 
 .site-branding:not(.mobile-header .site-branding) {
     padding-bottom: 2.6vh;
+}
+
+.site-branding img {
+    width: auto;
+    height: 17.66vh;
+    object-fit: cover;
 }
 
 .site-contact {
@@ -2166,7 +2187,7 @@ button.close:hover {
     width: 215px;
 }
 
-#page.site{
+#page.site {
     padding-left: var(--header-width);
 }
 
@@ -2179,6 +2200,11 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     padding-inline: 4.4vw;
 }
 /*==========Header CSS End==========*/
+
+.awards.cirty {
+    background-color: transparent;
+    padding: 0 0 105px;
+}
 
 /*==========banner CSS start==========*/
 .main-banner {
@@ -2333,6 +2359,9 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     bottom: -1px;
     left: 0;
     background-image: url(assets/images/service-path.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .main-service::before {
@@ -2343,6 +2372,9 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     bottom: -75px;
     left: 0;
     background-image: url(assets/images/service-bottom-path.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .service-title .h2-title {
@@ -2362,6 +2394,10 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     font-weight: 500;
     padding-bottom: 17px;
     cursor: pointer;
+}
+
+.service-tab .active-gallery-tab {
+    color: var(--secondary-color);
 }
 
 .service-tab li:last-child {
@@ -2409,6 +2445,39 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     left: 0;
     bottom: -10px;
     border-bottom: 3px solid var(--secondary-color);
+}
+
+.service-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 75, 46, 0.7);
+    z-index: 5;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-loader i {
+    color: var(--white-color);
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: loader 2s linear infinite;
+    z-index: 2;
+}
+
+@keyframes loader {
+    from {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(0);
+    }
 }
 /*==========service CSS End==========*/
 
@@ -2459,6 +2528,9 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     top: calc(var(--mb) * -1);
     left: 0;
     background-image: url(assets/images/health-before.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .health::after {
@@ -2469,6 +2541,9 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     bottom: calc(var(--mb) * -1);
     left: 0;
     background-image: url(assets/images/heath-after.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     z-index: 1;
 }
 
@@ -2484,15 +2559,8 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .health-list {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 168px;
     margin-top: 21px;
-}
-
-.health-list-wp {
-    gap: 21px;
-    margin-top: 31px;
+    column-count: 2;
 }
 
 .health-list li {
@@ -2501,6 +2569,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     font-size: 18px;
     line-height: 30px;
     color: var(--dark-color);
+    margin-bottom: 31px;
 }
 
 .health-list li::before {
@@ -2633,7 +2702,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     color: transparent;
 }
 
-.testimonial .slick-arrow{
+.testimonial .slick-arrow {
     top: 71px;
     left: -357px;
 }
@@ -2659,18 +2728,18 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 /*==========testimonial CSS end==========*/
 
 /*==========instagram CSS start==========*/
-.instagram{
-    padding: 182px 0 104px;
+.instagram {
+    padding: 182px 0 92px;
 }
 
-.ig-title ul{
+.ig-title ul {
     display: flex;
     align-items: center;
     gap: 18px;
-    margin-bottom:38px;
+    margin-bottom: 38px;
 }
 
-.ig-title ul li a{
+.ig-title ul li a {
     font-family: var(--title-font);
     color: var(--dark-color);
     font-size: 26px;
@@ -2680,12 +2749,12 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     border-right: 2px solid var(--dark-color);
 }
 
-.ig-title ul li a.mail{
+.ig-title ul li a.mail {
     color: var(--secondary-color);
     border: 0;
 }
 
-.ig-img .back-img{
+.ig-img .back-img {
     width: 100%;
     height: 170px;
 }
@@ -2765,9 +2834,103 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 /*=========awards CSS end==========*/
 
 /*==========Footer CSS Start==========*/
+.site-footer {
+    padding: 193px 0 140px;
+    position: relative;
+    background-color: var(--light-green);
+    --mb: 75px;
+    margin-top: var(--mb);
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    top: calc(var(--mb) * -1);
+    left: 0;
+    background-image: url(assets/images/footer-path.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.footer-content {
+    padding-right: 102px;
+}
+
+.footer-content img {
+    margin-bottom: 19px;
+}
+
+.footer-content .h3-title {
+    font-weight: 500;
+    margin-bottom: 41px;
+}
+
+.footer-page a {
+    line-height: 24px;
+    text-decoration: underline !important;
+}
+
+.contact-info {
+    margin-bottom: 27px;
+}
+
+.contact-info a {
+    font-family: var(--title-font);
+}
+
+.contact-info .phone {
+    margin-bottom: 4px;
+}
+
+.contact-info .callus {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+}
+
+.fotter-add {
+    padding-left: 38px;
+}
+
+.footer-form {
+    padding-top: 206px;
+}
+
+.footer-hour {
+    margin-bottom: 30px;
+}
+
+.footer-hour li,
+.footer-loaction li,
+.footer-loaction li a {
+    color: var(--white-color);
+    padding-bottom: 5px;
+    transition: var(--transition);
+}
+
+.footer-loaction li a:hover {
+    color: var(--black-color);
+}
+
+.footer-hour li:first-child,
+.footer-loaction li:first-child {
+    font-weight: 700;
+}
+
+.footer-form ::placeholder {
+    color: var(--white-color);
+}
+
+.footer-form .sec-btn {
+    width: 130px;
+}
+
 .footer-bottom-box {
     position: relative;
-    padding: 40px 0;
+    padding: 30px 0;
 }
 
 .footer-bottom-text {
@@ -2802,7 +2965,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .footer-bottom-link ul li {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 1;
     display: inline-block;
     padding-right: 8px;
     margin-right: 8px;
@@ -2817,7 +2980,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .footer-bottom-link ul li a {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 1;
     color: var(--common-color);
     transition: 0.3s;
 }
@@ -2830,6 +2993,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     color: var(--primary-color);
     font-weight: bold;
     transition: 0.3s;
+    text-decoration: underline !important;
 }
 
 .footer-other-link p a:hover {
@@ -2840,6 +3004,136 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     color: var(--primary-color);
 }
 /*==========Footer CSS End==========*/
+
+/*==========about-page-start==========*/
+.about-sec {
+    position: relative;
+    padding: 140px 0 180px;
+    overflow: hidden;
+}
+
+.about-sec-path {
+    position: absolute;
+    top: -140px;
+    left: 0;
+    width: 1575px;
+    height: 996px;
+}
+
+.about-sec .about-us-content .h4-title {
+    margin-bottom: 24px;
+}
+
+.about-sec .about-us-content p {
+    margin-bottom: 40px;
+}
+
+.about-sec .about-us-content .h2-title {
+    position: relative;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 41px 0;
+}
+
+.about-sec .about-us-content .h2-title::before,
+.about-sec .about-us-content .h2-title::after {
+    position: absolute;
+    content: "";
+    width: 33px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background-image: url("assets/images/about-sec-sahpe.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about-sec .about-us-content .h2-title::after {
+    top: auto;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.about-sec-img {
+    position: relative;
+    z-index: 1;
+}
+
+.about-sec-img .back-img {
+    width: calc(100% - 70px);
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: -20px 20px 0 var(--primary-color);
+    margin-left: 70px;
+}
+
+.about-sec-brand {
+    position: absolute;
+    bottom: -85px;
+    right: -70px;
+    z-index: 2;
+}
+
+.profestional {
+    position: relative;
+    padding: 180px 0 260px;
+}
+
+.profestional .about-us-img .back-img {
+    width: calc(100% - 70px);
+    height:600px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--primary-color);
+}
+
+.profestional .about-us-content .h2-title {
+    margin-bottom: 27px;
+}
+
+.profestional .about-us-content p{
+    margin-bottom: 20px;
+}
+/*==========about-page-end==========*/
+
+.who-sec {
+    position: relative;
+    background-color: var(--primary-color);
+    padding: 170px 0 218px;
+    --mb: 75px;
+    margin-bottom: var(--mb);
+}
+
+.who-sec::before,
+.who-sec::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 76px;
+    top: calc(var(--mb) * -1);
+    left: 0;
+    background-image: url(assets/images/who-before.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.who-sec::after {
+    top: auto;
+    bottom: calc(var(--mb) * -1);
+    background-image: url(assets/images/who-after.svg);
+}
+
+.who-sec .h2-title {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
 
 /*==========Scroll To Top CSS Start==========*/
 .scrolltop {

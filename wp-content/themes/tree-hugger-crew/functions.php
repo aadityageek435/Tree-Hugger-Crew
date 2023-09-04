@@ -200,7 +200,7 @@ add_filter( 'get_custom_logo', 'change_html_custom_logo' );
 function change_html_custom_logo() {
     $custom_logo_id = get_theme_mod( 'custom_logo' );
 	$site_name = get_bloginfo( 'name' );
-    $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" title="'.$site_name.'">%2$s</a>',
+    $html = sprintf( '<a href="%1$s" class="custom-logo-link" title="'.$site_name.'">%2$s</a>',
             esc_url( home_url( '/' ) ),
             wp_get_attachment_image( $custom_logo_id, 'full', false, array(
                 'class'    => 'custom-logo',
@@ -208,4 +208,62 @@ function change_html_custom_logo() {
             ) )
         );
     return $html;   
+}
+
+// Ajax response - service tabbing 
+
+add_action('wp_ajax_service_tabbing','service_sec_tabbing');
+add_action( 'wp_ajax_nopriv_service_tabbing', 'service_sec_tabbing' );
+
+function service_sec_tabbing() {	
+
+	$ajax_index = $_POST['index'];
+	$front_page_id = get_option('page_on_front');
+
+	if(have_rows("our_services", $front_page_id)){
+
+		while(have_rows("our_services", $front_page_id)){ the_row(); 
+
+			$home_our_services_title = get_sub_field("home_our_services_title");
+			$home_our_services_page_url = get_sub_field("home_our_services_page_url");
+			$home_our_services_image = get_sub_field("home_our_services_image");
+			$home_our_services_icon = get_sub_field("home_our_services_icon");
+			$home_our_services_content = get_sub_field("home_our_services_content");
+
+			if( get_row_index() == $ajax_index ){?>
+				<div class="service-content">
+					<?php  
+					if($home_our_services_icon){?>
+						<div class="about-brand">
+							<img src="<?php echo $home_our_services_icon['url']; ?>" alt="<?php echo $home_our_services_title." Image";  ?>" width="<?php echo $home_our_services_icon['width']; ?>" height="<?php echo $home_our_services_icon['height']; ?>">
+						</div>
+						<?php
+					}
+					if($home_our_services_image){?>
+						<div class="service-img">
+							<div class="back-img" style="background-image: url('<?php echo $home_our_services_image; ?>');"></div>
+						</div>
+						<?php
+					}
+					if($home_our_services_title){?>
+						<h3 class="h3-title"><?php echo $home_our_services_title; ?></h3>
+						<?php
+					}
+					
+					//our service main content
+					echo $home_our_services_content;
+
+					if($home_our_services_page_url){?>
+						<a href="<?php echo $home_our_services_page_url; ?>" title="<?php echo $home_our_services_title.", Learn More"; ?>">Learn More</a>
+						<?php
+					}?>
+				</div>
+				<?php
+			}
+		}
+	}else{
+		echo "Something Went Wrong!, Please check Ajax Request";
+	}
+
+	wp_die();
 }

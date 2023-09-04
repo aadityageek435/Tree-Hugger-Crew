@@ -60,16 +60,45 @@
 							</nav>
 						</div>
 					</div>
-					<div class="site-contact">
-						<a href="tel:515520-0971" class="site-call" title="(515) 520-0971">(515) 520-0971</a>
-						<ul>
-							<li><a class="contact-icon" href="javascript:void(0);"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a class="contact-icon" href="javascript:void(0);"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-					<div class="contact-header-btn">
-						<a href="javascript:void(0);" title="Request A Quote" class="sec-btn">Request A Quote</a>
-					</div>
+					<?php 
+					
+					$tree_hugger_phone_number        = get_field("tree_hugger_phone_number","option"); 
+					$conv_number                     = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
+					$tree_hugger_instagram_url       = get_field("tree_hugger_instagram_url","option");
+					$tree_hugger_facebook_url        = get_field("tree_hugger_facebook_url","option");
+					$tree_hugger_contact_request_url = get_field("tree_hugger_contact_request_url","option");
+
+					if($tree_hugger_phone_number || $tree_hugger_instagram_url || $tree_hugger_facebook_url || $tree_hugger_contact_request_url){?>
+						<div class="site-contact">
+							<?php 
+							if($tree_hugger_phone_number){?>
+								<a href="tel:<?php echo $conv_number; ?>" class="site-call" title="Call on <?php echo $tree_hugger_phone_number; ?>"><?php echo $tree_hugger_phone_number; ?></a>
+								<?php
+							}?>
+							<ul>
+								<?php 
+								if($tree_hugger_facebook_url){?>
+									<li>
+										<a class="contact-icon" href="<?php echo $tree_hugger_facebook_url; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+									</li>
+									<?php
+								}
+								if($tree_hugger_instagram_url){?>
+									<li>
+										<a class="contact-icon" href="<?php echo $tree_hugger_instagram_url; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+									</li>
+									<?php
+								}?>
+							</ul>
+						</div>
+						<?php  
+						if($tree_hugger_contact_request_url){?>
+							<div class="contact-header-btn">
+								<a href="<?php echo $tree_hugger_contact_request_url['url']; ?>" title="<?php echo $tree_hugger_contact_request_url['title']; ?>" class="sec-btn"><?php echo $tree_hugger_contact_request_url['title']; ?></a>
+							</div>
+							<?php
+						}
+					}?>
 				</div>
 			</div>
 		</header>
