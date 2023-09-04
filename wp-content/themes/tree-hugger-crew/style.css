@@ -2166,11 +2166,16 @@ button.close:hover {
     width: 215px;
 }
 
-div#primary {
+#page.site{
     padding-left: var(--header-width);
 }
 
+a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
+    margin-right: 30px;
+}
+
 .sec-wp {
+    position: relative;
     padding-inline: 4.4vw;
 }
 /*==========Header CSS End==========*/
@@ -2227,10 +2232,6 @@ div#primary {
 .sec-about-us {
     position: relative;
     padding: 180px 0 254px;
-}
-
-.sec-wp {
-    position: relative;
 }
 
 .about-path {
@@ -2321,25 +2322,25 @@ div#primary {
 .main-service {
     position: relative;
     background-color: var(--primary-color);
-    padding: 100px 0;
+    padding: 100px 0 148px;
 }
 
-.sec-about-us::before{
-    content: '';
+.sec-about-us::before {
+    content: "";
     position: absolute;
     width: 100%;
-    height:76px;
-    bottom:-1px;
+    height: 76px;
+    bottom: -1px;
     left: 0;
     background-image: url(assets/images/service-path.svg);
 }
 
-.main-service::before{
-    content: '';
+.main-service::before {
+    content: "";
     position: absolute;
     width: 100%;
-    height:76px;
-    bottom:-76px;
+    height: 75px;
+    bottom: -75px;
     left: 0;
     background-image: url(assets/images/service-bottom-path.svg);
 }
@@ -2350,7 +2351,7 @@ div#primary {
 }
 
 .service-tab {
-    padding-top: 90px;
+    padding-top: 98px;
 }
 
 .service-tab li {
@@ -2367,8 +2368,8 @@ div#primary {
     padding-bottom: 0px;
 }
 
-.service-img{
-    margin-bottom:79px;
+.service-img {
+    margin-bottom: 79px;
 }
 
 .service-img .back-img {
@@ -2378,7 +2379,7 @@ div#primary {
     box-shadow: -20px 20px 0 var(--light-green);
 }
 
-.service-title{
+.service-title {
     margin-bottom: 78px;
 }
 
@@ -2387,15 +2388,15 @@ div#primary {
     color: var(--white-color);
 }
 
-.service-content .h3-title{
+.service-content .h3-title {
     margin-bottom: 15px;
 }
 
-.service-content a:hover{
+.service-content a:hover {
     color: var(--black-color);
 }
 
-.service-content p{
+.service-content p {
     color: var(--white-color);
     margin-bottom: 30px;
 }
@@ -2410,6 +2411,358 @@ div#primary {
     border-bottom: 3px solid var(--secondary-color);
 }
 /*==========service CSS End==========*/
+
+/*==========store CSS start==========*/
+.store {
+    padding: 256px 0 275px;
+}
+
+.about-us-content.store-content {
+    padding-left: 70px;
+}
+
+.store-img .back-img {
+    width: calc(100% - 70px);
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--primary-color);
+}
+
+.about-us-content.store-content .h2-title {
+    max-width: 400px;
+    margin-bottom: 27px;
+}
+
+.about-us-content.store-content p {
+    margin-bottom: 31px;
+}
+
+.about-us-content.store-content a {
+    margin-right: 35px;
+}
+/*==========store CSS End==========*/
+
+/*==========health CSS start==========*/
+.health {
+    position: relative;
+    background-color: var(--light-yellow);
+    padding: 145px 0;
+    --mb: 75px;
+    margin-bottom: var(--mb);
+}
+
+.health::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    top: calc(var(--mb) * -1);
+    left: 0;
+    background-image: url(assets/images/health-before.svg);
+}
+
+.health::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    bottom: calc(var(--mb) * -1);
+    left: 0;
+    background-image: url(assets/images/heath-after.svg);
+    z-index: 1;
+}
+
+.health .sec-wp {
+    --space: -144px;
+    margin-bottom: var(--space);
+}
+
+.health-wp {
+    --space: 144px;
+    margin-bottom: var(--space);
+}
+
+.health-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 168px;
+    margin-top: 21px;
+}
+
+.health-list-wp {
+    gap: 21px;
+    margin-top: 31px;
+}
+
+.health-list li {
+    position: relative;
+    padding-left: 48px;
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--dark-color);
+}
+
+.health-list li::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 32px;
+    background-image: url("assets/images/insect.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+}
+
+.health-img .back-img {
+    width: calc(100% - 70px);
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--primary-color);
+}
+
+.about-us-content.store-content.health-content {
+    padding-left: 0;
+}
+
+.about-us-content.store-content.health-content.even .h2-title {
+    max-width: 470px;
+}
+
+.about-us-content.store-content.health-content p {
+    margin-bottom: 10px;
+}
+/*==========health CSS End==========*/
+
+/*==========testimonial CSS start==========*/
+.testimonial {
+    padding: 240px 0 180px;
+}
+
+.testimonial-title {
+    margin-top: 82px;
+}
+
+.testimonial-box {
+    position: relative;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+
+.testimonial-box .about-brand {
+    top: -60px;
+    right: -30px;
+}
+
+.testimonial-title .h2-title {
+    margin-bottom: 6px;
+}
+
+.testimonial-title .h3-title {
+    color: var(--primary-color);
+    font-size: 20px;
+    line-height: 34px;
+    font-weight: 500;
+}
+
+.testimonial-content {
+    position: relative;
+    padding: 77px 70px 74px;
+}
+
+.testimonial-content::before {
+    position: absolute;
+    content: "";
+    width: 33px;
+    height: 30px;
+    top: 30px;
+    left: 30px;
+    background-image: url("assets/images/testi-before.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.testimonial-content::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    bottom: 30px;
+    right: 30px;
+    background-image: url("assets/images/testi-after.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.testimonial-content .about-brand {
+    top: -60px;
+    right: -30px;
+}
+
+.testimonial-content p {
+    color: var(--white-color);
+    margin-bottom: 20px;
+}
+
+.testimonial-content h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: var(--body-font);
+    font-weight: 700;
+    color: var(--white-color);
+    margin-bottom: 0px;
+}
+
+.testimonial-content span {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--white-color);
+}
+
+.slick-arrow {
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    background: transparent;
+    color: transparent;
+}
+
+.testimonial .slick-arrow{
+    top: 71px;
+    left: -357px;
+}
+
+.testimonial .next-arrow.slick-arrow {
+    left: -258px;
+}
+
+.testimonial .next-arrow.slick-arrow::before {
+    transform: rotate(180deg);
+}
+
+.testimonial .slick-arrow::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 32px;
+    -webkit-mask-image: url("assets/images/testi-arrow.svg");
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--secondary-color);
+}
+/*==========testimonial CSS end==========*/
+
+/*==========instagram CSS start==========*/
+.instagram{
+    padding: 182px 0 104px;
+}
+
+.ig-title ul{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom:38px;
+}
+
+.ig-title ul li a{
+    font-family: var(--title-font);
+    color: var(--dark-color);
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 500;
+    padding-right: 18px;
+    border-right: 2px solid var(--dark-color);
+}
+
+.ig-title ul li a.mail{
+    color: var(--secondary-color);
+    border: 0;
+}
+
+.ig-img .back-img{
+    width: 100%;
+    height: 170px;
+}
+/*==========instagram CSS end==========*/
+
+/*=========gallery CSS start==========*/
+.gallery-img .back-img {
+    height: 560px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.gallery .slick-list {
+    width: 83.3vw;
+}
+
+.gallery .slick-slide {
+    margin-right: 30px;
+    width: 770px;
+}
+
+.gallery .slick-arrow {
+    left: 66px;
+}
+
+.gallery .slide-arrow.next-arrow.slick-arrow {
+    right: -231px;
+    left: auto;
+}
+
+.gallery .slick-arrow::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 32px;
+    -webkit-mask-image: url("assets/images/testi-arrow.svg");
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--white-color);
+}
+
+.gallery .next-arrow.slick-arrow::before {
+    transform: rotate(180deg);
+}
+/*=========gallery CSS end==========*/
+
+/*=========career CSS start==========*/
+.career {
+    position: relative;
+    padding: 180px 0;
+}
+
+.career .about-us-content .h2-title {
+    margin-bottom: 8px;
+}
+
+.career .about-us-content .h3-title {
+    margin-bottom: 25px;
+}
+
+.career .about-us-content p {
+    margin-bottom: 31px;
+}
+/*=========career CSS end==========*/
+
+/*=========awards CSS start==========*/
+.awards {
+    background-color: var(--light-yellow);
+    padding: 120px;
+}
+
+.awards-img {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+/*=========awards CSS end==========*/
 
 /*==========Footer CSS Start==========*/
 .footer-bottom-box {

@@ -209,34 +209,3 @@ function change_html_custom_logo() {
         );
     return $html;   
 }
-
-
-function custom_testimonials_post() {
-	$labels = array(
-		'name' => _x( 'Testimonials', 'post type general name' ),
-		'singular_name' => _x( 'Testimonial', 'post type singular name' ),
-		'add_new' => _x( 'Add New', 'testimonial' ),
-		'add_new_item' => __( 'Add New Testimonials' ),
-		'edit_item' => __( 'Edit Testimonial' ),
-		'new_item' => __( 'New Testimonial' ),
-		'all_items' => __( 'All Testimonials' ),
-		'view_item' => __( 'View Testimonial' ),
-		'search_items' => __( 'Search Testimonials' ),
-		'not_found' => __( 'No testimonial found' ),
-		'not_found_in_trash' => __( 'No testimonial found in the Trash' ),
-		'parent_item_colon' => '',
-		'menu_name' => 'Testimonials'
-	);
-	$args = array(
-		'labels' => $labels,
-		'description' => 'Holds testimonials and testimonial specific data',
-		'public' => true,
-		'exclude_from_search'   => true,
-		'menu_position' => 20,
-		'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
-		'has_archive' => true,
-		'menu_icon' => 'dashicons-testimonial',
-	);
-	register_post_type( 'testimonials', $args );
-}
-add_action( 'init', 'custom_testimonials_post' );

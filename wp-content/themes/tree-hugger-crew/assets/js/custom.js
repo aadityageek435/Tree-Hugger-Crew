@@ -39,6 +39,50 @@ jQuery(document).ready(function($) {
         }
     });
 
+    jQuery('.testimonial-slider').slick({
+        slidesToShow:1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+        nextArrow: '<button class="slide-arrow next-arrow"></button>',  
+    });
+
+    jQuery('.gallery-img-slider').slick({
+        slidesToShow:2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots:false,
+        arrows: true,
+        variableWidth: true,
+        autoplay: false,
+        rows: 0,
+        autoplaySpeed: 2000,
+        prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+        nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        responsive: [{
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                }
+            }
+        ]
+    });
 
     jQuery('.plans-slider').slick({
         slidesToShow: 4,
@@ -128,10 +172,11 @@ jQuery(document).ready(function($) {
 
     setTimeout(function() {
         jQuery("#sbi_images").slick({
-            slidesToShow: 4,
+            slidesToShow: 6,
             slidesToScroll: 1,
+            swipeToSlide: true,
             draggable: true,
-            rows: 1,
+            rows: 0,
             swipeToSlide: true,
             dots: false,
             arrows: true,
