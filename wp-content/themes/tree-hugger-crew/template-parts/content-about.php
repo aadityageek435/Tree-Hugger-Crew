@@ -1,26 +1,52 @@
 <!-- about-start -->
 <section class="about-sec">
-    <div class="sec-wp">
-        <div class="about-sec-path">
-            <img src="<?php echo home_url(); ?>/wp-content/themes/tree-hugger-crew/assets/images/about-ec-path.svg" alt="about-sec-path" width="1575" height="996">
-        </div>
+    <div class="sec-wp">      
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 align-self-center">
-                    <div class="about-us-content">
-                        <h1 class="h4-title">About Us</h1>
-                        <p>At TreeHugger Complete Tree Care, we are a local family owned business that upholds honesty, integrity, and shows the utmost respect and care for your property. Our tree pruning and removal services are tailored to meet the unique needs of both homeowners and business owners. <b>We take pride in the high standard of our work, and we are committed to maintaining the health and wellness of your trees and property.</b></p>
-                        <h2 class="h2-title">We cut because we care.</h2>
+                <?php
+                $about_title                     = get_the_title();
+                $about_content                   = get_the_content();
+                $tree_hugger_about_banner_slogan = get_field("tree_hugger_about_banner_slogan");
+                if($about_title || $about_content || $tree_hugger_about_banner_slogan){?>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="about-us-content">
+                            <?php  
+                            if($about_title){?>
+                                <h4 class="h4-title"><?php echo $about_title; ?></h4>
+                                <?php
+                            }
+                            if($about_content){?>
+                                <p><?php echo $about_content; ?></p>
+                                <?php
+                            }
+                            if($tree_hugger_about_banner_slogan){?>                                
+                                <h2 class="h2-title"><?php echo $tree_hugger_about_banner_slogan; ?></h2>
+                                <?php
+                            }?>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-sec-brand">
-                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/about-sec-shape.png" alt="about-brand" width="230" height="230">
+                    <?php
+                }
+                $tree_hugger_about_icon  = get_field("tree_hugger_about_icon");
+                $tree_hugger_about_image = get_field("tree_hugger_about_image");
+                if($tree_hugger_about_icon || $tree_hugger_about_image){?>
+                    <div class="col-lg-6">
+                        <?php 
+                        if($tree_hugger_about_icon){?>
+                            <div class="about-sec-brand">   
+                                <img src="<?php echo $tree_hugger_about_icon['url']; ?>" alt="about-brand" width="<?php echo $tree_hugger_about_icon['width']; ?>" height="<?php echo $tree_hugger_about_icon['height']; ?>">
+                            </div>
+                            <?php
+                        }
+                        if($tree_hugger_about_image){?>
+                            <div class="about-sec-img">
+                                <div class="back-img" style="background-image: url('<?php echo $tree_hugger_about_image; ?>');"></div>
+                            </div>
+                            <?php
+                        }?>
                     </div>
-                    <div class="about-sec-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/about-sec-img.jpg');"></div>
-                    </div>
-                </div>
+                    <?php
+                }?>
             </div>
         </div>
     </div>
@@ -30,115 +56,215 @@
 <!-- who-sec start-->
 <section class="who-sec">
     <div class="sec-wp">
-        <div class="container">
-            <h2 class="h2-title">Who We Are</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="who-title white-text">
-                        <p>Denny Deakins has over 30 years of experience in the tree care industry, starting as a young man and progressing to a full-time professional. He has worked with several regional tree services before founding TreeHugger in 2014, a family-owned and operated company that provides complete tree care services. Denny brought his son Sean into the partnership, and together they have built a business that specializes in tree removal, tree pruning, plant health care for the health and longevity of your tree and custom milling and drying services for slabs and dimensional wood products. They are fully licensed and insured and approach each project with respect for your property an our urban forest.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="who-content white-text">
-                        <p>TreeHugger is Central Iowa’s premier tree service, and their tagline “We cut because we care” highlights it is their philosophy and high standards that sets them apart. Despite tree removal being an essential part of their business, they are equally focused on the care and management of trees. Their commitment to Urban Forestry adds value to the homeowner and the urban environment.</p>
-                        <p>Recognizing that trees are a long-term investment for homeowners, TreeHugger Complete Tree Care is devoted to the stewardship of that investment. Denny and Sean Deakins share the sentiment of Joyce Kilmer, that they shall never see a poem as lovely as a tree, which is why they love what they do.You are in good hands with the TreeHugger Crew.</p>
-                    </div>
+        <?php 
+        $tree_hugger_who_we_title       = get_field("tree_hugger_who_we_title");
+        $tree_hugger_who_we_content_rep = get_field("tree_hugger_who_we_content_rep");
+        if($tree_hugger_who_we_title || $tree_hugger_who_we_content_rep){?>
+            <div class="container">
+                <?php  
+                if($tree_hugger_who_we_title){?>
+                    <h2 class="h2-title"><?php echo $tree_hugger_who_we_title; ?></h2>
+                    <?php
+                }?>
+                <div class="row">
+                    <?php  
+                    foreach($tree_hugger_who_we_content_rep as $content){?>
+                        <div class="col-lg-6">
+                            <?php
+                            if($content['tree_hugger_who_we_content']){?> 
+                                <div class="who-title white-text">
+                                    <?php echo $content['tree_hugger_who_we_content']; ?>
+                                </div>
+                                <?php
+                            }?>
+                        </div>
+                        <?php
+                    }?>
                 </div>
             </div>
+            <?php
+        }?>
         </div>
-    </div>
 </section>
 <!-- who-sec end-->
-
 <!-- career-start -->
 <section class="profestional">
     <div class="sec-wp">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-us-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/profestional-img.jpg');"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="about-us-content">
-                        <h2 class="h2-title">Work with the Professional Arborists at TreeHugger</h2>
-                        <p>Trees are a gift from nature and we work on their behalf for a healthy and long life. Professional maintenance from TreeHugger Complete Tree Care is the best investment. Our family-owned team has been providing professional tree services in the Des Moines, IA area for over 25 years. We offer a range of services, including tree removal,tree trimming,crane assisted tree removal, and lot clearing services. Our TreeHugger Crew is committed to delivering exceptional results.</p>
-                        <p>At TreeHugger, our motto is “we cut because we care.” Our team is dedicated to providing high-quality tree services in Ankeny, Altoona, Bondurant, Des Moines, West Des Moines, Urbandale, Johnston, and other central Iowa communities that are both beneficial to you and the environment</p>
-                        <p><b>We Cut Because We Care.</b></p>
+        <?php
+        $tree_hugger_work_with_title   = get_field("tree_hugger_work_with_title");
+        $tree_hugger_work_with_image   = get_field("tree_hugger_work_with_image");
+        $tree_hugger_work_with_content = get_field("tree_hugger_work_with_content");
+        if($tree_hugger_work_with_title || $tree_hugger_work_with_image || $tree_hugger_work_with_content){?>
+            <div class="container">
+                <div class="row">
+                    <?php  
+                    if($tree_hugger_work_with_image){?>
+                        <div class="col-lg-6">
+                            <div class="about-us-img">
+                                <div class="back-img" style="background-image: url('<?php echo $tree_hugger_work_with_image; ?>');"></div>
+                            </div>
+                        </div>
+                        <?php
+                    }?>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="about-us-content">
+                            <?php  
+                            if($tree_hugger_work_with_title){?>
+                                <h2 class="h2-title"><?php echo $tree_hugger_work_with_title; ?></h2>
+                                <?php
+                            }
+                            //Work with Content
+                            echo $tree_hugger_work_with_content; ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <?php
+        }?>
     </div>
 </section>
 <!--career-end-->
-
 <!-- Arborists start -->
 <section class="arborists">
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="arborists-title">
-                        <h2 class="h2-title">Meet Our Arborists</h2>
-                        <p>Our family-owned team has been providing professional tree services in the Des Moines, IA area for over 25 years. Our TreeHugger Crew is committed to delivering exceptional results.</p>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="row arborists-slider">
-                        <div class="col-lg-6">
-                            <div class="arborists-content">
-                                <div class="arborists-img">
-                                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/gallery-3.jpg');"></div>
-                                </div>
-                                <h3>Denny Deakins</h3>
-                                <p>26 years of Service in Arboriculture</p>
-                                <a href="javascript:void(0);" title="About Us, Learn More">Learn More</a>
-                            </div>
+                <?php 
+                $tree_hugger_meet_arborists_title = get_field("tree_hugger_meet_arborists_title");
+                $tree_hugger_meet_arborists_content = get_field("tree_hugger_meet_arborists_content");
+                if($tree_hugger_meet_arborists_title || $tree_hugger_meet_arborists_content ){?>
+                    <div class="col-lg-4">
+                        <div class="arborists-title">
+                            <?php  
+                            if($tree_hugger_meet_arborists_title){?>
+                                <h2 class="h2-title"><?php echo $tree_hugger_meet_arborists_title; ?></h2>
+                                <?php
+                            }
+                            //arborist content
+                            echo $tree_hugger_meet_arborists_content;
+                            ?>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="arborists-content">
-                                <div class="arborists-img">
-                                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/arborists-2.jpg');"></div>
-                                </div>
-                                <h3>Sean Deakins</h3>
-                                <p>7 Years of Service in Arboriculture</p>
-                                <a href="javascript:void(0);" title="About Us, Learn More">Learn More</a>
-                            </div>
-                        </div>   
-                        <div class="col-lg-6">
-                            <div class="arborists-content">
-                                <div class="arborists-img">
-                                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/arborists-3.jpg');"></div>
-                                </div>
-                                <h3>Dawna Deakins</h3>
-                                <p>7 Years of Service in Arboriculture</p>
-                                <a href="javascript:void(0);" title="About Us, Learn More">Learn More</a>
-                            </div>
-                        </div>                      
                     </div>
-                </div>
+                    <?php
+                }
+                $arborists_query = new WP_Query(array("post_type"=>"our-arborists","post_status"=>"publish","posts_per_page"=>-1));
+                if($arborists_query->have_posts()){?>
+                    <div class="col-lg-8">
+                        <div class="row arborists-slider">
+                            <?php 
+                            while($arborists_query->have_posts()){  $arborists_query->the_post();
+                                $arborist_name          = get_the_title();
+                                $arborist_exp           = get_field("arborist_experience");
+                                $arborist_about         = get_the_content();
+                                $arborist_profile_image = get_the_post_thumbnail_url();
+                                ?>
+                                <div class="col-lg-6">
+                                    <div class="arborists-content">
+                                        <?php  
+                                        if($arborist_profile_image){?>
+                                            <div class="arborists-img">
+                                                <div class="back-img" style="background-image: url('<?php echo $arborist_profile_image; ?>');"></div>
+                                            </div>
+                                            <?php
+                                        }
+                                        if($arborist_name){?>
+                                            <h3><?php echo $arborist_name; ?></h3>
+                                            <?php
+                                        }
+                                        if($arborist_exp){?>
+                                            <p><?php echo $arborist_exp; ?></p>
+                                            <?php
+                                        }?>
+                                        <a href="javascript:void(0);" title="About Us, Learn More" class="arborist-learn-more" data-bs-toggle="modal" data-bs-target="#arborist_modal" data-arborist-id="<?php echo get_the_ID(); ?>">Learn More</a>
+                                        <div class="popup-content" style="display:none;">
+                                            <div class="row">
+                                                <?php 
+                                                if($arborist_profile_image){?>
+                                                    <div class="col-lg-4">
+                                                        <img src="<?php echo $arborist_profile_image; ?>" alt="<?php echo $arborist_name;  ?>">			
+                                                    </div>
+                                                    <?php
+                                                }
+                                                if($arborist_name || $arborist_about ||  $arborist_exp){?>
+                                                    <div class="col-lg-8">
+                                                        <?php  
+                                                        if($arborist_name){?>
+                                                            <div class="arborist-name">
+                                                                <h3><?php echo $arborist_name;  ?></h3>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                        if($arborist_exp || $arborist_about){?>
+                                                            <div class="arborist-about-exp">
+                                                                <?php 
+                                                                if($arborist_exp){?>
+                                                                    <p><strong><?php echo $arborist_exp; ?></strong></p>
+                                                                    <?php
+                                                                }
+                                                                if($arborist_about){?>
+                                                                    <p><?php echo $arborist_about; ?></p>
+                                                                    <?php
+                                                                }?>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                        if(have_rows("arborist_awards_certifications")){?>
+                                                            <div class="awards-certifications">
+                                                                <p><strong>Awards/Certifications : </strong></p>
+                                                                    <ul>
+                                                                        <?php 
+                                                                        while(have_rows("arborist_awards_certifications")){ the_row();?>
+                                                                            <li><?php the_sub_field("arborist_awards_certifications_title"); ?></li>
+                                                                            <?php
+                                                                        }?>
+                                                                    </ul>
+                                                            </div>
+                                                            <?php
+                                                        }?>
+                                                    </div>
+                                                    <?php
+                                                }?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            wp_reset_postdata(); ?>
+                        </div>
+                    </div>
+                    <?php
+                }?>
             </div>
         </div>
     </div>
 </section>
 <!-- Arborists end -->
+<?php
+if(have_rows("awards_certificatons","option")){?>
+    <!-- awards-start -->
+    <section class="awards cirty">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="awards-img">
+                    <?php 
+                    $awards_index = 1;
+                    while(have_rows("awards_certificatons","option")){ the_row(); 
 
-<!-- awards-start -->
-<section class="awards cirty">
-    <div class="sec-wp">
-        <div class="container">
-            <div class="awards-img">
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/TCIA_Member.png" alt="award" width="143" height="116"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/CTSP_Logo.png" alt="award" width="120" height="120"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/bbb-a-plus.png" alt="award" width="145" height="94"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/CertifiedArborist_ISA.jpg" alt="award" width="100" height="175"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/ISA_Member.jpg" alt="award" width="100" height="158"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/BestOf2021.jpg" alt="award" width="100" height="144"></a>
-                <a href="javascript:void(0);"><img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/BestOf2022.jpg" alt="award" width="100" height="144"></a>
+                        $award_certification_image = get_sub_field("award_certification_image");
+                        $award_certification_redirect_url = (get_sub_field("award_certification_redirect_url")) ? get_sub_field("award_certification_redirect_url") : "javascript:void(0);";
+                        if($award_certification_image){?>
+                            <a href="<?php echo $award_certification_redirect_url; ?>">
+                                <img src="<?php echo $award_certification_image['url']; ?>" alt="Awards Image <?php echo $awards_index; ?>" width="<?php echo $award_certification_image['width']; ?>" height="<?php echo $award_certification_image['height']; ?>">
+                            </a>
+                            <?php
+                        }
+                        $awards_index++;
+                    }?>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- awards-end -->
+    </section>
+    <!-- awards-end -->
+    <?php
+}?>

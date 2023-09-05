@@ -1,9 +1,6 @@
 <!-- about-start -->
 <section class="about-sec tree-removal">
-    <div class="sec-wp">
-        <div class="about-sec-path">
-            <img src="<?php echo home_url(); ?>/wp-content/themes/tree-hugger-crew/assets/images/about-ec-path.svg" alt="about-sec-path" width="1575" height="996">
-        </div>
+    <div class="sec-wp">     
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 align-self-center">
@@ -43,8 +40,26 @@
                 <div class="col-lg-6">
                     <div class="who-content white-text">
                         <h3 class="h3-title">Stump Removal/ Grinding</h3>
-                        <p>Tree removal, planned or otherwise results in a stump. The option to remove a stump is available and our professionals are here to help you decide.</p>
+                        <p>Tree removal, planned or otherwise results in a stump. The option to remove a stump is available and our professionals are here to help you decide.</p>                      
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="tree-pruning-list">
+                        <li>Removing dead and dying branches to improve the appearance of the tree and remove potential hazards.</li>
+                        <li>Eliminating dead-weight that weakens the tree and promoting overall tree health.</li>
+                        <li>Creating a natural look to enhance the tree’s aesthetic appeal</li>
+                        <li>Discouraging pests, fungus, and tree diseases from spreading to other trees and plants.</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6">
+                    <ul class="tree-pruning-list">
+                        <li>Encouraging new growth to help the tree thrive.</li>
+                        <li>Preventing trees from affecting power lines or homes by strategically pruning branches away from these areas.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -52,26 +67,28 @@
 </section>
 <!-- who-sec end-->
 
-<!-- career-start -->
-<section class="profestional">
+<!-- tree-need-start -->
+<section class="profestional tree-need">
     <div class="sec-wp">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="about-us-img">
-                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/profestional-img.jpg');"></div>
+                        <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/tree-need.jpg');"></div>
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center">
-                    <div class="about-us-content">
-                        <h2 class="h2-title">Work with the Professional Arborists at TreeHugger</h2>
-                        <p>Trees are a gift from nature and we work on their behalf for a healthy and long life. Professional maintenance from TreeHugger Complete Tree Care is the best investment. Our family-owned team has been providing professional tree services in the Des Moines, IA area for over 25 years. We offer a range of services, including tree removal,tree trimming,crane assisted tree removal, and lot clearing services. Our TreeHugger Crew is committed to delivering exceptional results.</p>
-                        <p>At TreeHugger, our motto is “we cut because we care.” Our team is dedicated to providing high-quality tree services in Ankeny, Altoona, Bondurant, Des Moines, West Des Moines, Urbandale, Johnston, and other central Iowa communities that are both beneficial to you and the environment</p>
-                        <p><b>We Cut Because We Care.</b></p>
+                    <div class="tree-content">
+                        <h2 class="h2-title">Do You Have a Tree That Needs to Go?</h2>
+                        <p>Our friendly tree experts will come take a look and outline a plan of action for your tree’s safe removal. <b> Contact us today to schedule a free estimate!</b></p>
+                        <div class="banner-btn">
+                            <a href="javascript:void(0);" title="Get a Free Quote" class="sec-btn">Get a Free Quote</a>
+                            <a href="javascript:void(0);" title="Call (515) 520-0971" class="sec-btn  white-outline-btn">Call &nbsp;<span class="for-des callus">(515) 520-0971</span><span class="for-mob">Now!</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--career-end-->
+<!--tree-need-end-->

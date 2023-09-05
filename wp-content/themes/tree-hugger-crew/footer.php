@@ -68,7 +68,7 @@
 									}?>
 								</div>
 								<div class="col-lg-6">
-									<div class="fotter-add">
+									<div class="footer-add">
 										<?php  
 										$tree_hugger_hours_title = get_field("tree_hugger_hours_title","option");
 										$tree_huggers_hours_content = get_field("tree_huggers_hours_content","option");
@@ -148,6 +148,26 @@
 	</div>
 </div>
 </div><!-- #page -->
+
+<!-- Modal Start -->
+<div class="modal common-popup" id="arborist_modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="popup-title">
+				<h2 class="h2-title">Arborist Details :</h2>
+				<button type="button" class="close close-popup" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="common-popup-overflow">
+				<div class="common-popup-text" data-simplebar>
+					<div class="arborist-info">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal End -->
 
 <?php wp_footer(); ?>
 

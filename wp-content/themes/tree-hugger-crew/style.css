@@ -1569,7 +1569,7 @@ a:hover {
     content: "\f078";
     position: absolute;
     top: 60%;
-    right: 75px;
+    right: 0;
     transform: translate(0, -50%);
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -1584,21 +1584,19 @@ a:hover {
 }
 
 .main-navigation ul ul {
-    position: absolute;
+    position: relative;
     top: 100%;
     left: 0 !important;
     float: none;
-    width: 200px;
-    background: var(--secondary-color);
-    box-shadow: 0 0 10px rgb(60 140 244 / 15%);
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
     text-align: left;
+    transition: var(--transition);
     display: none;
+    padding-left: 15px;
+    margin-top: 15px;
 }
-
-/* .main-navigation ul li.menu-item-has-children:hover ul {
-    display: block;
-    top: 100%;
-} */
 
 @keyframes swip_up {
     from {
@@ -1613,25 +1611,20 @@ a:hover {
 
 .main-navigation ul ul li {
     display: block;
-    margin: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0 0 10px;
+    border-bottom: 1px solid rgb(255 255 255 / 37%);
 }
 
 .main-navigation ul ul li:last-child {
     border-bottom: 0;
+    margin: 0;
 }
 
 .main-navigation ul ul li a {
     display: block;
-    padding: 5px 10px;
-    font-size: 16px;
-    line-height: 26px;
-    transition: 0.3s;
-}
-
-.main-navigation ul ul li a:hover {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    transition: var(--transition);
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .sec-btn,
@@ -2113,7 +2106,7 @@ button.close:hover {
 
 .main-navigation ul li a {
     font-family: var(--title-font);
-    display: block;
+    display: inline-block;
     color: var(--primary-color);
     font-size: 16px;
     line-height: 1.27;
@@ -2122,13 +2115,9 @@ button.close:hover {
 }
 
 .main-navigation ul li.current-menu-item a:not(.main-navigation ul ul li a),
+.main-navigation ul ul li.current-menu-item a,
 .main-navigation ul li a:hover {
     color: var(--secondary-color);
-}
-
-.main-navigation ul ul li.current-menu-item a {
-    color: var(--white-color);
-    background-color: var(--primary-color);
 }
 
 .site-branding:not(.mobile-header .site-branding) {
@@ -2260,13 +2249,22 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     padding: 180px 0 254px;
 }
 
-.about-path {
+.sec-about-us::after {
+    background-image: url(assets/images/about-path.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
-    top: -180px;
-    left: 0;
+    content: "";
+    top: -50px;
+    left: -130px;
     width: 1675px;
     height: 630px;
     opacity: 0.05;
+}
+
+.about-img-wp {
+    position: relative;
 }
 
 .about-brand {
@@ -2304,15 +2302,8 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     line-height: 24px;
     font-weight: 700;
     letter-spacing: 0.09px;
-}
-
-.about-us-content a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    bottom: -10px;
+    display: inline-block;
+    padding-bottom: 6px;
     border-bottom: 3px solid var(--secondary-color);
 }
 
@@ -2359,10 +2350,10 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     height: 76px;
     bottom: -1px;
     left: 0;
-    background-image: url(assets/images/service-path.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    -webkit-mask-image: url("assets/images/service-path.svg");
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--primary-color);
 }
 
 .main-service::before {
@@ -2372,10 +2363,10 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     height: 75px;
     bottom: -75px;
     left: 0;
-    background-image: url(assets/images/service-bottom-path.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    -webkit-mask-image: url("assets/images/service-bottom-path.svg");
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--primary-color);
 }
 
 .service-title .h2-title {
@@ -2405,6 +2396,14 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     padding-bottom: 0px;
 }
 
+.service-content {
+    position: relative;
+}
+
+.service-content .about-brand{
+    
+}
+
 .service-img {
     margin-bottom: 79px;
 }
@@ -2427,6 +2426,9 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     line-height: 24px;
     font-weight: 700;
     letter-spacing: 0.09px;
+    display: inline-block;
+    padding-bottom: 6px;
+    border-bottom: 3px solid var(--secondary-color);
 }
 
 .service-content .h3-title {
@@ -2440,16 +2442,6 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .service-content p {
     color: var(--white-color);
     margin-bottom: 30px;
-}
-
-.service-content a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    bottom: -10px;
-    border-bottom: 3px solid var(--secondary-color);
 }
 
 .service-loader {
@@ -2532,10 +2524,10 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     height: 75px;
     top: calc(var(--mb) * -1);
     left: 0;
-    background-image: url(assets/images/health-before.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    -webkit-mask-image: url("assets/images/health-before.svg");
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--light-yellow);
 }
 
 .health::after {
@@ -2545,11 +2537,11 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     height: 75px;
     bottom: calc(var(--mb) * -1);
     left: 0;
-    background-image: url(assets/images/heath-after.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     z-index: 1;
+    -webkit-mask-image: url("assets/images/heath-after.svg");
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--light-yellow);
 }
 
 .health .sec-wp {
@@ -2744,7 +2736,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 38px;
 }
 
-.ig-title ul li a {
+.ig-title ul li {
     font-family: var(--title-font);
     color: var(--dark-color);
     font-size: 26px;
@@ -2754,9 +2746,12 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     border-right: 2px solid var(--dark-color);
 }
 
+.ig-title ul li:last-child {
+    border: 0;
+}
+
 .ig-title ul li a.mail {
     color: var(--secondary-color);
-    border: 0;
 }
 
 .ig-img .back-img {
@@ -2854,10 +2849,10 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     height: 75px;
     top: calc(var(--mb) * -1);
     left: 0;
-    background-image: url(assets/images/footer-path.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    -webkit-mask-image: url(assets/images/footer-path.svg);
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--light-green);
 }
 
 .footer-content {
@@ -2900,8 +2895,8 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     line-height: 30px;
 }
 
-.fotter-add {
-    padding-left: 38px;
+.footer-add {
+    padding-left: 28px;
 }
 
 .footer-form {
@@ -2912,7 +2907,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 30px;
 }
 
-.footer-hour h5{
+.footer-hour h5 {
     font-family: var(--body-font);
     font-size: 16px;
     line-height: 30px;
@@ -2920,8 +2915,8 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     color: var(--white-color);
 }
 
-.footer-hour p{
-    margin-bottom:2px;
+.footer-hour p {
+    margin-bottom: 2px;
     color: var(--white-color);
     transition: var(--transition);
     font-weight: 400;
@@ -3030,16 +3025,12 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 /*==========about-page-start==========*/
 .about-sec {
     position: relative;
-    padding:140px 0 274px;
+    padding: 140px 0 274px;
     overflow: hidden;
-}
-
-.about-sec-path {
-    position: absolute;
-    top: -140px;
-    left: 0;
-    width: 1575px;
-    height: 996px;
+    background-image: url(assets/images/about-sec-path.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .about-sec .about-us-content .h4-title {
@@ -3110,7 +3101,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .profestional .about-us-img .back-img {
     width: calc(100% - 70px);
-    height:600px;
+    height: 600px;
     border-radius: 20px;
     box-shadow: 20px 20px 0 var(--primary-color);
 }
@@ -3119,11 +3110,11 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 27px;
 }
 
-.profestional .about-us-content p{
+.profestional .about-us-content p {
     margin-bottom: 20px;
 }
 
-.arborists{
+.arborists {
     padding-bottom: 238px;
 }
 
@@ -3131,7 +3122,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     max-width: 270px;
 }
 
-.arborists-title .h2-title{
+.arborists-title .h2-title {
     margin-bottom: 27px;
 }
 
@@ -3139,7 +3130,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 26px;
 }
 
-.arborists-img .back-img{
+.arborists-img .back-img {
     height: 400px;
     width: 370px;
     border-radius: 20px;
@@ -3150,33 +3141,26 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     z-index: 2;
 }
 
-.arborists-content h3{
+.arborists-content h3 {
     font-size: 20px;
     line-height: 34px;
     color: var(--primary-color);
     margin-bottom: 4px;
 }
 
-.arborists-content p{
+.arborists-content p {
     font-style: italic;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
-.arborists-content a{
+.arborists-content a {
     position: relative;
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
     letter-spacing: 0.09px;
-}
-
-.arborists-content a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    bottom: -10px;
+    display: inline-block;
+    padding-bottom: 6px;
     border-bottom: 3px solid var(--secondary-color);
 }
 
@@ -3210,12 +3194,100 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 20px;
 }
 
-.who-sec.tree-help .h2-title {
+.who-sec.tree-help {
+    padding: 107px 0 138px;
+}
+
+.tree-help .h2-title {
     margin-bottom: 28px;
 }
 
-.tree-help .h3-title{
+.tree-help .h3-title {
     margin-bottom: 15px;
+}
+
+.tree-help p {
+    margin-bottom: 21px;
+}
+
+.profestional.tree-need {
+    padding: 179px 0 200px;
+}
+
+.tree-need .about-us-img .back-img {
+    height: 500px;
+}
+
+.tree-content .h2-title {
+    max-width: 470px;
+    margin-bottom: 25px;
+}
+
+.tree-content p {
+    margin-bottom: 31px;
+}
+
+.tree-need .sec-btn.white-outline-btn {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.tree-need .sec-btn.white-outline-btn:hover {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.tree-pruning-list li {
+    position: relative;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--white-color);
+    padding-left: 45px;
+    margin-bottom: 24px;
+}
+
+.tree-pruning-list li::before {
+    position: absolute;
+    content: "";
+    top: -5px;
+    left: 0;
+    width: 30px;
+    height: 32px;
+    -webkit-mask-image: url("assets/images/pruning-list.svg");
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--light-green);
+}
+
+.about-sec.lot-clearing {
+    padding: 140px 0 310px;
+}
+
+.who-sec.approach-sec .h2-title {
+    margin-bottom: 26px;
+}
+
+.about-sec.lot-clearing .about-us-content p {
+    margin-bottom: 32px;
+}
+
+.ready .tree-content .h2-title {
+    max-width: 570px;
+}
+
+.approach-sec .who-title p {
+    margin-bottom: 20px;
+}
+
+.lot-gallery {
+    padding: 180px 0;
+}
+
+.lot-list li {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 25px;
 }
 /*==========service-detail-page-end==========*/
 
@@ -3235,16 +3307,16 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     height: 76px;
     top: calc(var(--mb) * -1);
     left: 0;
-    background-image: url(assets/images/who-before.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    -webkit-mask-image: url("assets/images/who-before.svg");
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--primary-color);
 }
 
 .who-sec::after {
     top: auto;
     bottom: calc(var(--mb) * -1);
-    background-image: url(assets/images/who-after.svg);
+    -webkit-mask-image: url("assets/images/who-after.svg");
 }
 
 .who-sec .h2-title {
