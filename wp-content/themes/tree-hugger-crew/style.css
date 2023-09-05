@@ -2303,6 +2303,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
+    letter-spacing: 0.09px;
 }
 
 .about-us-content a::before {
@@ -2422,6 +2423,10 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .service-content a {
     position: relative;
     color: var(--white-color);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: 0.09px;
 }
 
 .service-content .h3-title {
@@ -2868,6 +2873,10 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 41px;
 }
 
+.footer-page {
+    max-width: 180px;
+}
+
 .footer-page a {
     line-height: 24px;
     text-decoration: underline !important;
@@ -2903,7 +2912,21 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 30px;
 }
 
-.footer-hour li,
+.footer-hour h5{
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+.footer-hour p{
+    margin-bottom:2px;
+    color: var(--white-color);
+    transition: var(--transition);
+    font-weight: 400;
+}
+
 .footer-loaction li,
 .footer-loaction li a {
     color: var(--white-color);
@@ -2915,7 +2938,6 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     color: var(--black-color);
 }
 
-.footer-hour li:first-child,
 .footer-loaction li:first-child {
     font-weight: 700;
 }
@@ -3008,7 +3030,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 /*==========about-page-start==========*/
 .about-sec {
     position: relative;
-    padding: 140px 0 180px;
+    padding:140px 0 274px;
     overflow: hidden;
 }
 
@@ -3076,14 +3098,14 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .about-sec-brand {
     position: absolute;
-    bottom: -85px;
-    right: -70px;
+    bottom: -127px;
+    right: -100px;
     z-index: 2;
 }
 
 .profestional {
     position: relative;
-    padding: 180px 0 260px;
+    padding: 180px 0 280px;
 }
 
 .profestional .about-us-img .back-img {
@@ -3100,12 +3122,107 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .profestional .about-us-content p{
     margin-bottom: 20px;
 }
+
+.arborists{
+    padding-bottom: 238px;
+}
+
+.arborists-title {
+    max-width: 270px;
+}
+
+.arborists-title .h2-title{
+    margin-bottom: 27px;
+}
+
+.arborists-img {
+    margin-bottom: 26px;
+}
+
+.arborists-img .back-img{
+    height: 400px;
+    width: 370px;
+    border-radius: 20px;
+}
+
+.arborists-content {
+    position: relative;
+    z-index: 2;
+}
+
+.arborists-content h3{
+    font-size: 20px;
+    line-height: 34px;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.arborists-content p{
+    font-style: italic;
+    margin-bottom:20px;
+}
+
+.arborists-content a{
+    position: relative;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: 0.09px;
+}
+
+.arborists-content a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: -10px;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.arborists .slick-arrow::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 32px;
+    -webkit-mask-image: url(assets/images/testi-arrow.svg);
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    background-color: var(--secondary-color);
+}
+
+.arborists .next-arrow.slick-arrow::before {
+    transform: rotate(180deg);
+}
+
+.arborists .slick-arrow {
+    top: 184px;
+    left: -357px;
+}
+
+.arborists .next-arrow.slick-arrow {
+    left: -258px;
+}
 /*==========about-page-end==========*/
+
+/*==========service-detail-page-start==========*/
+.about-sec.tree-removal .about-us-content p {
+    margin-bottom: 20px;
+}
+
+.who-sec.tree-help .h2-title {
+    margin-bottom: 28px;
+}
+
+.tree-help .h3-title{
+    margin-bottom: 15px;
+}
+/*==========service-detail-page-end==========*/
 
 .who-sec {
     position: relative;
     background-color: var(--primary-color);
-    padding: 170px 0 218px;
+    padding: 146px 0 140px;
     --mb: 75px;
     margin-bottom: var(--mb);
 }

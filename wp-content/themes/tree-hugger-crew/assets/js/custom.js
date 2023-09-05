@@ -87,6 +87,38 @@ jQuery(document).ready(function($) {
         ]
     });
 
+    jQuery('.arborists-slider').slick({
+        slidesToShow:2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots:false,
+        arrows: true,
+        rows: 0,
+        autoplay: false,        
+        autoplaySpeed: 2000,
+        prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+        nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        responsive: [{
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                }
+            }
+        ]
+    });
+
     jQuery('.plans-slider').slick({
         slidesToShow: 4,
         slidesToScroll: 1,

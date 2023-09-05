@@ -37,42 +37,55 @@
 									$tree_hugger_phone_number = get_field("tree_hugger_phone_number","option");
 									$footer_conv_number       = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
 									$tree_hugger_email        = get_field("tree_hugger_email","option");
-									?>
-									<ul class="contact-info">
-										<?php  
-										if($tree_hugger_phone_number && $footer_conv_number){?>
-											<li class="phone">
-												<a href="tel:<?php echo $footer_conv_number; ?>" title="Call on <?php echo $tree_hugger_phone_number; ?>">
-													<span class="callus"><?php echo $tree_hugger_phone_number; ?></span>
-												</a>
-											</li>
-											<?php
-										}
-										if($tree_hugger_email){?>
+									if($tree_hugger_phone_number || $tree_hugger_email){?>
+										<ul class="contact-info">
+											<?php  
+											if($tree_hugger_phone_number && $footer_conv_number){?>
+												<li class="phone">
+													<a href="tel:<?php echo $footer_conv_number; ?>" title="Call on <?php echo $tree_hugger_phone_number; ?>">
+														<span class="callus"><?php echo $tree_hugger_phone_number; ?></span>
+													</a>
+												</li>
+												<?php
+											}
+											if($tree_hugger_email){?>
+												<li>
+													<a href="mailto:<?php echo $tree_hugger_email; ?>" title="Mail at <?php echo $tree_hugger_email; ?>"><?php echo $tree_hugger_email; ?></a>
+												</li>
+												<?php
+											}?>
+										</ul>
+										<?php 
+									}
+									$shop_treehugger_wood_slabs_url = get_field("shop_treehugger_wood_slabs_url","option");
+									if($shop_treehugger_wood_slabs_url){?>
+										<ul class="footer-page">
 											<li>
-												<a href="mailto:<?php echo $tree_hugger_email; ?>" title="Mail at <?php echo $tree_hugger_email; ?>"><?php echo $tree_hugger_email; ?></a>
-											</li>
-											<?php
-										}?>
-									</ul>
-									<ul class="footer-page">
-										<li>
-											<a href="javascript:void(0);" title="Shop TreeHugger II">Shop TreeHugger II</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" title="Urban Wood Mill">Urban Wood Mill</a>
-										</li>
-									</ul>
+												<a href="<?php echo $shop_treehugger_wood_slabs_url['url']; ?>" title="<?php echo $shop_treehugger_wood_slabs_url['title']; ?>"><?php echo $shop_treehugger_wood_slabs_url['title']; ?></a>
+											</li>								
+										</ul>
+										<?php
+									}?>
 								</div>
 								<div class="col-lg-6">
-
 									<div class="fotter-add">
+										<?php  
+										$tree_hugger_hours_title = get_field("tree_hugger_hours_title","option");
+										$tree_huggers_hours_content = get_field("tree_huggers_hours_content","option");
+										if($tree_hugger_hours_title || $tree_huggers_hours_content){?>
+											<div class="footer-hour">
+												<?php  
+												if($tree_hugger_hours_title){?>
+													<h5><?php echo $tree_hugger_hours_title; ?></h5>
+													<?php
+												}
+												// Hours Content
+												echo $tree_huggers_hours_content;
+												?>
+											</div>
+											<?php
+										}?>
 
-										<ul class="footer-hour">
-											<li>Hours</li>
-											<li>Mon–Fri: 7AM–PM</li>
-											<li>Sat–Sun: Closed</li>
-										</ul>
 										<?php 
 										$tree_hugger_location_text = get_field("tree_hugger_location_text","option"); 
 										$tree_hugger_location_url  = get_field("tree_hugger_location_url","option");

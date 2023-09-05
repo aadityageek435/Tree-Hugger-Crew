@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-sec-brand">
-                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/about-sec-shape.png" alt="about-brand" width="170" height="170">
+                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/about-sec-shape.png" alt="about-brand" width="230" height="230">
                     </div>
                     <div class="about-sec-img">
                         <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/about-sec-img.jpg');"></div>
@@ -73,6 +73,57 @@
     </div>
 </section>
 <!--career-end-->
+
+<!-- Arborists start -->
+<section class="arborists">
+    <div class="sec-wp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="arborists-title">
+                        <h2 class="h2-title">Meet Our Arborists</h2>
+                        <p>Our family-owned team has been providing professional tree services in the Des Moines, IA area for over 25 years. Our TreeHugger Crew is committed to delivering exceptional results.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row arborists-slider">
+                        <div class="col-lg-6">
+                            <div class="arborists-content">
+                                <div class="arborists-img">
+                                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/gallery-3.jpg');"></div>
+                                </div>
+                                <h3>Denny Deakins</h3>
+                                <p>26 years of Service in Arboriculture</p>
+                                <a href="javascript:void(0);" title="About Us, Learn More">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="arborists-content">
+                                <div class="arborists-img">
+                                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/arborists-2.jpg');"></div>
+                                </div>
+                                <h3>Sean Deakins</h3>
+                                <p>7 Years of Service in Arboriculture</p>
+                                <a href="javascript:void(0);" title="About Us, Learn More">Learn More</a>
+                            </div>
+                        </div>   
+                        <div class="col-lg-6">
+                            <div class="arborists-content">
+                                <div class="arborists-img">
+                                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2023/09/arborists-3.jpg');"></div>
+                                </div>
+                                <h3>Dawna Deakins</h3>
+                                <p>7 Years of Service in Arboriculture</p>
+                                <a href="javascript:void(0);" title="About Us, Learn More">Learn More</a>
+                            </div>
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Arborists end -->
 
 <!-- awards-start -->
 <section class="awards cirty">
