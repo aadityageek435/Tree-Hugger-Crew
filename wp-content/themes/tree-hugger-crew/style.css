@@ -1530,6 +1530,36 @@ a:hover {
     background-repeat: no-repeat;
 }
 
+.img-box {
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 25%);
+    width: calc(100% - 70px);
+}
+
+.img-left-box {
+    position: relative;
+}
+
+.img-box::before,
+.img-left-box::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    bottom: -20px;
+    right: -20px;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.img-left-box::before {
+    right: auto;
+    left: -20px;
+    background-color: var(--primary-color);
+}
+
 .ajax-loader {
     position: absolute;
     top: 0;
@@ -2279,11 +2309,8 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     z-index: 1;
 }
 
-.about-us-img .back-img {
-    width: calc(100% - 70px);
+.about-us-img .img-box {
     height: 500px;
-    border-radius: 20px;
-    box-shadow: 20px 20px 0 var(--primary-color);
 }
 
 .about-us-content .h2-title {
@@ -2296,7 +2323,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 29px;
 }
 
-.about-us-content a {
+.about-us-content a,.position-content a {
     position: relative;
     font-size: 18px;
     line-height: 24px;
@@ -2400,19 +2427,24 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     position: relative;
 }
 
-.service-content .about-brand{
-    
+.service-content .about-brand {
+    position: absolute;
+    top: -115px;
+    right: -110px;
+    z-index: 2;
 }
 
 .service-img {
     margin-bottom: 79px;
 }
 
-.service-img .back-img {
+.service-img .img-box {
     width: 100%;
     height: 470px;
-    border-radius: 20px;
-    box-shadow: -20px 20px 0 var(--light-green);
+}
+
+.service-img .img-left-box::before {
+    background-color: var(--light-green);
 }
 
 .service-title {
@@ -2483,15 +2515,19 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     padding: 256px 0 275px;
 }
 
+.store .about-brand {
+    position: absolute;
+    top: -85px;
+    right: -45px;
+    z-index: 2;
+}
+
 .about-us-content.store-content {
     padding-left: 70px;
 }
 
-.store-img .back-img {
-    width: calc(100% - 70px);
+.store-img .img-box {
     height: 600px;
-    border-radius: 20px;
-    box-shadow: 20px 20px 0 var(--primary-color);
 }
 
 .about-us-content.store-content .h2-title {
@@ -2582,11 +2618,13 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     left: 0;
 }
 
-.health-img .back-img {
-    width: calc(100% - 70px);
+.health-img .img-box {
     height: 500px;
-    border-radius: 20px;
-    box-shadow: 20px 20px 0 var(--primary-color);
+    margin-left: 70px;
+}
+
+.health-img.even .img-box {
+    margin-left: 0;
 }
 
 .about-us-content.store-content.health-content {
@@ -3060,7 +3098,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     height: 30px;
     top: 0;
     left: 0;
-    background-image: url("assets/images/about-sec-sahpe.svg");
+    background-image: url("assets/images/about-sec-shape.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3079,11 +3117,8 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     z-index: 1;
 }
 
-.about-sec-img .back-img {
-    width: calc(100% - 70px);
+.about-sec-img .img-box {
     height: 600px;
-    border-radius: 20px;
-    box-shadow: -20px 20px 0 var(--primary-color);
     margin-left: 70px;
 }
 
@@ -3099,11 +3134,8 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     padding: 180px 0 280px;
 }
 
-.profestional .about-us-img .back-img {
-    width: calc(100% - 70px);
+.profestional .about-us-img .img-box {
     height: 600px;
-    border-radius: 20px;
-    box-shadow: 20px 20px 0 var(--primary-color);
 }
 
 .profestional .about-us-content .h2-title {
@@ -3214,7 +3246,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     padding: 179px 0 200px;
 }
 
-.tree-need .about-us-img .back-img {
+.tree-need .about-us-img .img-box {
     height: 500px;
 }
 
@@ -3238,19 +3270,24 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     background-color: var(--primary-color);
 }
 
+.tree-pruning-list {
+    column-count: 2;
+}
+
 .tree-pruning-list li {
     position: relative;
     font-size: 16px;
     line-height: 24px;
     color: var(--white-color);
     padding-left: 45px;
+    padding-top: 7px;
     margin-bottom: 24px;
 }
 
 .tree-pruning-list li::before {
     position: absolute;
     content: "";
-    top: -5px;
+    top:0;
     left: 0;
     width: 30px;
     height: 32px;
@@ -3264,11 +3301,18 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     padding: 140px 0 310px;
 }
 
+.lot-clearing .about-sec-brand {
+    position: absolute;
+    bottom: -85px;
+    right: -100px;
+    z-index: 2;
+}
+
 .who-sec.approach-sec .h2-title {
     margin-bottom: 26px;
 }
 
-.about-sec.lot-clearing .about-us-content p {
+.lot-clearing .about-us-content p {
     margin-bottom: 32px;
 }
 
@@ -3281,7 +3325,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 }
 
 .lot-gallery {
-    padding: 180px 0;
+    padding:178px 0 180px;
 }
 
 .lot-list li {
@@ -3289,7 +3333,6 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     gap: 24px;
     margin-bottom: 25px;
 }
-/*==========service-detail-page-end==========*/
 
 .who-sec {
     position: relative;
@@ -3322,6 +3365,161 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .who-sec .h2-title {
     color: var(--secondary-color);
     margin-bottom: 30px;
+}
+
+.dry-sec a {
+    position: relative;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: 0.09px;
+    display: inline-block;
+    padding-bottom: 6px;
+    color: var(--white-color);
+    border-bottom: 3px solid var(--secondary-color);
+    transition: var(--transition);
+    margin-top: 11px;
+}
+
+.dry-sec a:hover {
+    color: var(--secondary-color);
+}
+
+.about-sec.lot-clearing.wood-slab {
+    padding: 140px 0 324px;
+}
+
+.wood-slab .about-us-content .h4-title {
+    margin-bottom: 27px;
+}
+
+.wood-slab .about-us-content p {
+    margin-bottom: 20px;
+}
+
+.wood-slab .about-us-content a {
+    margin-top: 11px;
+}
+
+.dry-sec {
+    padding: 146px 0 147px;
+}
+
+.dry-sec .who-content p {
+    margin-bottom: 20px;
+}
+/*==========service-detail-page-end==========*/
+
+/*==========career-page-start==========*/
+.about-sec.lot-clearing.wood-slab.tree-career {
+    padding: 140px 0 273px;
+}
+
+.tree-career .about-us-content .h3-title {
+    max-width: 400px;
+}
+
+.tree-career .about-sec-brand {
+    position: absolute;
+    bottom: -115px;
+    right: -100px;
+    z-index: 2;
+}
+
+.employee {
+    padding: 146px 0 160px;
+}
+
+.employee p{
+    font-weight: 700;
+    max-width: 370px;
+}
+
+.employee .tree-pruning-list li{
+    margin-bottom: 27px;
+}
+
+.play-btn {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height:100px;
+    width:100px;
+    background-color: transparent;
+    border: 5px solid var(--white-color);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.play-btn:before {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 30px;
+    border-top: 30px solid var(--white-color);
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    transform: rotate(270deg);
+    box-sizing: border-box;
+}
+
+.position {
+    padding: 178px 0px;
+}
+
+.position-list {
+    margin-top: 63px;
+}
+
+.position .h2-title{
+    margin-bottom:30px;
+}
+
+.position-content .h3-title{
+    color: var(--dark-color);
+    font-weight: 500;
+    margin-bottom: 23px;
+}
+
+.position-list h5{
+    font-family: var(--body-font);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.position-list ul li{
+    list-style: disc;
+    color: var(--dark-color);
+    line-height: 24px;
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+.position-list ::marker{
+    color: var(--dark-color);
+}
+
+.position-wp{
+    margin-bottom:93px;
+}
+
+.position-wp:last-child{
+    margin-bottom:0px;
+}
+/*==========career-page-end==========*/
+
+.form-sec .about-us-content .h3-title{
+    max-width: unset;
+}
+
+.form-sec .about-us-content p{
+    font-weight: 700;
 }
 
 /*==========Scroll To Top CSS Start==========*/

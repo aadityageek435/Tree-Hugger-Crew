@@ -63,7 +63,7 @@ $home_conv_number              = preg_replace('/[^0-9.]/', '', $home_tree_hugger
                             <?php
                             } ?>
                             <div class="about-us-img">
-                                <div class="back-img" style="background-image: url('<?php echo $home_about_image; ?>');"></div>
+                                <div class="back-img img-box" style="background-image: url('<?php echo $home_about_image; ?>');"></div>
                             </div>
                         </div>
                     </div>
@@ -194,7 +194,7 @@ $home_conv_number              = preg_replace('/[^0-9.]/', '', $home_tree_hugger
                                         }
                                         if ($home_our_services_image) { ?>
                                             <div class="service-img">
-                                                <div class="back-img" style="background-image: url('<?php echo $home_our_services_image; ?>');"></div>
+                                                <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $home_our_services_image; ?>');"></div>
                                             </div>
                                         <?php
                                         }
@@ -244,7 +244,7 @@ $home_conv_number              = preg_replace('/[^0-9.]/', '', $home_tree_hugger
                             }
                             if ($home_tree_hugger_image) { ?>
                                 <div class="store-img">
-                                    <div class="back-img" style="background-image: url('<?php echo $home_tree_hugger_image; ?>');"></div>
+                                    <div class="back-img img-box" style="background-image: url('<?php echo $home_tree_hugger_image; ?>');"></div>
                                 </div>
                             <?php
                             } ?>
@@ -306,8 +306,8 @@ if (have_rows("health_care_details")) { ?>
                                 <?php
                                 if ($home_health_care_image) { ?>
                                     <div class="col-lg-6">
-                                        <div class="health-img">
-                                            <div class="back-img" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
+                                        <div class="health-img even">
+                                            <div class="back-img img-box" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
                                         </div>
                                     </div>
                                 <?php
@@ -365,7 +365,7 @@ if (have_rows("health_care_details")) { ?>
                                 if ($home_health_care_image) { ?>
                                     <div class="col-lg-6">
                                         <div class="health-img">
-                                            <div class="back-img" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
+                                            <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
                                         </div>
                                     </div>
                                 <?php
@@ -488,7 +488,7 @@ if ($home_gallery_images) { ?>
                 if ($home_careers_image) { ?>
                     <div class="col-lg-6">
                         <div class="about-us-img">
-                            <div class="back-img" style="background-image: url('<?php echo $home_careers_image; ?>');"></div>
+                            <div class="back-img img-box" style="background-image: url('<?php echo $home_careers_image; ?>');"></div>
                         </div>
                     </div>
                 <?php

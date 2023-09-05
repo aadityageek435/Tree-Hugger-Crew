@@ -94,7 +94,7 @@
 						<?php  
 						if($tree_hugger_contact_request_url){?>
 							<div class="contact-header-btn">
-								<a href="<?php echo $tree_hugger_contact_request_url['url']; ?>" title="<?php echo $tree_hugger_contact_request_url['title']; ?>" class="sec-btn"><?php echo $tree_hugger_contact_request_url['title']; ?></a>
+								<a href="<?php echo $tree_hugger_contact_request_url; ?>" title="Request a Quote" class="sec-btn">Request a Quote</a>
 							</div>
 							<?php
 						}

@@ -4,6 +4,14 @@ jQuery(document).ready(function($) {
     new WOW().init();
     var currentRequest = null;
 
+    // date picker
+    jQuery('.datetimepicker').datetimepicker({
+        timepicker: false,
+        format: 'd/m/Y',
+		minDate: new Date(),
+		scrollInput: false
+    });
+
     //Home Page - Service Tabbing
     jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
     jQuery(".service-tab li").on("click", function() {

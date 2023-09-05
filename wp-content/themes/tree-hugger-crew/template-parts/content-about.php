@@ -3,30 +3,21 @@
     <div class="sec-wp">      
         <div class="container">
             <div class="row">
-                <?php
-                $about_title                     = get_the_title();
-                $about_content                   = get_the_content();
-                $tree_hugger_about_banner_slogan = get_field("tree_hugger_about_banner_slogan");
-                if($about_title || $about_content || $tree_hugger_about_banner_slogan){?>
-                    <div class="col-lg-6 align-self-center">
-                        <div class="about-us-content">
-                            <?php  
-                            if($about_title){?>
-                                <h4 class="h4-title"><?php echo $about_title; ?></h4>
-                                <?php
-                            }
-                            if($about_content){?>
-                                <p><?php echo $about_content; ?></p>
-                                <?php
-                            }
-                            if($tree_hugger_about_banner_slogan){?>                                
-                                <h2 class="h2-title"><?php echo $tree_hugger_about_banner_slogan; ?></h2>
-                                <?php
-                            }?>
-                        </div>
+                <div class="col-lg-6 align-self-center">
+                    <div class="about-us-content">
+                        <h4 class="h4-title"><?php the_title(); ?></h4>
+                        <?php 
+                        //about banner content
+                        the_content(); 
+                        
+                        $tree_hugger_about_banner_slogan = get_field("tree_hugger_about_banner_slogan");
+                        if($tree_hugger_about_banner_slogan){?>                                
+                            <h2 class="h2-title"><?php echo $tree_hugger_about_banner_slogan; ?></h2>
+                            <?php
+                        }?>
                     </div>
-                    <?php
-                }
+                </div>
+                <?php
                 $tree_hugger_about_icon  = get_field("tree_hugger_about_icon");
                 $tree_hugger_about_image = get_field("tree_hugger_about_image");
                 if($tree_hugger_about_icon || $tree_hugger_about_image){?>
@@ -34,13 +25,13 @@
                         <?php 
                         if($tree_hugger_about_icon){?>
                             <div class="about-sec-brand">   
-                                <img src="<?php echo $tree_hugger_about_icon['url']; ?>" alt="about-brand" width="<?php echo $tree_hugger_about_icon['width']; ?>" height="<?php echo $tree_hugger_about_icon['height']; ?>">
+                                <img src="<?php echo $tree_hugger_about_icon['url']; ?>" alt="about-brand" width="230" height="230">
                             </div>
                             <?php
                         }
                         if($tree_hugger_about_image){?>
                             <div class="about-sec-img">
-                                <div class="back-img" style="background-image: url('<?php echo $tree_hugger_about_image; ?>');"></div>
+                                <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $tree_hugger_about_image; ?>');"></div>
                             </div>
                             <?php
                         }?>
@@ -84,24 +75,24 @@
             </div>
             <?php
         }?>
-        </div>
+    </div>
 </section>
 <!-- who-sec end-->
 <!-- career-start -->
 <section class="profestional">
     <div class="sec-wp">
-        <?php
-        $tree_hugger_work_with_title   = get_field("tree_hugger_work_with_title");
-        $tree_hugger_work_with_image   = get_field("tree_hugger_work_with_image");
-        $tree_hugger_work_with_content = get_field("tree_hugger_work_with_content");
-        if($tree_hugger_work_with_title || $tree_hugger_work_with_image || $tree_hugger_work_with_content){?>
-            <div class="container">
+        <div class="container">
+            <?php
+            $tree_hugger_work_with_title   = get_field("tree_hugger_work_with_title");
+            $tree_hugger_work_with_image   = get_field("tree_hugger_work_with_image");
+            $tree_hugger_work_with_content = get_field("tree_hugger_work_with_content");
+            if($tree_hugger_work_with_title || $tree_hugger_work_with_image || $tree_hugger_work_with_content){?>
                 <div class="row">
                     <?php  
                     if($tree_hugger_work_with_image){?>
                         <div class="col-lg-6">
                             <div class="about-us-img">
-                                <div class="back-img" style="background-image: url('<?php echo $tree_hugger_work_with_image; ?>');"></div>
+                                <div class="back-img img-box" style="background-image: url('<?php echo $tree_hugger_work_with_image; ?>');"></div>
                             </div>
                         </div>
                         <?php
@@ -118,9 +109,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php
-        }?>
+                <?php
+            }?>
+        </div>
     </div>
 </section>
 <!--career-end-->
