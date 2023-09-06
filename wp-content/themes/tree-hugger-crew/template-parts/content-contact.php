@@ -68,7 +68,7 @@
                                     }
                                     if($tree_hugger_location_url){?>
                                         <li>
-                                            <a href="<?php echo $tree_hugger_location_url['url']; ?>" target="<?php echo $tree_hugger_location_url['target']; ?>"><?php echo $tree_hugger_location_url['title']; ?></a>
+                                            <a href="<?php echo $tree_hugger_location_url['url']; ?>" target="<?php echo $tree_hugger_location_url['target']; ?>" title="<?php echo $tree_hugger_location_url['title']; ?>"><?php echo $tree_hugger_location_url['title']; ?></a>
                                         </li>
                                         <?php
                                     }?>

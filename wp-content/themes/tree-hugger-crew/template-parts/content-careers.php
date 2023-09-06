@@ -30,8 +30,8 @@
                     <div class="col-lg-6">
                         <?php  
                         if($tree_huggers_carrers_icon){?>  
-                            <div class="about-sec-brand">
-                                <img src="<?php echo $tree_huggers_carrers_icon; ?>" alt="Service Icon" width="230" height="230">
+                            <div class="about-brand">
+                                <img src="<?php echo $tree_huggers_carrers_icon['url']; ?>" alt="Service Icon" width="<?php echo $tree_huggers_carrers_icon['width']; ?>" height="<?php echo $tree_huggers_carrers_icon['height']; ?>">
                             </div>
                             <?php
                         }
@@ -138,7 +138,7 @@ if(have_rows("tree_hugger_positions_available")){?>
                                         echo $position_avail_about;
 
                                         if($position_avail_apply_now_url){?>
-                                            <a href="<?php echo $position_avail_apply_now_url; ?>" title="Apply Now">Apply Now</a>
+                                            <a href="<?php echo $position_avail_apply_now_url; ?>" title="<?php echo "Apply For ".$position_avail_name; ?>">Apply Now</a>
                                             <?php
                                         }?>
                                     </div>

@@ -23,7 +23,7 @@
                             // lot clearing banner content
                             the_content();
                             if($tree_hugger_our_inventory_url){?>
-                                <a href="<?php echo $tree_hugger_our_inventory_url; ?>" title="Wood Slabs, See Our Inventory" target="_blank">See Our Inventory</a>
+                                <a href="<?php echo $tree_hugger_our_inventory_url['url']; ?>" title="<?php echo $tree_hugger_our_inventory_url['title']; ?>" target="_blank"><?php echo $tree_hugger_our_inventory_url['title']; ?></a>
                                 <?php
                             }?>
                         </div>
@@ -36,8 +36,8 @@
                     <div class="col-lg-6">
                         <?php 
                         if($wood_slabs_banner_icon){?>
-                            <div class="about-sec-brand">
-                                <img src="<?php echo $wood_slabs_banner_icon; ?>" alt="Lot Clearing" width="230" height="230">
+                            <div class="about-brand">
+                                <img src="<?php echo $wood_slabs_banner_icon['url']; ?>" alt="<?php echo get_the_title()." Icon"; ?>" width="<?php echo $wood_slabs_banner_icon['width']; ?>" height="<?php echo $wood_slabs_banner_icon['height']; ?>">
                             </div>
                             <?php
                         }
@@ -61,9 +61,9 @@
     <div class="sec-wp">
         <?php 
         $wood_slabs_why_idry_title       = get_field("wood_slabs_why_idry_title");
-        $tree_hugger_contact_request_url = get_field("tree_hugger_contact_request_url","option");
+        $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_url","option");
         $wood_slabs_why_idry_content_rep = get_field("wood_slabs_why_idry_content_rep");
-        if($wood_slabs_why_idry_title || $wood_slabs_why_idry_content_rep || $tree_hugger_contact_request_url){?>
+        if($wood_slabs_why_idry_title || $wood_slabs_why_idry_content_rep || $tree_hugger_contact_free_quote_url){?>
             <div class="container">
                 <?php  
                 if($wood_slabs_why_idry_title){?>
@@ -86,9 +86,9 @@
                         </div>
                        <?php
                     }
-                    if($tree_hugger_contact_request_url){?>
+                    if($tree_hugger_contact_free_quote_url){?>
                         <div class="contact-link">
-                            <a href="<?php echo $tree_hugger_contact_request_url; ?>" title="Contact Us">Contact Us</a>
+                            <a href="<?php echo $tree_hugger_contact_free_quote_url['url']; ?>" title="Contact Us">Contact Us</a>
                         </div>
                         <?php
                     }?>

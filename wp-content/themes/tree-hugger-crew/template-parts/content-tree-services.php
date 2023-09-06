@@ -19,8 +19,8 @@
                     <div class="col-lg-6">
                         <?php  
                         if($tree_services_banner_icon){?>  
-                            <div class="about-sec-brand">
-                                <img src="<?php echo $tree_services_banner_icon; ?>" alt="Service Icon" width="230" height="230">
+                            <div class="about-brand">
+                                <img src="<?php echo $tree_services_banner_icon['url']; ?>" alt="<?php echo get_the_title()." Icon"; ?>" width="<?php echo $tree_services_banner_icon['width']; ?>" height="<?php echo $tree_services_banner_icon['height']; ?>">
                             </div>
                             <?php
                         }
@@ -122,10 +122,10 @@ if(have_rows("tree_services_how_we_content")){?>
                 }
                 $tree_services_contact_title     = get_field("tree_services_contact_title");
                 $tree_services_contact_content   = get_field("tree_services_contact_content");
-                $tree_hugger_contact_request_url = get_field("tree_hugger_contact_request_url","option");
+                $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_url","option");
                 $tree_hugger_phone_number        = get_field("tree_hugger_phone_number","option");
                 $service_conv_number             = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
-                if($tree_services_contact_title || $tree_services_contact_content || $tree_hugger_contact_request_url || $tree_hugger_phone_number){?>
+                if($tree_services_contact_title || $tree_services_contact_content || $tree_hugger_contact_free_quote_url || $tree_hugger_phone_number){?>
                     <div class="col-lg-6 align-self-center">
                         <div class="tree-content">
                             <?php 
@@ -136,11 +136,11 @@ if(have_rows("tree_services_how_we_content")){?>
                             //contact content
                             echo $tree_services_contact_content;?>
                             <?php  
-                            if($tree_hugger_contact_request_url || $tree_hugger_phone_number){?>
+                            if($tree_hugger_contact_free_quote_url || $tree_hugger_phone_number){?>
                                 <div class="banner-btn">
                                     <?php  
-                                    if($tree_hugger_contact_request_url){?>
-                                        <a href="<?php echo $tree_hugger_contact_request_url; ?>" title="Get a Free Quote" class="sec-btn">Get a Free Quote</a>
+                                    if($tree_hugger_contact_free_quote_url){?>
+                                        <a href="<?php echo $tree_hugger_contact_free_quote_url['url']; ?>" title="<?php echo $tree_hugger_contact_free_quote_url['title']; ?>" class="sec-btn"><?php echo $tree_hugger_contact_free_quote_url['title']; ?></a>
                                         <?php
                                     }
                                     if($tree_hugger_phone_number && $service_conv_number){?>

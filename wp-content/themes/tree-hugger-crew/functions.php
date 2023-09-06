@@ -205,6 +205,7 @@ function change_html_custom_logo() {
             wp_get_attachment_image( $custom_logo_id, 'full', false, array(
                 'class'    => 'custom-logo',
 				"data-no-lazy" => "1",
+				'alt' => "$site_name"
             ) )
         );
     return $html;   

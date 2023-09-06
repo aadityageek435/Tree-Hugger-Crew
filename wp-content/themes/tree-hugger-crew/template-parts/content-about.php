@@ -24,8 +24,8 @@
                     <div class="col-lg-6">
                         <?php 
                         if($tree_hugger_about_icon){?>
-                            <div class="about-sec-brand">   
-                                <img src="<?php echo $tree_hugger_about_icon['url']; ?>" alt="about-brand" width="230" height="230">
+                            <div class="about-brand">   
+                                <img src="<?php echo $tree_hugger_about_icon['url']; ?>" alt="Leaf Icon" width="<?php echo $tree_hugger_about_icon['width']; ?>" height="<?php echo $tree_hugger_about_icon['height']; ?>">
                             </div>
                             <?php
                         }
@@ -166,7 +166,7 @@
                                             <p><?php echo $arborist_exp; ?></p>
                                             <?php
                                         }?>
-                                        <a href="javascript:void(0);" title="About Us, Learn More" class="arborist-learn-more" data-bs-toggle="modal" data-bs-target="#arborist_modal" data-arborist-id="<?php echo get_the_ID(); ?>">Learn More</a>
+                                        <a href="javascript:void(0);" title="<?php echo $arborist_name.", Learn More"; ?>" class="arborist-learn-more" data-bs-toggle="modal" data-bs-target="#arborist_modal" data-arborist-id="<?php echo get_the_ID(); ?>">Learn More</a>
                                         <div class="popup-content" style="display:none;">
                                             <div class="row">
                                                 <?php 
@@ -239,18 +239,19 @@ if(have_rows("awards_certificatons","option")){?>
             <div class="container">
                 <div class="awards-img">
                     <?php 
-                    $awards_index = 1;
+                    $about_awards_index = 1;
                     while(have_rows("awards_certificatons","option")){ the_row(); 
 
                         $award_certification_image = get_sub_field("award_certification_image");
                         $award_certification_redirect_url = (get_sub_field("award_certification_redirect_url")) ? get_sub_field("award_certification_redirect_url") : "javascript:void(0);";
+                        $target_class = ($award_certification_redirect_url!=="javascript:void(0);") ? "target='_blank'" : ""; 
                         if($award_certification_image){?>
-                            <a href="<?php echo $award_certification_redirect_url; ?>">
-                                <img src="<?php echo $award_certification_image['url']; ?>" alt="Awards Image <?php echo $awards_index; ?>" width="<?php echo $award_certification_image['width']; ?>" height="<?php echo $award_certification_image['height']; ?>">
+                            <a href="<?php echo $award_certification_redirect_url; ?>" title="Awards Image <?php echo $about_awards_index; ?>" <?php echo $target_class; ?>>
+                                <img src="<?php echo $award_certification_image['url']; ?>" alt="Awards Image <?php echo $about_awards_index; ?>" width="<?php echo $award_certification_image['width']; ?>" height="<?php echo $award_certification_image['height']; ?>">
                             </a>
                             <?php
                         }
-                        $awards_index++;
+                        $about_awards_index++;
                     }?>
                 </div>
             </div>

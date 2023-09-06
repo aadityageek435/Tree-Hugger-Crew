@@ -31,15 +31,21 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'tree-hugger-crew'); ?></a>
+		<a class="skip-link screen-reader-text" href="#primary" title="Skip to Content"><?php esc_html_e('Skip to content', 'tree-hugger-crew'); ?></a>
 
 		<!-- Header Start -->
 		<header id="masthead" class="site-header">
 			<div class="header-sidebar">
 				<div class="main-header-sidebar-wp" data-simplebar>
 					<div class="main-header-sidebar">
-						<div class="site-branding">
+						<div class="site-branding for-des">
 							<?php the_custom_logo(); ?>
+						</div>
+						<div class="mob-logo for-mob">
+							<img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/mob-logo.svg" alt="Tree Hugger Mobile Logo" width="46" height="50">
+						</div>
+						<div class="mob-call for-mob">
+							<img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/mob-call.svg" alt="Tree Hugger Call Logo" width="30" height="30">
 						</div>
 						<div class="header-menu">
 							<nav id="site-navigation" class="main-navigation">
@@ -56,49 +62,49 @@
 											'menu_id'        => 'primary-menu',
 										)
 									); ?>
+									<?php
+
+									$tree_hugger_phone_number        = get_field("tree_hugger_phone_number", "option");
+									$conv_number                     = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
+									$tree_hugger_instagram_url       = get_field("tree_hugger_instagram_url", "option");
+									$tree_hugger_facebook_url        = get_field("tree_hugger_facebook_url", "option");
+									$tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_url", "option");
+
+									if ($tree_hugger_phone_number || $tree_hugger_instagram_url || $tree_hugger_facebook_url || $tree_hugger_contact_free_quote_url) { ?>
+										<div class="site-contact">
+											<?php
+											if ($tree_hugger_phone_number) { ?>
+												<a href="tel:<?php echo $conv_number; ?>" class="site-call" title="Call on <?php echo $tree_hugger_phone_number; ?>"><?php echo $tree_hugger_phone_number; ?></a>
+											<?php
+											} ?>
+											<ul>
+												<?php
+												if ($tree_hugger_facebook_url) { ?>
+													<li>
+														<a class="contact-icon" href="<?php echo $tree_hugger_facebook_url; ?>" title="Follow on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+													</li>
+												<?php
+												}
+												if ($tree_hugger_instagram_url) { ?>
+													<li>
+														<a class="contact-icon" href="<?php echo $tree_hugger_instagram_url; ?>" title="Follow on Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+													</li>
+												<?php
+												} ?>
+											</ul>
+										</div>
+										<?php
+										if ($tree_hugger_contact_free_quote_url) { ?>
+											<div class="contact-header-btn">
+												<a href="<?php echo $tree_hugger_contact_free_quote_url['url']; ?>" title="Request a Quote" class="sec-btn">Request a Quote</a>
+											</div>
+											<?php
+										}
+									} ?>
 								</div>
 							</nav>
 						</div>
 					</div>
-					<?php 
-					
-					$tree_hugger_phone_number        = get_field("tree_hugger_phone_number","option"); 
-					$conv_number                     = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
-					$tree_hugger_instagram_url       = get_field("tree_hugger_instagram_url","option");
-					$tree_hugger_facebook_url        = get_field("tree_hugger_facebook_url","option");
-					$tree_hugger_contact_request_url = get_field("tree_hugger_contact_request_url","option");
-
-					if($tree_hugger_phone_number || $tree_hugger_instagram_url || $tree_hugger_facebook_url || $tree_hugger_contact_request_url){?>
-						<div class="site-contact">
-							<?php 
-							if($tree_hugger_phone_number){?>
-								<a href="tel:<?php echo $conv_number; ?>" class="site-call" title="Call on <?php echo $tree_hugger_phone_number; ?>"><?php echo $tree_hugger_phone_number; ?></a>
-								<?php
-							}?>
-							<ul>
-								<?php 
-								if($tree_hugger_facebook_url){?>
-									<li>
-										<a class="contact-icon" href="<?php echo $tree_hugger_facebook_url; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
-									</li>
-									<?php
-								}
-								if($tree_hugger_instagram_url){?>
-									<li>
-										<a class="contact-icon" href="<?php echo $tree_hugger_instagram_url; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
-									</li>
-									<?php
-								}?>
-							</ul>
-						</div>
-						<?php  
-						if($tree_hugger_contact_request_url){?>
-							<div class="contact-header-btn">
-								<a href="<?php echo $tree_hugger_contact_request_url; ?>" title="Request a Quote" class="sec-btn">Request a Quote</a>
-							</div>
-							<?php
-						}
-					}?>
 				</div>
 			</div>
 		</header>
