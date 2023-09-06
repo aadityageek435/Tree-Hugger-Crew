@@ -14,41 +14,39 @@ jQuery(document).ready(function($) {
 
     //Home Page - Service Tabbing
     jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
+    
     jQuery(".service-tab li").on("click", function() {
 
-        var index = jQuery(this).attr('data-index');
-        console.log(index);
-        jQuery(".service-tab li").removeClass('active-gallery-tab');
-        jQuery(this).addClass('active-gallery-tab');
-        jQuery(".service-loader").css("display", "flex");
+         // Check if the clicked tab is already active
+         if (!jQuery(this).hasClass("active-gallery-tab")) {
 
-        currentRequest = $.ajax({
-            type: 'POST',
-            url: custom_call.ajaxurl,
-            data: {
-                'action': 'service_tabbing',
-                'index': index,
-            },
-            dataType: 'text',
-            success: function(data) {
-                jQuery("#service_ajax_response").html(data);                                
-                jQuery(".service-loader").css("display", "none");
+            var index = jQuery(this).attr('data-index');
+
+            jQuery(".service-tab li").removeClass('active-gallery-tab');
+            jQuery(this).addClass('active-gallery-tab');
+            
+            jQuery(".service-loader").css("display", "flex");
+
+            if (currentRequest !== null) {
+                currentRequest.abort();
             }
-        });
-    });
-
-    jQuery('body').on('click', '#primary-menu .menu-item-has-children a:first', function () {
-        if ((jQuery(this).parent().hasClass('active-sub-menu'))) {
-            jQuery(this).parent().removeClass('active-sub-menu');
-            jQuery(this).parent().find('.sub-menu').css('display', 'none');
-        } else {
-            jQuery(".menu-item-has-children").removeClass('active-sub-menu');
-            jQuery(".sub-menu").css('display', 'none');
-            jQuery(this).parent().addClass('active-sub-menu');
-            jQuery(this).parent().find('.sub-menu').css('display', 'block');
+            currentRequest = $.ajax({
+                type: 'POST',
+                url: custom_call.ajaxurl,
+                data: {
+                    'action': 'service_tabbing',
+                    'index': index,
+                },
+                dataType: 'text',
+                success: function(data) {
+                    jQuery("#service_ajax_response").html(data);                                
+                    jQuery(".service-loader").css("display", "none");
+                }
+            });
         }
     });
 
+ 
     jQuery('.testimonial-slider').slick({
         slidesToShow:1,
         slidesToScroll: 1,
@@ -69,7 +67,7 @@ jQuery(document).ready(function($) {
         dots:false,
         arrows: true,
         variableWidth: true,
-        autoplay: false,
+        autoplay: true,
         rows: 0,
         autoplaySpeed: 2000,
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
@@ -166,11 +164,46 @@ jQuery(document).ready(function($) {
         }
     });
 
-    /* Mobile Menu JS */
-    jQuery("#menu-item-21 a").first().attr('href', 'javascript:void(0);');
-    jQuery("#main-menu .menu-item a").click(function() {
-        jQuery("#site-navigation").removeClass("toggled");
+    /* Toggle Menu JS */
+    jQuery('.menu-item a').not('#primary-menu .menu-item-has-children a:first').click(function () {
+        jQuery(".main-navigation").removeClass('toggled	');
     });
+
+    /* DropDown mobile menu */
+    jQuery("#primary-menu .menu-item-has-children a").first().attr('href', 'javascript:void(0);');
+
+    jQuery('body').on('click', '#primary-menu .menu-item-has-children a:first', function () {
+        if ((jQuery(this).parent().hasClass('active-sub-menu'))) {
+            jQuery(this).parent().removeClass('active-sub-menu');
+            jQuery(this).parent().find('.sub-menu').css('display', 'none');
+        } else {
+            jQuery(".menu-item-has-children").removeClass('active-sub-menu');
+            jQuery(".sub-menu").css('display', 'none');
+            jQuery(this).parent().addClass('active-sub-menu');
+            jQuery(this).parent().find('.sub-menu').css('display', 'block');
+        }
+    });
+
+    // Get File name in contact forms Js
+    jQuery('.wpcf7-form input[name="careers-documents"]').change(function (e) {
+		var resume_file = e.target.files[0];
+
+		if (resume_file !== undefined) {
+			var file_extension = resume_file.name.split('.').pop().toLowerCase();
+			var file_size = resume_file.size;
+			var actual_filesize = Math.round((file_size / 1024));
+
+			if ($.inArray(file_extension, ['doc', 'docx', 'png', 'jpg', 'jpeg', 'pdf']) === -1) {
+				jQuery('.input-file-text').text('');
+			} else if (actual_filesize >= 5000) {
+				jQuery('.input-file-text').text('');
+			} else {
+				jQuery('.input-file-text').text(e.target.files[0].name);
+			}
+		} else {
+			jQuery('.input-file-text').text('');
+		}
+	});
     
     //Adding Team Member Content in Modal
     jQuery(".arborists-content .arborist-learn-more").on("click", function() {
@@ -183,36 +216,14 @@ jQuery(document).ready(function($) {
         var scrolly = window.scrollY;
         jQuery("body").css("top", "-" + scrolly + "px");
         jQuery(this).attr("data-top", scrolly);
+        jQuery('.slick-initialized').slick('slickPause');
     });
     jQuery('#arborist_modal').on('hidden.bs.modal', function() {
         var scrolly = jQuery(this).attr("data-top");
         jQuery("body").css("top", "0px");
         window.scrollTo(0, scrolly);
+        jQuery('.slick-initialized').slick('slickPlay');
     });
-
-    /* Toggle Menu JS */
-    jQuery('.menu-item a').not('#primary-menu .menu-item-has-children a:first').click(function () {
-        jQuery(".main-navigation").removeClass('toggled	');
-    });
-
-    /* DropDown mobile menu */
-    jQuery("#primary-menu .menu-item-has-children a").first().attr('href', 'javascript:void(0);');
-
-    if (window_size <= 991) {
-
-        /* DropDown mobile menu show and hide */
-        jQuery('body').on('click', '#primary-menu .menu-item-has-children a:first', function () {
-            if ((jQuery(this).parent().hasClass('active-sub-menu'))) {
-                jQuery(this).parent().removeClass('active-sub-menu');
-                jQuery(this).parent().find('.sub-menu').css('display', 'none');
-            } else {
-                jQuery(".menu-item-has-children").removeClass('active-sub-menu');
-                jQuery(".sub-menu").css('display', 'none');
-                jQuery(this).parent().addClass('active-sub-menu');
-                jQuery(this).parent().find('.sub-menu').css('display', 'block');
-            }
-        });
-    }
 
     /*Smooth Scroll JS*/
     jQuery("ul.menu li.menu-item").each(function () {
@@ -228,4 +239,19 @@ jQuery(document).ready(function($) {
         }
     });
 
+      // fancy box stop slider JS
+      jQuery().fancybox({
+        selector: '[data-fancybox]',
+        "afterShow": function () {
+            jQuery('.slick-initialized').slick('slickPause');
+        },
+
+        "afterClose": function () {
+            setTimeout(() => {
+                jQuery('.slick-initialized').slick('slickPlay');
+                jQuery("body").trigger("click");
+            }, 1000);
+
+        }
+    });
 });

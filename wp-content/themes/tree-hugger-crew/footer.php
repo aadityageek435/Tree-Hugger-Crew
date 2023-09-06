@@ -84,9 +84,7 @@
 												?>
 											</div>
 											<?php
-										}?>
-
-										<?php 
+										} 
 										$tree_hugger_location_text = get_field("tree_hugger_location_text","option"); 
 										$tree_hugger_location_url  = get_field("tree_hugger_location_url","option");
 										if($tree_hugger_location_text || $tree_hugger_location_url){?>

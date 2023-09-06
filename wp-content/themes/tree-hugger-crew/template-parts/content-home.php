@@ -12,7 +12,7 @@ $home_conv_number              = preg_replace('/[^0-9.]/', '', $home_tree_hugger
             <div class="row">
                 <?php
                 if ($home_banner_title || $home_banner_sub_title || $home_banner_free_quote_url || $home_tree_hugger_phone_number) { ?>
-                    <div class="col-lg-6">
+                    <div class="col-12">
                         <div class="banner-content">
                             <?php
                             if ($home_banner_title) { ?>
@@ -57,7 +57,7 @@ $home_conv_number              = preg_replace('/[^0-9.]/', '', $home_tree_hugger
                         <div class="about-img-wp">
                             <?php
                             if ($home_about_accredited_image) { ?>
-                                <div class="about-brand">
+                                <div class="about-brand brand">
                                     <img src="<?php echo $home_about_accredited_image['url']; ?>" alt="About Accredied Image" width="<?php echo $home_about_accredited_image['width']; ?>" height="<?php echo $home_about_accredited_image['height']; ?>">
                                 </div>
                             <?php

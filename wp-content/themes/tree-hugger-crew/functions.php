@@ -241,7 +241,7 @@ function service_sec_tabbing() {
 					}
 					if($home_our_services_image){?>
 						<div class="service-img">
-							<div class="back-img" style="background-image: url('<?php echo $home_our_services_image; ?>');"></div>
+							<div class="back-img img-box img-left-box" style="background-image: url('<?php echo $home_our_services_image; ?>');"></div>
 						</div>
 						<?php
 					}

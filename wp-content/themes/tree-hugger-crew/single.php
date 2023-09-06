@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all single posts
  *
@@ -11,11 +12,13 @@ get_header();
 ?>
 <!-- Banner Start -->
 <section class="main-banner inner-banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="banner-content">
-                    <h1 class="h1-title"><?php the_title(); ?></h1>
+    <div class="sec-wp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-content">
+                        <h1 class="h1-title"><?php the_title(); ?></h1>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,29 +27,31 @@ get_header();
 <!-- Banner End -->
 
 <div class="inner-page-text">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="inner-page-box">
-                    <div id="primary" class="content-area">
-						<main id="primary" class="site-main">
-							<?php
-							while ( have_posts() ) :
-								the_post();
+    <div class="sec-wp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="inner-page-box">
+                        <div id="primary" class="content-area">
+                            <main id="primary" class="site-main">
+                                <?php
+                                while (have_posts()) :
+                                    the_post();
 
-								get_template_part( 'template-parts/content', get_post_type() );
+                                    get_template_part('template-parts/content', get_post_type());
 
-								the_posts_pagination();
+                                    the_posts_pagination();
 
-							endwhile; // End of the loop.
-							?>
-						</main><!-- #main -->
-					</div>
+                                endwhile; // End of the loop.
+                                ?>
+                            </main><!-- #main -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <?php get_sidebar(); ?>
                 </div>
             </div>
-			<div class="col-lg-4">
-				<?php get_sidebar(); ?>
-			</div>
         </div>
     </div>
 </div>

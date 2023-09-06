@@ -23,7 +23,7 @@
                     <?php
                 }  
                 $tree_huggers_carrers_icon       = get_field("tree_huggers_carrers_icon");
-                $tree_hugger_careers_video_url   = (get_field("tree_hugger_careers_video_url")) ? get_field("tree_hugger_careers_video_url") : "javascript:void(0);";
+                $tree_hugger_careers_video_url   = get_field("tree_hugger_careers_video_url");
                 $tree_hugger_careers_video_thumb = get_field("tree_hugger_careers_video_thumb");
 
                 if($tree_huggers_carrers_icon || $tree_hugger_careers_video_url || $tree_hugger_careers_video_thumb){?>
@@ -38,7 +38,11 @@
                         if($tree_hugger_careers_video_thumb || $tree_hugger_careers_video_url){?>
                             <div class="about-sec-img">
                                 <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $tree_hugger_careers_video_thumb; ?>');">
-                                    <a class="play-btn" href="<?php echo $tree_hugger_careers_video_url; ?>" title="play-video"></a>
+                                    <?php  
+                                    if($tree_hugger_careers_video_url){?>
+                                        <a class="play-btn" href="<?php echo $tree_hugger_careers_video_url; ?>" title="play-video" data-fancybox="careers-video"></a>
+                                        <?php
+                                    }?>
                                 </div>
                             </div>
                             <?php
