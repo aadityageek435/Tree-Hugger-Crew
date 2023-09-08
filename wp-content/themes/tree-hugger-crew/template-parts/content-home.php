@@ -165,14 +165,14 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                                     $home_our_services_title = get_sub_field("home_our_services_title");
                                     if ($home_our_services_title) { ?>
                                         <li data-index="<?php echo get_row_index(); ?>"><?php echo $home_our_services_title; ?></li>
-                                <?php
+                                        <?php
                                     }
                                 } ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-8" id="service_ajax_response">
-                        <div class="service-slider">
+                    <div class="col-lg-8">
+                        <div class="service-slider" id="service_ajax_response">
                             <?php
                             while (have_rows("our_services")) {
                                 the_row();
@@ -190,34 +190,34 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                                             <div class="about-brand">
                                                 <img src="<?php echo $home_our_services_icon['url']; ?>" alt="<?php echo $home_our_services_title . " Image";  ?>" width="<?php echo $home_our_services_icon['width']; ?>" height="<?php echo $home_our_services_icon['height']; ?>">
                                             </div>
-                                        <?php
+                                            <?php
                                         }
                                         if ($home_our_services_image) { ?>
                                             <div class="service-img">
                                                 <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $home_our_services_image; ?>');"></div>
                                             </div>
-                                        <?php
+                                            <?php
                                         }
                                         if ($home_our_services_title) { ?>
                                             <h3 class="h3-title"><?php echo $home_our_services_title; ?></h3>
-                                        <?php
+                                            <?php
                                         }
                                         //our service main content
                                         echo $home_our_services_content;
 
                                         if ($home_our_services_page_url) { ?>
                                             <a href="<?php echo $home_our_services_page_url; ?>" title="<?php echo $home_our_services_title . ", Learn More"; ?>">Learn More</a>
-                                        <?php
+                                            <?php
                                         } ?>
                                     </div>
-                            <?php
+                                    <?php
                                 }
                             } ?>
                         </div>
                         <div class="service-loader"><i class="fas fa-spinner"></i></div>
                     </div>
                 </div>
-            <?php
+                <?php
             } ?>
         </div>
     </div>
