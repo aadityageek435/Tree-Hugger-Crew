@@ -110,6 +110,7 @@
 					</div>
 					<div class="col-lg-6">
 						<div class="footer-form">
+							<h3>Contact Us</h3>
 							<?php echo
 							do_shortcode("[contact-form-7 id='53bcbd7' title='Footer Form']");
 							?>
@@ -146,20 +147,32 @@
 										echo $tree_huggers_hours_content;
 										?>
 									</div>
-								<?php
+									<?php
 								} 	?>
 							</div>
-							<div class="site-contact">
-								<ul>
-									<li>
-										<a class="contact-icon" href="<?php echo $tree_hugger_facebook_url; ?>" title="Follow on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-									</li>
-
-									<li>
-										<a class="contact-icon" href="<?php echo $tree_hugger_instagram_url; ?>" title="Follow on Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-									</li>
-								</ul>
-							</div>
+							<?php  
+							$tree_hugger_instagram_url = get_field("tree_hugger_instagram_url", "option");
+							$tree_hugger_facebook_url  = get_field("tree_hugger_facebook_url", "option");
+							if($tree_hugger_instagram_url || $tree_hugger_facebook_url){?>
+								<div class="site-contact for-mob">
+									<ul>
+										<?php  
+										if($tree_hugger_facebook_url){?>
+											<li>
+												<a class="contact-icon" href="<?php echo $tree_hugger_facebook_url; ?>" title="Follow on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+											</li>
+											<?php
+										}
+										if($tree_hugger_instagram_url){?>
+											<li>
+												<a class="contact-icon" href="<?php echo $tree_hugger_instagram_url; ?>" title="Follow on Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+											</li>
+											<?php
+										}?>
+									</ul>
+								</div>
+								<?php
+							}?>
 						</div>
 					</div>
 				</div>

@@ -3,8 +3,8 @@ $home_banner_image                  = (get_field("home_banner_image")) ? get_fie
 $home_banner_title                  = get_field("home_banner_title");
 $home_banner_sub_title              = get_field("home_banner_sub_title");
 $home_tree_hugger_phone_number      = get_field("tree_hugger_phone_number", "option");
-$home_conv_number                   = preg_replace('/[^0-9.]/', '', $home_tree_hugger_phone_number); 
-$tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_url","option");?>
+$home_conv_number                   = preg_replace('/[^0-9.]/', '', $home_tree_hugger_phone_number);
+$tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_url", "option"); ?>
 <!-- banner-start -->
 <section class="main-banner back-img" style="background-image: url(<?php echo $home_banner_image; ?>);">
     <div class="sec-wp">
@@ -30,7 +30,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                                 <?php
                                 }
                                 if ($home_tree_hugger_phone_number && $home_conv_number) { ?>
-                                    <a href="tel:<?php echo $home_conv_number; ?>" title="Call <?php echo $home_tree_hugger_phone_number; ?>" class="sec-btn  white-outline-btn">Call &nbsp;<span class="for-des callus"><?php echo $home_tree_hugger_phone_number; ?></span><span class="for-mob">Now!</span></a>
+                                    <a href="tel:<?php echo $home_conv_number; ?>" title="Call <?php echo $home_tree_hugger_phone_number; ?>" class="sec-btn  white-outline-btn">Call&nbsp;<span class="for-des call"><?php echo $home_tree_hugger_phone_number; ?></span><span class="for-mob">us</span></a>
                                 <?php
                                 } ?>
                             </div>
@@ -121,11 +121,11 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                                     ?>
                                 </div>
                             </div>
-                            <?php
+                    <?php
                         }
                     } ?>
                 </div>
-                <?php
+            <?php
             } ?>
         </div>
     </div>
@@ -144,14 +144,14 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                     <?php
                     if ($our_services_title) { ?>
                         <h2 class="h2-title">Our Services</h2>
-                        <?php
+                    <?php
                     }
                     if ($our_services_title) { ?>
                         <h3 class="h3-title"><?php echo $our_services_sub_title; ?></h3>
-                        <?php
+                    <?php
                     } ?>
                 </div>
-                <?php
+            <?php
             }
             //main services repeater
             if (have_rows("our_services")) { ?>
@@ -165,24 +165,24 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                                     $home_our_services_title = get_sub_field("home_our_services_title");
                                     if ($home_our_services_title) { ?>
                                         <li data-index="<?php echo get_row_index(); ?>"><?php echo $home_our_services_title; ?></li>
-                                        <?php
+                                <?php
                                     }
                                 } ?>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-8" id="service_ajax_response">
-                        <?php
-                        while (have_rows("our_services")) {
-                            the_row();
+                        <div class="service-slider">
+                            <?php
+                            while (have_rows("our_services")) {
+                                the_row();
 
-                            $home_our_services_title    = get_sub_field("home_our_services_title");
-                            $home_our_services_page_url = get_sub_field("home_our_services_page_url");
-                            $home_our_services_image    = get_sub_field("home_our_services_image");
-                            $home_our_services_icon     = get_sub_field("home_our_services_icon");
-                            $home_our_services_content  = get_sub_field("home_our_services_content");
+                                $home_our_services_title    = get_sub_field("home_our_services_title");
+                                $home_our_services_page_url = get_sub_field("home_our_services_page_url");
+                                $home_our_services_image    = get_sub_field("home_our_services_image");
+                                $home_our_services_icon     = get_sub_field("home_our_services_icon");
+                                $home_our_services_content  = get_sub_field("home_our_services_content");
 
-                            if (get_row_index() == 1) {
                                 if ($home_our_services_icon || $home_our_services_image || $home_our_services_title || $home_our_services_content || $home_our_services_page_url) { ?>
                                     <div class="service-content">
                                         <?php
@@ -190,34 +190,34 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                                             <div class="about-brand">
                                                 <img src="<?php echo $home_our_services_icon['url']; ?>" alt="<?php echo $home_our_services_title . " Image";  ?>" width="<?php echo $home_our_services_icon['width']; ?>" height="<?php echo $home_our_services_icon['height']; ?>">
                                             </div>
-                                            <?php
+                                        <?php
                                         }
                                         if ($home_our_services_image) { ?>
                                             <div class="service-img">
                                                 <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $home_our_services_image; ?>');"></div>
                                             </div>
-                                            <?php
+                                        <?php
                                         }
                                         if ($home_our_services_title) { ?>
                                             <h3 class="h3-title"><?php echo $home_our_services_title; ?></h3>
-                                            <?php
+                                        <?php
                                         }
                                         //our service main content
                                         echo $home_our_services_content;
 
                                         if ($home_our_services_page_url) { ?>
                                             <a href="<?php echo $home_our_services_page_url; ?>" title="<?php echo $home_our_services_title . ", Learn More"; ?>">Learn More</a>
-                                            <?php
+                                        <?php
                                         } ?>
                                     </div>
-                                    <?php
+                            <?php
                                 }
-                            }
-                        } ?>
+                            } ?>
+                        </div>
+                        <div class="service-loader"><i class="fas fa-spinner"></i></div>
                     </div>
-                    <div class="service-loader"><i class="fas fa-spinner"></i></div>
                 </div>
-                <?php
+            <?php
             } ?>
         </div>
     </div>
@@ -255,7 +255,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                 $home_tree_hugger_title         = get_field("home_tree_hugger_title");
                 $home_tree_hugger_content       = get_field("home_tree_hugger_content");
                 $home_tree_hugger_page_url      = get_field("home_tree_hugger_page_url");
-                $tree_hugger_our_inventory_url = get_field("tree_hugger_our_inventory_url","option");
+                $tree_hugger_our_inventory_url = get_field("tree_hugger_our_inventory_url", "option");
                 if ($home_tree_hugger_title || $home_tree_hugger_page_url || $tree_hugger_our_inventory_url || $home_tree_hugger_content) { ?>
                     <div class="col-lg-6 align-self-center">
                         <div class="about-us-content store-content">
@@ -269,15 +269,15 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
 
                             if ($home_tree_hugger_page_url) { ?>
                                 <a href="<?php echo $home_tree_hugger_page_url; ?>" title="Tree Hugger II, Learn More">Learn More</a>
-                                <?php
+                            <?php
                             }
                             if ($tree_hugger_our_inventory_url) { ?>
                                 <a href="<?php echo $tree_hugger_our_inventory_url['url']; ?>" title="<?php echo $tree_hugger_our_inventory_url['title']; ?>" target="_blank"><?php echo $tree_hugger_our_inventory_url['title']; ?></a>
-                                <?php
+                            <?php
                             } ?>
                         </div>
                     </div>
-                    <?php
+                <?php
                 } ?>
             </div>
         </div>
@@ -305,7 +305,7 @@ if (have_rows("health_care_details")) { ?>
                             <div class="row">
                                 <?php
                                 if ($home_health_care_image) { ?>
-                                    <div class="col-lg-6 oeder-lg-1 order-2">
+                                    <div class="col-lg-6">
                                         <div class="health-img even">
                                             <div class="back-img img-box" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
                                         </div>
@@ -313,7 +313,7 @@ if (have_rows("health_care_details")) { ?>
                                 <?php
                                 }
                                 if ($home_health_care_title || $home_health_care_content) { ?>
-                                    <div class="col-lg-6 oeder-lg-2 order-1 align-self-center">
+                                    <div class="col-lg-6 align-self-center">
                                         <div class="about-us-content store-content health-content even">
                                             <?php
                                             if ($home_health_care_title) { ?>
@@ -364,7 +364,7 @@ if (have_rows("health_care_details")) { ?>
                                 }
                                 if ($home_health_care_image) { ?>
                                     <div class="col-lg-6">
-                                        <div class="health-img">
+                                        <div class="health-img mob-img">
                                             <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
                                         </div>
                                     </div>
@@ -532,27 +532,31 @@ if ($home_gallery_images) { ?>
 if (have_rows("awards_certificatons", "option")) { ?>
     <!-- awards-start -->
     <section class="awards">
-        <div class="sec-wp">
-            <div class="container">
-                <div class="awards-img">
-                    <?php
-                    $home_awards_index = 1;
-                    while (have_rows("awards_certificatons", "option")) {
-                        the_row();
+        <!-- <div class="sec-wp"> -->
+        <div class="container">
+            <div class="awards-img-slider">
+                <?php
+                $home_awards_index = 1;
+                while (have_rows("awards_certificatons", "option")) {
+                    the_row();
 
-                        $award_certification_image = get_sub_field("award_certification_image");
-                        $award_certification_redirect_url = (get_sub_field("award_certification_redirect_url")) ? get_sub_field("award_certification_redirect_url") : "javascript:void(0);";
-                        $target_class = ($award_certification_redirect_url!=="javascript:void(0);") ? "target='_blank'" : ""; 
-                        if ($award_certification_image) { ?>
-                            <a href="<?php echo $award_certification_redirect_url; ?>" title="Awards Image <?php echo $home_awards_index; ?>" <?php echo $target_class; ?>>
-                                <img src="<?php echo $award_certification_image['url']; ?>" alt="Awards Image <?php echo $home_awards_index; ?>" width="<?php echo $award_certification_image['width']; ?>" height="<?php echo $award_certification_image['height']; ?>">
-                            </a>
-                            <?php
-                        }
-                        $home_awards_index++;
-                    } ?>
-                </div>
+                    $award_certification_image = get_sub_field("award_certification_image");
+                    $award_certification_redirect_url = (get_sub_field("award_certification_redirect_url")) ? get_sub_field("award_certification_redirect_url") : "javascript:void(0);";
+                    $target_class = ($award_certification_redirect_url !== "javascript:void(0);") ? "target='_blank'" : "";
+                    if ($award_certification_image) { ?>
+                        <div class="award-slider">
+                            <div class="awards-img">
+                                <a href="<?php echo $award_certification_redirect_url; ?>" title="Awards Image <?php echo $home_awards_index; ?>" <?php echo $target_class; ?>>
+                                    <img src="<?php echo $award_certification_image['url']; ?>" alt="Awards Image <?php echo $home_awards_index; ?>" width="<?php echo $award_certification_image['width']; ?>" height="<?php echo $award_certification_image['height']; ?>">
+                                </a>
+                            </div>
+                        </div>
+                <?php
+                    }
+                    $home_awards_index++;
+                } ?>
             </div>
+            <!-- </div> -->
         </div>
     </section>
     <!-- awards-end -->
@@ -562,27 +566,27 @@ if (have_rows("awards_certificatons", "option")) { ?>
 <section class="instagram">
     <div class="sec-wp">
         <div class="container">
-            <?php  
+            <?php
             $home_instagram_title = get_field("home_instagram_title");
             $home_instagram_handle = get_field("home_instagram_handle");
             $home_instagram_account_url = get_field("home_instagram_account_url");
-            if($home_instagram_title ||  $home_instagram_handle || $home_instagram_account_url){?>
+            if ($home_instagram_title ||  $home_instagram_handle || $home_instagram_account_url) { ?>
                 <div class="ig-title">
-                    <?php 
-                    if($home_instagram_title){?>
+                    <?php
+                    if ($home_instagram_title) { ?>
                         <h2 class="h2-title"><?php echo $home_instagram_title; ?></h2>
-                        <?php
+                    <?php
                     }
-                    if($home_instagram_handle && $home_instagram_account_url){?>
+                    if ($home_instagram_handle && $home_instagram_account_url) { ?>
                         <ul>
                             <li><?php echo $home_instagram_account_url['title']; ?></li>
                             <li><a class="mail" href="<?php echo $home_instagram_account_url['url']; ?>" title="<?php echo $home_instagram_handle; ?>" target="<?php echo $home_instagram_account_url['target']; ?>"><?php echo $home_instagram_handle; ?></a></li>
                         </ul>
-                        <?php
+                    <?php
                     } ?>
                 </div>
-                <?php
-            }?>
+            <?php
+            } ?>
             <div class="row">
                 <?php echo
                 do_shortcode("[instagram-feed feed=1]");

@@ -10,6 +10,12 @@
  * @package tree-hugger-crew
  */
 
+$tree_hugger_site_mobile_logo    = get_field("tree_hugger_site_mobile_logo","option");
+$tree_hugger_phone_number        = get_field("tree_hugger_phone_number", "option");
+$conv_number                     = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
+$tree_hugger_instagram_url       = get_field("tree_hugger_instagram_url", "option");
+$tree_hugger_facebook_url        = get_field("tree_hugger_facebook_url", "option");
+$tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_url", "option");
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -41,12 +47,21 @@
 						<div class="site-branding for-des">
 							<?php the_custom_logo(); ?>
 						</div>
-						<div class="mob-logo for-mob">
-							<img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/mob-logo.svg" alt="Tree Hugger Mobile Logo" width="46" height="50">
-						</div>
-						<div class="mob-call for-mob">
-							<img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/mob-call.svg" alt="Tree Hugger Call Logo" width="30" height="30">
-						</div>
+						<?php 
+						if($tree_hugger_site_mobile_logo){?>
+							<div class="mob-logo for-mob">
+								<img src="<?php echo $tree_hugger_site_mobile_logo['url']; ?>" alt="<?php echo $tree_hugger_site_mobile_logo['alt']; ?>" width="<?php echo $tree_hugger_site_mobile_logo['width']; ?>" height="<?php echo $tree_hugger_site_mobile_logo['height']; ?>">
+							</div>
+							<?php
+						}
+						if ($tree_hugger_phone_number) { ?>
+							<div class="mob-call for-mob">
+								<a href="tel:<?php echo $conv_number; ?>" class="site-call callus" title="Call on <?php echo $tree_hugger_phone_number; ?>">
+									<img src="<?php echo home_url(); ?>/wp-content/uploads/2023/09/mob-call.svg" alt="Tree Hugger Call Logo" width="30" height="30">
+								</a>
+							</div>
+							<?php
+						} ?>
 						<div class="header-menu">
 							<nav id="site-navigation" class="main-navigation">
 								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
@@ -63,19 +78,12 @@
 										)
 									); ?>
 									<?php
-
-									$tree_hugger_phone_number        = get_field("tree_hugger_phone_number", "option");
-									$conv_number                     = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
-									$tree_hugger_instagram_url       = get_field("tree_hugger_instagram_url", "option");
-									$tree_hugger_facebook_url        = get_field("tree_hugger_facebook_url", "option");
-									$tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_url", "option");
-
 									if ($tree_hugger_phone_number || $tree_hugger_instagram_url || $tree_hugger_facebook_url || $tree_hugger_contact_free_quote_url) { ?>
 										<div class="site-contact">
 											<?php
 											if ($tree_hugger_phone_number) { ?>
 												<a href="tel:<?php echo $conv_number; ?>" class="site-call" title="Call on <?php echo $tree_hugger_phone_number; ?>"><?php echo $tree_hugger_phone_number; ?></a>
-											<?php
+												<?php
 											} ?>
 											<ul>
 												<?php

@@ -2103,6 +2103,7 @@ button.close:hover {
     left: 0;
     width: 100%;
     z-index: 99;
+    box-shadow: var(--box-shadow);
 }
 
 .site-contact ul li {
@@ -2194,7 +2195,7 @@ button.close:hover {
     color: var(--secondary-color);
 }
 
-.site-contact .contact-icon:hover {
+.site-contact .contact-icon:hover,.footer-form .site-contact .contact-icon:hover {
     background-color: var(--secondary-color);
 }
 
@@ -2912,12 +2913,21 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .awards-img {
     display: flex;
-    gap: 60px;
-    align-items: center;
+}
+
+.awards .slick-slide{
+    margin-right: 60px;
 }
 /*=========awards CSS end==========*/
 
 /*==========Footer CSS Start==========*/
+.footer-form h3{
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--white-color);
+    margin-bottom: 23px;
+}
+
 .site-footer {
     padding: 193px 0 140px;
     position: relative;
@@ -3207,7 +3217,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .arborists-img .back-img {
     height: 400px;
-    width: 370px;
+    width:100%;
     border-radius: 20px;
 }
 
@@ -4386,6 +4396,24 @@ a.prev.page-numbers {
     }
 }
 
+@media (max-width:1699px) {
+    .about-sec .about-brand {
+        right: -50px;
+    }
+
+    .arborists .slick-arrow {
+        left: -305px;
+    }
+
+    .arborists .next-arrow.slick-arrow {
+        left: -205px;
+    }
+
+    .arborists .next-arrow.slick-arrow {
+        left: -135px;
+    }
+}
+
 @media screen and (max-width: 1499px) {
     :root {
         --header-width: clamp(240px, 17vw, 250px);
@@ -4427,6 +4455,14 @@ a.prev.page-numbers {
 
     .gallery .slide-arrow.next-arrow.slick-arrow {
         right: -30px;
+    }
+/* about-page */
+    .profestional {
+        padding: 180px 0 200px;
+    }
+
+    .arborists {
+        padding-bottom: 180px;
     }
 }
 
@@ -4502,6 +4538,22 @@ a.prev.page-numbers {
     .footer-content {
         padding-right: 0px;
     }
+
+    .awards .slick-slide {
+        margin-right: 45px;
+    }
+    /* about-img */
+    .about-sec .about-us-content .h2-title, .profestional .about-us-content .h2-title{
+        font-size: 36px;
+    }
+
+    .profestional .about-us-content .h2-title,.profestional .about-us-content p {
+        margin-bottom: 12px;
+    }
+
+    .arborists .slick-arrow {
+        left: -235px;
+    }
 }
 
 @media screen and (max-width: 1199px) {
@@ -4515,7 +4567,15 @@ a.prev.page-numbers {
         display: block !important;
     }
 
+    .footer-form .for-mob {
+        display: none !important;
+    }
+
     .for-mob {
+        display: block !important;
+    }
+
+    .site-footer  .for-des {
         display: block !important;
     }
 
@@ -4743,6 +4803,26 @@ a.prev.page-numbers {
     .service-content .about-brand {
         right: -25px;
     }
+
+    .about-sec {
+        padding: 210px 0 260px;
+    }
+
+    .about-sec-img .img-box {
+        margin-left: 40px;
+    }
+
+    .about-sec .about-brand {
+        right: -10px;
+    }
+
+    .who-sec {
+        padding: 120px 0;
+    }
+
+    .profestional {
+        padding: 150px 0;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -4799,6 +4879,7 @@ a.prev.page-numbers {
     .about-box {
         height: auto;
         margin-top: 80px;
+        padding:24px 30px 40px;
     }
 
     .about-us-img .img-box,
@@ -4835,16 +4916,22 @@ a.prev.page-numbers {
 
     .health-list {
         column-count: unset;
-        margin: 30px 0 50px;
+        margin:30px 0 50px;
     }
 
     .health-img .img-box {
-        margin-left: 0;
-        margin-bottom: 0;
+        display:none;
     }
 
-    .health-content.even {
-        margin-bottom: 50px;
+    .health-img.mob-img .img-box{
+        display: block;
+        margin-left:0px;
+        margin-bottom: 0;
+        height: 230px;
+    }
+
+    .health-list li:last-child{
+        margin-bottom: 0;
     }
 
     .health .sec-wp {
@@ -4864,7 +4951,7 @@ a.prev.page-numbers {
     }
 
     .testimonial-title .h3-title {
-        margin-bottom: 30px;
+        margin-bottom: 34px;
     }
 
     .testimonial .slick-arrow {
@@ -4912,6 +4999,148 @@ a.prev.page-numbers {
     .footer-form .site-contact .contact-icon i {
         color: var(--light-green);
     }
+
+    .site-contact {
+        padding: 3vw 0 0;
+    }
+
+    .footer-add.for-mob {
+        margin: 60px 0 10px;
+    }
+
+    .footer-loaction{
+        max-width: 195px;
+    }
+
+    .awards .slick-list{
+        width:95vw;
+    }
+
+    .site-footer {
+        padding: 100px 0 90px;
+    }
+    .about-us-content.store-content {
+        padding-left: 0;
+    }
+
+    .health-wp,.health {
+        --space: 68px;
+    }
+
+    .health {
+        padding: 35px 0 61px;
+    }
+
+    .testimonial-title {
+        margin-top: 0px;
+    }
+
+    .testimonial {
+        padding: 44px 0 122px;
+    }
+
+    .testimonial .slick-arrow {
+        bottom: -46px;
+    }    
+
+    .gallery .slick-slide {
+        width: 390px;
+    }
+
+    .gallery-img .back-img {
+        height:284px;
+        border-radius: 0;
+    }
+
+    .career {
+        padding: 59px 0 61px;
+    }
+
+    .instagram .slick-list{
+        width: 100vw;
+    }
+
+    #sb_instagram .sbi_photo{
+        height: 170px !important;
+    }
+
+    a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready{
+        margin-right: 20px;
+    }
+
+    .testimonial-box .testi-brand {
+        top: -30px;
+        right: -15px;
+    }
+
+    .testimonial-box .testi-brand img{
+        width: 64px;
+        height: 70px;
+    }
+
+    .ig-title ul li{
+        font-size: 18px;
+    }
+
+    .site-contact ul {
+        margin-bottom: 3vw;
+    }
+
+    .main-service .slick-arrow {
+        left:30px;
+        top:-280px;    
+    }
+    
+    .main-service .slide-arrow.next-arrow.slick-arrow {
+        right: 20px;
+        left: auto;
+    }
+
+    .main-service .slick-arrow::before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 28px;
+        -webkit-mask-image: url(assets/images/service-arrow.svg);
+        -webkit-mask-size: 100%;
+        --webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        background-color: var(--white-color);
+    }
+
+    .main-service .next-arrow.slick-arrow::before {
+        transform: rotate(180deg);
+    }
+
+    .footer-form .for-mob {
+        display: block !important;
+    }
+
+    .site-footer  .for-des {
+        display: none !important;
+    }
+
+    .service-img{
+        padding-left: 10px;
+    }
+
+    .main-service .slick-list{
+        overflow: visible;
+    }
+
+    .main-service .slick-slide{
+        opacity: 0;
+    }
+
+    .main-service .slick-slide.slick-current{
+        opacity: 1;
+    }
+
+    /* about-page */
+    .about-sec-img .img-box {
+        margin-left: 0;
+        height: 400px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -4926,6 +5155,161 @@ a.prev.page-numbers {
         max-width: unset;
         width: calc(100vw - 60px);
     }
+
+    .h1-title {
+        font-size: 44px;
+        line-height: 54px;
+    }
+
+    .h2-title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .h3-title {
+        font-size: 18px;
+    }
+
+    .main-banner {
+        padding: 180px 0 267px;
+    }
+
+    .main-banner:not(.inner-banner) .h1-title {
+        max-width: 382px;
+        margin-bottom: 17px;
+    }
+
+    .banner-content .h3-title {
+        font-weight: 600;
+        margin-bottom: 54px;
+        font-size: 20px;
+    }
+
+    .sec-btn{
+        width: 195px;
+    }
+
+    .sec-about-us {
+        padding: 60px 0 122px;
+    }
+        
+    .about-us-img .img-box,.store-img .img-box{
+        height: 230px;
+    }
+
+    .service-img .img-box{
+        height: 250px;
+    }
+
+    .about-brand, .sec-about-us .about-brand {
+        width: 100px;
+        height: 100px;
+    }
+
+    .sec-about-us .about-brand {
+        bottom: -50px;
+        right: -15px;
+    }
+
+    .img-box {
+        margin-bottom:40px;
+    }  
+
+    .store .img-box {
+        margin-bottom:45px;
+    }  
+
+    .about-us-content .h2-title {
+        margin-bottom: 0;
+    }
+
+    .about-us-content .h3-title {
+        margin-bottom: 21px;
+    }
+
+    .sec-about-us .about-us-content p{
+        margin-bottom: 30px;
+    }
+
+    .about-box {
+        margin-top:20px;
+    }
+    
+    .sec-about-us .about-us-content a{
+        margin-bottom: 40px;
+    }
+
+    .main-service {
+        padding:26px 0 34px;
+    }
+
+    .service-title .h2-title {
+        margin-bottom: 0;
+    }
+
+    .service-content .about-brand {
+        top: -50px;
+        right: -15px;
+    }
+
+    .service-title {
+        margin-bottom: 33px;
+    }   
+
+    .service-content .h3-title {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .service-img {
+        margin-bottom: 46px;
+        margin-bottom: 46px;
+    }   
+    
+    .store {
+        padding: 60px 0 120px;
+    }
+
+    .about-us-content.store-content .h2-title{
+        line-height: 38px;
+        max-width: 250px;
+        margin-bottom: 25px;
+    }
+
+    .store .about-us-content.store-content p {
+        margin-bottom: 27px;
+    }
+
+    .health {
+        padding: 35px 0 120px;
+    }
+
+    .health-list {
+        margin: 22px 0 62px;
+    }
+
+    .store .about-brand {
+        bottom: -45px;
+        right: -25px;
+    }   
+ 
+    .testimonial-content {
+        padding: 70px 30px;
+    }
+
+    .awards .slick-slide {
+        width: 145px;
+        margin-right: 60px;
+    }
+
+    .awards{
+        padding: 90px 0;
+    }
+
+    .instagram {
+        padding: 60px 0;
+    }
+    
 }
 
 @media screen and (max-width: 575px) {
@@ -4962,6 +5346,10 @@ a.prev.page-numbers {
     }
     .page-numbers li {
         margin-bottom: 10px;
+    }
+
+    .about-box {
+        padding:24px 30px 22px;
     }
 }
 
@@ -5011,5 +5399,55 @@ a.prev.page-numbers {
         padding: 20px 15px !important;
         max-height: 75vh;
     }
+
+    .about-brand, .sec-about-us .about-brand{
+        width: 90px;
+        height: 90px;
+    }
+
+    .main-banner {
+        padding: 160px 0 200px;
+    }
+
+    .gallery .slick-slide {
+        width: 260px;
+        margin-right: 20px;
+    }
+
+    .health-wp,.health {
+        --space: 40px;
+    }   
+
+    .health {
+        padding: 35px 0 90px;
+    }
+    
+    .testimonial {
+        padding: 40px 0 90px;
+    }
+
+    .testimonial .slick-arrow::before {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 25px;
+    }
+
+    .awards .slick-slide {
+        margin-right: 20px;
+    }
+
+    .awards {
+        padding: 80px 0 60px;
+    }
+
+    .instagram {
+        padding: 60px 0 40px;
+    }
+
+    .site-footer {
+        padding: 40px 0 60px;
+    }
+   
 }
 /*==========Responsive End==========*/

@@ -233,26 +233,29 @@
 <!-- Arborists end -->
 <?php
 if(have_rows("awards_certificatons","option")){?>
-    <!-- awards-start -->
-    <section class="awards cirty">
+     <!-- awards-start -->
+     <section class="awards cirty">
         <div class="sec-wp">
             <div class="container">
-                <div class="awards-img">
-                    <?php 
-                    $about_awards_index = 1;
-                    while(have_rows("awards_certificatons","option")){ the_row(); 
+                <div class="awards-img-slider">
+                    <?php
+                    $home_awards_index = 1;
+                    while (have_rows("awards_certificatons", "option")) {
+                        the_row();
 
                         $award_certification_image = get_sub_field("award_certification_image");
                         $award_certification_redirect_url = (get_sub_field("award_certification_redirect_url")) ? get_sub_field("award_certification_redirect_url") : "javascript:void(0);";
-                        $target_class = ($award_certification_redirect_url!=="javascript:void(0);") ? "target='_blank'" : ""; 
-                        if($award_certification_image){?>
-                            <a href="<?php echo $award_certification_redirect_url; ?>" title="Awards Image <?php echo $about_awards_index; ?>" <?php echo $target_class; ?>>
-                                <img src="<?php echo $award_certification_image['url']; ?>" alt="Awards Image <?php echo $about_awards_index; ?>" width="<?php echo $award_certification_image['width']; ?>" height="<?php echo $award_certification_image['height']; ?>">
-                            </a>
-                            <?php
+                        $target_class = ($award_certification_redirect_url !== "javascript:void(0);") ? "target='_blank'" : "";
+                        if ($award_certification_image) { ?>
+                            <div class="awards-img">
+                                <a href="<?php echo $award_certification_redirect_url; ?>" title="Awards Image <?php echo $home_awards_index; ?>" <?php echo $target_class; ?>>
+                                    <img src="<?php echo $award_certification_image['url']; ?>" alt="Awards Image <?php echo $home_awards_index; ?>" width="<?php echo $award_certification_image['width']; ?>" height="<?php echo $award_certification_image['height']; ?>">
+                                </a>
+                            </div>
+                    <?php
                         }
-                        $about_awards_index++;
-                    }?>
+                        $home_awards_index++;
+                    } ?>
                 </div>
             </div>
         </div>

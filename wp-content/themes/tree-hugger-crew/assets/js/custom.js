@@ -11,37 +11,69 @@ jQuery(document).ready(function ($) {
         scrollInput: false,
     });
 
-    //Home Page - Service Tabbing
-    jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
 
-    jQuery(".service-tab li").on("click", function () {
-        // Check if the clicked tab is already active
-        if (!jQuery(this).hasClass("active-gallery-tab")) {
-            var index = jQuery(this).attr("data-index");
-
-            jQuery(".service-tab li").removeClass("active-gallery-tab");
-            jQuery(this).addClass("active-gallery-tab");
-
-            jQuery(".service-loader").css("display", "flex");
-
-            if (currentRequest !== null) {
-                currentRequest.abort();
-            }
-            currentRequest = $.ajax({
-                type: "POST",
-                url: custom_call.ajaxurl,
-                data: {
-                    action: "service_tabbing",
-                    index: index,
+    if(window_size <= 992){
+        jQuery(".service-slider").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+            arrows: true,
+            autoplay: true,
+            rows: 0,
+            autoplaySpeed: 2000,
+            prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"></button>',
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false,
+                    },
                 },
-                dataType: "text",
-                success: function (data) {
-                    jQuery("#service_ajax_response").html(data);
-                    jQuery(".service-loader").css("display", "none");
-                },
-            });
-        }
-    });
+            ],
+        });
+    }else{
+         //Home Page - Service Tabbing
+      jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
+      jQuery(".main-service .service-content").hide();
+      jQuery(".main-service .service-content:eq(0)").show();
+
+      // jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
+      // jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
+
+      jQuery(".service-tab li").on("click", function () {
+          // Check if the clicked tab is already active
+          if (!jQuery(this).hasClass("active-gallery-tab")) {
+              var index = jQuery(this).attr("data-index");
+
+              jQuery(".service-tab li").removeClass("active-gallery-tab");
+              jQuery(this).addClass("active-gallery-tab");
+
+              jQuery(".service-loader").css("display", "flex");
+
+              if (currentRequest !== null) {
+                  currentRequest.abort();
+              }
+              currentRequest = $.ajax({
+                  type: "POST",
+                  url: custom_call.ajaxurl,
+                  data: {
+                      action: "service_tabbing",
+                      index: index,
+                  },
+                  dataType: "text",
+                  success: function (data) {
+                      jQuery("#service_ajax_response").html(data);
+                      jQuery(".service-loader").css("display", "none");
+                  },
+              });
+          }
+      });
+    }
 
     jQuery(".testimonial-slider").slick({
         slidesToShow: 1,
@@ -54,6 +86,42 @@ jQuery(document).ready(function ($) {
         autoplaySpeed: 2000,
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
         nextArrow: '<button class="slide-arrow next-arrow"></button>',
+    });
+
+    jQuery(".awards-img-slider").slick({
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: true,
+        variableWidth: true,
+        autoplay: true,
+        rows: 0,
+        autoplaySpeed: 2000,
+        prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+        nextArrow: '<button class="slide-arrow next-arrow"></button>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    infinite: true,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    infinite: true,
+                    dots: false,
+                },
+            },
+        ],
     });
 
     jQuery(".gallery-img-slider").slick({
@@ -70,15 +138,15 @@ jQuery(document).ready(function ($) {
         nextArrow: '<button class="slide-arrow next-arrow"></button>',
         responsive: [
             {
-                breakpoint:1200,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    arrows:false,
+                    arrows: false,
                     infinite: true,
-                    dots:false,
+                    dots: false,
                 },
-            },      
+            },
         ],
     });
 
@@ -117,11 +185,11 @@ jQuery(document).ready(function ($) {
 
     setTimeout(function () {
         jQuery("#sbi_images").slick({
-            slidesToShow: 6,
+            slidesToShow: 7,
             slidesToScroll: 1,
             swipeToSlide: true,
             draggable: true,
-            rows: 0,
+            rows: 1,
             swipeToSlide: true,
             dots: false,
             arrows: true,
@@ -134,9 +202,31 @@ jQuery(document).ready(function ($) {
                 '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
             responsive: [
                 {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false,
+                        arrows: false,
+                        rows: 1,
+                    },
+                },
+                {
                     breakpoint: 992,
                     settings: {
                         slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false,
+                        arrows: false,
+                        rows: 1,
+                    },
+                },
+                {
+                    breakpoint:401,
+                    settings: {
+                        slidesToShow: 1,
                         slidesToScroll: 1,
                         infinite: true,
                         dots: false,
@@ -280,3 +370,32 @@ jQuery(document).ready(function ($) {
         },
     });
 });
+
+
+// mobileOnlySlider(".service-slider", true, false, 991);
+
+// function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
+//   var slider = jQuery($slidername);
+//   var settings = {
+//     mobileFirst: true,
+//     dots: $dots,
+//     arrows: $arrows,
+//     responsive: [
+//       {
+//         breakpoint: $breakpoint,
+//         settings: "unslick"
+//       }
+//     ]
+//   };
+
+//   slider.slick(settings);
+
+//   jQuery(window).on("resize", function () {
+//     if ($(window).width() > $breakpoint) {
+//       return;
+//     }
+//     if (!slider.hasClass("slick-initialized")) {
+//       return slider.slick(settings);
+//     }
+//   });
+// } // Mobile Only Slider
