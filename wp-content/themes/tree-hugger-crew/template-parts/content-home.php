@@ -90,7 +90,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                             echo $home_about_content;
 
                             if ($home_about_page_url) { ?>
-                                <a href="<?php echo $home_about_page_url; ?>" title="About Us, Learn More">Learn More</a>
+                                <a href="<?php echo $home_about_page_url; ?>" title="About Us, Learn More" class="underline_link">Learn More</a>
                             <?php
                             } ?>
                         </div>
@@ -100,6 +100,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
             </div>
             <?php
             if (have_rows("home_about_points")) { ?>
+            <div class="about-boxes-row">
                 <div class="row">
                     <?php
                     while (have_rows("home_about_points")) {
@@ -124,6 +125,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                     <?php
                         }
                     } ?>
+                </div>
                 </div>
             <?php
             } ?>
@@ -206,7 +208,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                                         echo $home_our_services_content;
 
                                         if ($home_our_services_page_url) { ?>
-                                            <a href="<?php echo $home_our_services_page_url; ?>" title="<?php echo $home_our_services_title . ", Learn More"; ?>">Learn More</a>
+                                            <a href="<?php echo $home_our_services_page_url; ?>" title="<?php echo $home_our_services_title . ", Learn More"; ?>" class="underline_link underline_link_white">Learn More</a>
                                             <?php
                                         } ?>
                                     </div>
@@ -268,11 +270,11 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                             echo $home_tree_hugger_content;
 
                             if ($home_tree_hugger_page_url) { ?>
-                                <a href="<?php echo $home_tree_hugger_page_url; ?>" title="Tree Hugger II, Learn More">Learn More</a>
+                                <a href="<?php echo $home_tree_hugger_page_url; ?>" title="Tree Hugger II, Learn More" class="underline_link">Learn More</a>
                             <?php
                             }
                             if ($tree_hugger_our_inventory_url) { ?>
-                                <a href="<?php echo $tree_hugger_our_inventory_url['url']; ?>" title="<?php echo $tree_hugger_our_inventory_url['title']; ?>" target="_blank"><?php echo $tree_hugger_our_inventory_url['title']; ?></a>
+                                <a href="<?php echo $tree_hugger_our_inventory_url['url']; ?>" title="<?php echo $tree_hugger_our_inventory_url['title']; ?>" target="_blank" class="underline_link"><?php echo $tree_hugger_our_inventory_url['title']; ?></a>
                             <?php
                             } ?>
                         </div>
@@ -427,7 +429,9 @@ if (have_rows("health_care_details")) { ?>
                                         <div class="testimonial-content">
                                             <?php
                                             if ($testimonial_content) { ?>
-                                                <p><?php echo $testimonial_content; ?></p>
+                                                <div class="testimonial-text white-text" data-simplebar>
+                                                    <p><?php echo $testimonial_content; ?></p>
+                                                </div>
                                             <?php
                                             }
                                             if ($testimonial_title) { ?>
@@ -435,7 +439,7 @@ if (have_rows("health_care_details")) { ?>
                                             <?php
                                             }
                                             if ($testimonial_project) { ?>
-                                                <span><?php echo $testimonial_project; ?></span>
+                                                <h4><?php echo $testimonial_project; ?></span>
                                             <?php
                                             } ?>
                                         </div>
@@ -460,14 +464,16 @@ if ($home_gallery_images) { ?>
     <section class="gallery">
         <div class="sec-wp">
             <div class="container">
-                <div class="gallery-img-slider">
+                <div class="gallery-img-slider row">
                     <?php
                     $gallery_index = 1;
                     foreach ($home_gallery_images as $image) { ?>
+                    <div class="col-lg-6">
                         <div class="gallery-img">
                             <a href="<?php echo $image; ?>" data-fancybox="gallery-img" title="<?php echo "Gallery Image " . $gallery_index; ?>">
                                 <div class="back-img" style="background-image: url('<?php echo $image; ?>');"></div>
                             </a>
+                            </div>
                         </div>
                     <?php
                         $gallery_index++;
@@ -516,7 +522,7 @@ if ($home_gallery_images) { ?>
                                 echo $home_careers_content;
                             }
                             if ($home_careers_page_url) { ?>
-                                <a href="<?php echo $home_careers_page_url; ?>" title="Careers, Learn More">Learn More</a>
+                                <a href="<?php echo $home_careers_page_url; ?>" title="Careers, Learn More"  class="underline_link">Learn More</a>
                             <?php
                             } ?>
                         </div>
@@ -532,7 +538,7 @@ if ($home_gallery_images) { ?>
 if (have_rows("awards_certificatons", "option")) { ?>
     <!-- awards-start -->
     <section class="awards">
-        <!-- <div class="sec-wp"> -->
+        <div class="sec-wp">
         <div class="container">
             <div class="awards-img-slider">
                 <?php
@@ -556,7 +562,7 @@ if (have_rows("awards_certificatons", "option")) { ?>
                     $home_awards_index++;
                 } ?>
             </div>
-            <!-- </div> -->
+            </div>
         </div>
     </section>
     <!-- awards-end -->
@@ -588,9 +594,11 @@ if (have_rows("awards_certificatons", "option")) { ?>
             <?php
             } ?>
             <div class="row">
+                <div class="col-lg-12">
                 <?php echo
                 do_shortcode("[instagram-feed feed=1]");
                 ?>
+                </div>
             </div>
         </div>
     </div>

@@ -1,24 +1,25 @@
 <!-- about-start -->
 <section class="about-sec tree-removal">
-    <div class="sec-wp">     
+    <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 align-self-center">
+                <div class="col-lg-6 align-self-center order-2 order-lg-1">
                     <div class="about-us-content">
                         <h1 class="h4-title"><?php the_title(); ?></h1>
-                        <?php  
+                        <?php
                         //service banner content
                         the_content();
                         ?>
                     </div>
                 </div>
-                <?php  
+                <?php
                 $tree_services_banner_icon  = get_field("tree_services_banner_icon");
                 $tree_services_banner_image = get_field("tree_services_banner_image");
                 if($tree_services_banner_icon || $tree_services_banner_image){?>
-                    <div class="col-lg-6">
-                        <?php  
-                        if($tree_services_banner_icon){?>  
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="about-img-wp">
+                        <?php
+                        if($tree_services_banner_icon){?>
                             <div class="about-brand">
                                 <img src="<?php echo $tree_services_banner_icon['url']; ?>" alt="<?php echo get_the_title()." Icon"; ?>" width="<?php echo $tree_services_banner_icon['width']; ?>" height="<?php echo $tree_services_banner_icon['height']; ?>">
                             </div>
@@ -31,6 +32,7 @@
                             <?php
                         }?>
                     </div>
+                    </div>
                     <?php
                 }?>
             </div>
@@ -38,13 +40,13 @@
     </div>
 </section>
 <!-- About-end -->
-<?php 
+<?php
 if(have_rows("tree_services_how_we_content")){?>
     <!-- who-sec start-->
     <section class="who-sec tree-help">
         <div class="sec-wp">
             <div class="container">
-                <?php  
+                <?php
                 while(have_rows("tree_services_how_we_content")){  the_row();
 
                     $tree_services_main_heading = get_sub_field("tree_services_main_heading");
@@ -57,14 +59,14 @@ if(have_rows("tree_services_how_we_content")){?>
                     // title / content
                     if($select_content_fields === "title_content_rep"){?>
                         <div class="row">
-                            <?php  
+                            <?php
                             while(have_rows("tree_services_title_content")){ the_row();
                                 $tree_services_how_we_help_title   = get_sub_field("tree_services_how_we_help_title");
                                 $tree_services_how_we_help_content = get_sub_field("tree_services_how_we_help_content");
                                 if($tree_services_how_we_help_title || $tree_services_how_we_help_content){?>
                                     <div class="col-lg-6">
                                         <div class="who-title white-text">
-                                            <?php 
+                                            <?php
                                             if($tree_services_how_we_help_title){?>
                                                 <h3 class="h3-title"><?php echo $tree_services_how_we_help_title; ?></h3>
                                                 <?php
@@ -84,9 +86,9 @@ if(have_rows("tree_services_how_we_content")){?>
                         <div class="row">
                             <div class="col-lg-12">
                                 <ul class="tree-pruning-list">
-                                    <?php  
+                                    <?php
                                     while(have_rows("tree_services_list_of_points")){ the_row();
-                                        
+
                                         $tree_services_points_title = get_sub_field("tree_services_points_title");
                                         if($tree_services_points_title){?>
                                             <li><?php echo $tree_services_points_title; ?></li>
@@ -110,7 +112,7 @@ if(have_rows("tree_services_how_we_content")){?>
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <?php 
+                <?php
                 $tree_services_contact_image = get_field("tree_services_contact_image");
                 if($tree_services_contact_image){?>
                     <div class="col-lg-6">
@@ -128,17 +130,17 @@ if(have_rows("tree_services_how_we_content")){?>
                 if($tree_services_contact_title || $tree_services_contact_content || $tree_hugger_contact_free_quote_url || $tree_hugger_phone_number){?>
                     <div class="col-lg-6 align-self-center">
                         <div class="tree-content">
-                            <?php 
+                            <?php
                             if($tree_services_contact_title){?>
                                 <h2 class="h2-title"><?php echo $tree_services_contact_title; ?></h2>
                                 <?php
                             }
                             //contact content
                             echo $tree_services_contact_content;?>
-                            <?php  
+                            <?php
                             if($tree_hugger_contact_free_quote_url || $tree_hugger_phone_number){?>
                                 <div class="banner-btn">
-                                    <?php  
+                                    <?php
                                     if($tree_hugger_contact_free_quote_url){?>
                                         <a href="<?php echo $tree_hugger_contact_free_quote_url['url']; ?>" title="<?php echo $tree_hugger_contact_free_quote_url['title']; ?>" class="sec-btn"><?php echo $tree_hugger_contact_free_quote_url['title']; ?></a>
                                         <?php

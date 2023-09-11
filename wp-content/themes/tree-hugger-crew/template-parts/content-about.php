@@ -1,17 +1,17 @@
 <!-- about-start -->
 <section class="about-sec">
-    <div class="sec-wp">      
+    <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 align-self-center">
+                <div class="col-lg-6 align-self-center order-2 order-lg-1">
                     <div class="about-us-content">
-                        <h4 class="h4-title"><?php the_title(); ?></h4>
-                        <?php 
+                        <h1 class="h4-title"><?php the_title(); ?></h1>
+                        <?php
                         //about banner content
-                        the_content(); 
-                        
+                        the_content();
+
                         $tree_hugger_about_banner_slogan = get_field("tree_hugger_about_banner_slogan");
-                        if($tree_hugger_about_banner_slogan){?>                                
+                        if($tree_hugger_about_banner_slogan){?>
                             <h2 class="h2-title"><?php echo $tree_hugger_about_banner_slogan; ?></h2>
                             <?php
                         }?>
@@ -21,10 +21,11 @@
                 $tree_hugger_about_icon  = get_field("tree_hugger_about_icon");
                 $tree_hugger_about_image = get_field("tree_hugger_about_image");
                 if($tree_hugger_about_icon || $tree_hugger_about_image){?>
-                    <div class="col-lg-6">
-                        <?php 
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="about-img-wp">
+                        <?php
                         if($tree_hugger_about_icon){?>
-                            <div class="about-brand">   
+                            <div class="about-brand">
                                 <img src="<?php echo $tree_hugger_about_icon['url']; ?>" alt="Leaf Icon" width="<?php echo $tree_hugger_about_icon['width']; ?>" height="<?php echo $tree_hugger_about_icon['height']; ?>">
                             </div>
                             <?php
@@ -35,6 +36,7 @@
                             </div>
                             <?php
                         }?>
+                    </div>
                     </div>
                     <?php
                 }?>
@@ -47,22 +49,22 @@
 <!-- who-sec start-->
 <section class="who-sec">
     <div class="sec-wp">
-        <?php 
+        <?php
         $tree_hugger_who_we_title       = get_field("tree_hugger_who_we_title");
         $tree_hugger_who_we_content_rep = get_field("tree_hugger_who_we_content_rep");
         if($tree_hugger_who_we_title || $tree_hugger_who_we_content_rep){?>
             <div class="container">
-                <?php  
+                <?php
                 if($tree_hugger_who_we_title){?>
                     <h2 class="h2-title"><?php echo $tree_hugger_who_we_title; ?></h2>
                     <?php
                 }?>
                 <div class="row">
-                    <?php  
+                    <?php
                     foreach($tree_hugger_who_we_content_rep as $content){?>
                         <div class="col-lg-6">
                             <?php
-                            if($content['tree_hugger_who_we_content']){?> 
+                            if($content['tree_hugger_who_we_content']){?>
                                 <div class="who-title white-text">
                                     <?php echo $content['tree_hugger_who_we_content']; ?>
                                 </div>
@@ -88,7 +90,7 @@
             $tree_hugger_work_with_content = get_field("tree_hugger_work_with_content");
             if($tree_hugger_work_with_title || $tree_hugger_work_with_image || $tree_hugger_work_with_content){?>
                 <div class="row">
-                    <?php  
+                    <?php
                     if($tree_hugger_work_with_image){?>
                         <div class="col-lg-6">
                             <div class="about-us-img">
@@ -99,7 +101,7 @@
                     }?>
                     <div class="col-lg-6 align-self-center">
                         <div class="about-us-content">
-                            <?php  
+                            <?php
                             if($tree_hugger_work_with_title){?>
                                 <h2 class="h2-title"><?php echo $tree_hugger_work_with_title; ?></h2>
                                 <?php
@@ -120,13 +122,13 @@
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <?php 
+                <?php
                 $tree_hugger_meet_arborists_title = get_field("tree_hugger_meet_arborists_title");
                 $tree_hugger_meet_arborists_content = get_field("tree_hugger_meet_arborists_content");
                 if($tree_hugger_meet_arborists_title || $tree_hugger_meet_arborists_content ){?>
                     <div class="col-lg-4">
                         <div class="arborists-title">
-                            <?php  
+                            <?php
                             if($tree_hugger_meet_arborists_title){?>
                                 <h2 class="h2-title"><?php echo $tree_hugger_meet_arborists_title; ?></h2>
                                 <?php
@@ -142,7 +144,7 @@
                 if($arborists_query->have_posts()){?>
                     <div class="col-lg-8">
                         <div class="row arborists-slider">
-                            <?php 
+                            <?php
                             while($arborists_query->have_posts()){  $arborists_query->the_post();
                                 $arborist_name          = get_the_title();
                                 $arborist_exp           = get_field("arborist_experience");
@@ -151,7 +153,7 @@
                                 ?>
                                 <div class="col-lg-6">
                                     <div class="arborists-content">
-                                        <?php  
+                                        <?php
                                         if($arborist_profile_image){?>
                                             <div class="arborists-img">
                                                 <div class="back-img" style="background-image: url('<?php echo $arborist_profile_image; ?>');"></div>
@@ -169,16 +171,16 @@
                                         <a href="javascript:void(0);" title="<?php echo $arborist_name.", Learn More"; ?>" class="arborist-learn-more" data-bs-toggle="modal" data-bs-target="#arborist_modal" data-arborist-id="<?php echo get_the_ID(); ?>">Learn More</a>
                                         <div class="popup-content" style="display:none;">
                                             <div class="row">
-                                                <?php 
+                                                <?php
                                                 if($arborist_profile_image){?>
                                                     <div class="col-lg-4">
-                                                        <img src="<?php echo $arborist_profile_image; ?>" alt="<?php echo $arborist_name;  ?>">			
+                                                        <img src="<?php echo $arborist_profile_image; ?>" alt="<?php echo $arborist_name;  ?>">
                                                     </div>
                                                     <?php
                                                 }
                                                 if($arborist_name || $arborist_about ||  $arborist_exp){?>
                                                     <div class="col-lg-8">
-                                                        <?php  
+                                                        <?php
                                                         if($arborist_name){?>
                                                             <div class="arborist-name">
                                                                 <h3><?php echo $arborist_name;  ?></h3>
@@ -187,7 +189,7 @@
                                                         }
                                                         if($arborist_exp || $arborist_about){?>
                                                             <div class="arborist-about-exp">
-                                                                <?php 
+                                                                <?php
                                                                 if($arborist_exp){?>
                                                                     <p><strong><?php echo $arborist_exp; ?></strong></p>
                                                                     <?php
@@ -203,7 +205,7 @@
                                                             <div class="awards-certifications">
                                                                 <p><strong>Awards/Certifications : </strong></p>
                                                                     <ul>
-                                                                        <?php 
+                                                                        <?php
                                                                         while(have_rows("arborist_awards_certifications")){ the_row();?>
                                                                             <li><?php the_sub_field("arborist_awards_certifications_title"); ?></li>
                                                                             <?php

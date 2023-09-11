@@ -1,21 +1,21 @@
 <!-- about-start -->
 <section class="about-sec lot-clearing wood-slab">
-    <div class="sec-wp">     
+    <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <?php 
+                <?php
                 $wood_slabs_banner_title        = get_field("wood_slabs_banner_title");
                 $wood_slabs_banner_sub_title    = get_field("wood_slabs_banner_sub_title");
                 $tree_hugger_our_inventory_url  = get_field("tree_hugger_our_inventory_url","option");
                  if($wood_slabs_banner_title || $wood_slabs_banner_sub_title || $tree_hugger_our_inventory_url){?>
-                    <div class="col-lg-6 align-self-center">
+                    <div class="col-lg-6 align-self-center order-2 order-lg-1">
                         <div class="about-us-content">
-                            <?php  
+                            <?php
                             if($wood_slabs_banner_title){?>
                                 <h1 class="h4-title"><?php echo $wood_slabs_banner_title; ?></h1>
                                 <?php
                             }
-                            
+
                             if($wood_slabs_banner_sub_title){?>
                                 <h3 class="h3-title"><?php echo $wood_slabs_banner_sub_title; ?></h3>
                                 <?php
@@ -33,8 +33,9 @@
                 $wood_slabs_banner_image = get_field("wood_slabs_banner_image");
                 $wood_slabs_banner_icon = get_field("wood_slabs_banner_icon");
                 if($wood_slabs_banner_image || $wood_slabs_banner_icon){?>
-                    <div class="col-lg-6">
-                        <?php 
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="about-img-wp">
+                        <?php
                         if($wood_slabs_banner_icon){?>
                             <div class="about-brand">
                                 <img src="<?php echo $wood_slabs_banner_icon['url']; ?>" alt="<?php echo get_the_title()." Icon"; ?>" width="<?php echo $wood_slabs_banner_icon['width']; ?>" height="<?php echo $wood_slabs_banner_icon['height']; ?>">
@@ -48,6 +49,7 @@
                             <?php
                         }?>
                     </div>
+                    </div>
                     <?php
                 }?>
             </div>
@@ -59,25 +61,25 @@
 <!-- who-sec start-->
 <section class="who-sec approach-sec dry-sec">
     <div class="sec-wp">
-        <?php 
+        <?php
         $wood_slabs_why_idry_title       = get_field("wood_slabs_why_idry_title");
         $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_url","option");
         $wood_slabs_why_idry_content_rep = get_field("wood_slabs_why_idry_content_rep");
         if($wood_slabs_why_idry_title || $wood_slabs_why_idry_content_rep || $tree_hugger_contact_free_quote_url){?>
             <div class="container">
-                <?php  
+                <?php
                 if($wood_slabs_why_idry_title){?>
                     <h2 class="h2-title"><?php echo $wood_slabs_why_idry_title; ?></h2>
                     <?php
                 }?>
                 <div class="row">
-                    <?php  
+                    <?php
                     foreach($wood_slabs_why_idry_content_rep as $content){?>
                         <div class="col-lg-6">
                             <?php
-                            if($content['wood_slabs_why_idry_content']){?> 
+                            if($content['wood_slabs_why_idry_content']){?>
                                 <div class="who-title white-text">
-                                    <?php 
+                                    <?php
                                     echo $content['wood_slabs_why_idry_content'];
                                     ?>
                                 </div>
@@ -86,12 +88,7 @@
                         </div>
                        <?php
                     }
-                    if($tree_hugger_contact_free_quote_url){?>
-                        <div class="contact-link">
-                            <a href="<?php echo $tree_hugger_contact_free_quote_url['url']; ?>" title="Contact Us">Contact Us</a>
-                        </div>
-                        <?php
-                    }?>
+                    ?>
                 </div>
             </div>
             <?php
@@ -124,5 +121,5 @@ if ($wood_slabs_gallery_images) { ?>
         </div>
     </section>
     <!-- gallery-end -->
-    <?php 
+    <?php
 }?>

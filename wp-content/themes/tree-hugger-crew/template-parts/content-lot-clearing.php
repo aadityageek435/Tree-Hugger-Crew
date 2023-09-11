@@ -1,16 +1,16 @@
 <!-- about-start -->
 <section class="about-sec lot-clearing">
-    <div class="sec-wp">     
+    <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <?php 
+                <?php
                 $lot_clearing_banner_title       = get_field("lot_clearing_banner_title");
                 $lot_clearing_importance_heading = get_field("lot_clearing_importance_heading");
                 $lot_clearing_importance_points  = get_field("lot_clearing_importance_points");
                 if($lot_clearing_banner_title || $lot_clearing_importance_heading || $lot_clearing_importance_points){?>
-                    <div class="col-lg-6 align-self-center">
+                    <div class="col-lg-6 align-self-center order-2 order-lg-1">
                         <div class="about-us-content">
-                            <?php  
+                            <?php
                             if($lot_clearing_banner_title){?>
                                 <h1 class="h4-title"><?php echo $lot_clearing_banner_title; ?></h1>
                                 <?php
@@ -24,13 +24,13 @@
                             }
                             if($lot_clearing_importance_points){?>
                                 <ul class="lot-list">
-                                    <?php 
-                                    foreach($lot_clearing_importance_points as $imp_point){ 
+                                    <?php
+                                    foreach($lot_clearing_importance_points as $imp_point){
                                         $importance_point_icon = $imp_point['importance_point_icon'];
-                                        $importance_point_title = $imp_point['importance_point_title']; 
+                                        $importance_point_title = $imp_point['importance_point_title'];
                                         if($importance_point_icon || $importance_point_title){ ?>
                                             <li>
-                                                <?php  
+                                                <?php
                                                 if($importance_point_icon){?>
                                                     <span>
                                                         <img src="<?php echo $importance_point_icon; ?>" alt="<?php echo $importance_point_title; ?>" width="46" height="46">
@@ -54,8 +54,9 @@
                 $lot_clearing_banner_image = get_field("lot_clearing_banner_image");
                 $lot_clearing_banner_icon = get_field("lot_clearing_banner_icon");
                 if($lot_clearing_banner_image || $lot_clearing_banner_icon){?>
-                    <div class="col-lg-6">
-                        <?php 
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="about-img-wp">
+                        <?php
                         if($lot_clearing_banner_icon){?>
                             <div class="about-brand">
                                 <img src="<?php echo $lot_clearing_banner_icon['url']; ?>" alt="<?php echo get_the_title()." Icon"; ?>" width="<?php echo $lot_clearing_banner_icon['width']; ?>" height="<?php echo $lot_clearing_banner_icon['height']; ?>">
@@ -69,6 +70,7 @@
                             <?php
                         }?>
                     </div>
+                    </div>
                     <?php
                 }?>
             </div>
@@ -80,22 +82,22 @@
 <!-- who-sec start-->
 <section class="who-sec approach-sec">
     <div class="sec-wp">
-        <?php 
+        <?php
         $lot_clearing_our_approach_title       = get_field("lot_clearing_our_approach_title");
         $lot_clearing_our_approach_content_rep = get_field("lot_clearing_our_approach_content_rep");
         if($lot_clearing_our_approach_title || $lot_clearing_our_approach_content_rep){?>
             <div class="container">
-                <?php  
+                <?php
                 if($lot_clearing_our_approach_title){?>
                     <h2 class="h2-title"><?php echo $lot_clearing_our_approach_title; ?></h2>
                     <?php
                 }?>
                 <div class="row">
-                    <?php  
+                    <?php
                     foreach($lot_clearing_our_approach_content_rep as $content){?>
                         <div class="col-lg-6">
                             <?php
-                            if($content['tree_hugger_our_approach_main_content']){?> 
+                            if($content['tree_hugger_our_approach_main_content']){?>
                                 <div class="who-title white-text">
                                     <?php echo $content['tree_hugger_our_approach_main_content']; ?>
                                 </div>
@@ -117,7 +119,7 @@
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <?php 
+                <?php
                 $lot_clearing_contact_image = get_field("lot_clearing_contact_image");
                 if($lot_clearing_contact_image){?>
                     <div class="col-lg-6">
@@ -135,17 +137,17 @@
                 if($lot_clearing_contact_title || $lot_clearing_contact_content || $tree_hugger_contact_free_quote_url || $tree_hugger_phone_number){?>
                     <div class="col-lg-6 align-self-center">
                         <div class="tree-content">
-                            <?php 
+                            <?php
                             if($lot_clearing_contact_title){?>
                                 <h2 class="h2-title"><?php echo $lot_clearing_contact_title; ?></h2>
                                 <?php
                             }
                             //contact content
                             echo $lot_clearing_contact_content;?>
-                            <?php  
+                            <?php
                             if($tree_hugger_contact_free_quote_url || $tree_hugger_phone_number){?>
                                 <div class="banner-btn">
-                                    <?php  
+                                    <?php
                                     if($tree_hugger_contact_free_quote_url){?>
                                         <a href="<?php echo $tree_hugger_contact_free_quote_url['url']; ?>" title="<?php echo $tree_hugger_contact_free_quote_url['title']; ?>" class="sec-btn"><?php echo $tree_hugger_contact_free_quote_url['title']; ?></a>
                                         <?php

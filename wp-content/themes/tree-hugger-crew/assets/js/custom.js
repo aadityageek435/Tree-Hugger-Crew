@@ -11,8 +11,7 @@ jQuery(document).ready(function ($) {
         scrollInput: false,
     });
 
-
-    if(window_size <= 992){
+    if (window_size <= 992) {
         jQuery(".service-slider").slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -36,43 +35,43 @@ jQuery(document).ready(function ($) {
                 },
             ],
         });
-    }else{
-         //Home Page - Service Tabbing
-      jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
-      jQuery(".main-service .service-content").hide();
-      jQuery(".main-service .service-content:eq(0)").show();
+    } else {
+        //Home Page - Service Tabbing
+        jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
+        jQuery(".main-service .service-content").hide();
+        jQuery(".main-service .service-content:eq(0)").show();
 
-      // jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
-      // jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
+        // jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
+        // jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
 
-      jQuery(".service-tab li").on("click", function () {
-          // Check if the clicked tab is already active
-          if (!jQuery(this).hasClass("active-gallery-tab")) {
-              var index = jQuery(this).attr("data-index");
+        jQuery(".service-tab li").on("click", function () {
+            // Check if the clicked tab is already active
+            if (!jQuery(this).hasClass("active-gallery-tab")) {
+                var index = jQuery(this).attr("data-index");
 
-              jQuery(".service-tab li").removeClass("active-gallery-tab");
-              jQuery(this).addClass("active-gallery-tab");
+                jQuery(".service-tab li").removeClass("active-gallery-tab");
+                jQuery(this).addClass("active-gallery-tab");
 
-              jQuery(".service-loader").css("display", "flex");
+                jQuery(".service-loader").css("display", "flex");
 
-              if (currentRequest !== null) {
-                  currentRequest.abort();
-              }
-              currentRequest = $.ajax({
-                  type: "POST",
-                  url: custom_call.ajaxurl,
-                  data: {
-                      action: "service_tabbing",
-                      index: index,
-                  },
-                  dataType: "text",
-                  success: function (data) {
-                      jQuery("#service_ajax_response").html(data);
-                      jQuery(".service-loader").css("display", "none");
-                  },
-              });
-          }
-      });
+                if (currentRequest !== null) {
+                    currentRequest.abort();
+                }
+                currentRequest = $.ajax({
+                    type: "POST",
+                    url: custom_call.ajaxurl,
+                    data: {
+                        action: "service_tabbing",
+                        index: index,
+                    },
+                    dataType: "text",
+                    success: function (data) {
+                        jQuery("#service_ajax_response").html(data);
+                        jQuery(".service-loader").css("display", "none");
+                    },
+                });
+            }
+        });
     }
 
     jQuery(".testimonial-slider").slick({
@@ -82,7 +81,7 @@ jQuery(document).ready(function ($) {
         rows: 0,
         dots: false,
         arrows: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
         nextArrow: '<button class="slide-arrow next-arrow"></button>',
@@ -130,8 +129,7 @@ jQuery(document).ready(function ($) {
         infinite: true,
         dots: false,
         arrows: true,
-        variableWidth: true,
-        autoplay: true,
+        autoplay: false,
         rows: 0,
         autoplaySpeed: 2000,
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
@@ -142,7 +140,7 @@ jQuery(document).ready(function ($) {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    arrows: false,
+                    arrows: true,
                     infinite: true,
                     dots: false,
                 },
@@ -166,9 +164,8 @@ jQuery(document).ready(function ($) {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                     infinite: true,
-                    dots: true,
                 },
             },
             {
@@ -177,7 +174,6 @@ jQuery(document).ready(function ($) {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots: true,
                 },
             },
         ],
@@ -185,21 +181,19 @@ jQuery(document).ready(function ($) {
 
     setTimeout(function () {
         jQuery("#sbi_images").slick({
-            slidesToShow: 7,
+            slidesToShow: 6,
             slidesToScroll: 1,
             swipeToSlide: true,
             draggable: true,
-            rows: 1,
+            rows: 0,
             swipeToSlide: true,
             dots: false,
             arrows: true,
             autoplay: true,
             autoplaySpeed: 2000,
             infinite: true,
-            prevArrow:
-                '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-            nextArrow:
-                '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+            prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
             responsive: [
                 {
                     breakpoint: 1200,
@@ -209,7 +203,6 @@ jQuery(document).ready(function ($) {
                         infinite: true,
                         dots: false,
                         arrows: false,
-                        rows: 1,
                     },
                 },
                 {
@@ -220,18 +213,16 @@ jQuery(document).ready(function ($) {
                         infinite: true,
                         dots: false,
                         arrows: false,
-                        rows: 1,
                     },
                 },
                 {
-                    breakpoint:401,
+                    breakpoint: 401,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         infinite: true,
                         dots: false,
                         arrows: false,
-                        rows: 1,
                     },
                 },
             ],
@@ -257,50 +248,30 @@ jQuery(document).ready(function ($) {
         });
 
     /* DropDown mobile menu */
-    jQuery("#primary-menu .menu-item-has-children a")
-        .first()
-        .attr("href", "javascript:void(0);");
+    jQuery("#primary-menu .menu-item-has-children a").first().attr("href", "javascript:void(0);");
 
-    jQuery("body").on(
-        "click",
-        "#primary-menu .menu-item-has-children a:first",
-        function () {
-            if (jQuery(this).parent().hasClass("active-sub-menu")) {
-                jQuery(this).parent().removeClass("active-sub-menu");
-                jQuery(this).parent().find(".sub-menu").css("display", "none");
-            } else {
-                jQuery(".menu-item-has-children").removeClass(
-                    "active-sub-menu"
-                );
-                jQuery(".sub-menu").css("display", "none");
-                jQuery(this).parent().addClass("active-sub-menu");
-                jQuery(this).parent().find(".sub-menu").css("display", "block");
-            }
+    jQuery("body").on("click", "#primary-menu .menu-item-has-children a:first", function () {
+        if (jQuery(this).parent().hasClass("active-sub-menu")) {
+            jQuery(this).parent().removeClass("active-sub-menu");
+            jQuery(this).parent().find(".sub-menu").css("display", "none");
+        } else {
+            jQuery(".menu-item-has-children").removeClass("active-sub-menu");
+            jQuery(".sub-menu").css("display", "none");
+            jQuery(this).parent().addClass("active-sub-menu");
+            jQuery(this).parent().find(".sub-menu").css("display", "block");
         }
-    );
+    });
 
     // Get File name in contact forms Js
     jQuery('.wpcf7-form input[name="careers-documents"]').change(function (e) {
         var resume_file = e.target.files[0];
 
         if (resume_file !== undefined) {
-            var file_extension = resume_file.name
-                .split(".")
-                .pop()
-                .toLowerCase();
+            var file_extension = resume_file.name.split(".").pop().toLowerCase();
             var file_size = resume_file.size;
             var actual_filesize = Math.round(file_size / 1024);
 
-            if (
-                $.inArray(file_extension, [
-                    "doc",
-                    "docx",
-                    "png",
-                    "jpg",
-                    "jpeg",
-                    "pdf",
-                ]) === -1
-            ) {
+            if ($.inArray(file_extension, ["doc", "docx", "png", "jpg", "jpeg", "pdf"]) === -1) {
                 jQuery(".input-file-text").text("");
             } else if (actual_filesize >= 5000) {
                 jQuery(".input-file-text").text("");
@@ -341,10 +312,7 @@ jQuery(document).ready(function ($) {
                     jQuery(this)
                         .find("a")
                         .first()
-                        .attr(
-                            "href",
-                            window.location.href.replace("#", "") + href
-                        );
+                        .attr("href", window.location.href.replace("#", "") + href);
                 } else {
                     jQuery(this)
                         .find("a")
@@ -370,7 +338,6 @@ jQuery(document).ready(function ($) {
         },
     });
 });
-
 
 // mobileOnlySlider(".service-slider", true, false, 991);
 

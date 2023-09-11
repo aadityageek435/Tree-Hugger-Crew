@@ -49,7 +49,7 @@
 											<?php
 											}
 											if ($tree_hugger_email) { ?>
-												<li>
+												<li class="email">
 													<a href="mailto:<?php echo $tree_hugger_email; ?>" title="Mail at <?php echo $tree_hugger_email; ?>"><?php echo $tree_hugger_email; ?></a>
 												</li>
 											<?php
@@ -110,7 +110,7 @@
 					</div>
 					<div class="col-lg-6">
 						<div class="footer-form">
-							<h3>Contact Us</h3>
+							<h3 class="for-mob">Contact Us</h3>
 							<?php echo
 							do_shortcode("[contact-form-7 id='53bcbd7' title='Footer Form']");
 							?>
@@ -150,13 +150,13 @@
 									<?php
 								} 	?>
 							</div>
-							<?php  
+							<?php
 							$tree_hugger_instagram_url = get_field("tree_hugger_instagram_url", "option");
 							$tree_hugger_facebook_url  = get_field("tree_hugger_facebook_url", "option");
 							if($tree_hugger_instagram_url || $tree_hugger_facebook_url){?>
 								<div class="site-contact for-mob">
 									<ul>
-										<?php  
+										<?php
 										if($tree_hugger_facebook_url){?>
 											<li>
 												<a class="contact-icon" href="<?php echo $tree_hugger_facebook_url; ?>" title="Follow on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>

@@ -884,11 +884,7 @@ object {
 @font-face {
     font-family: "Roboto";
     src: url("assets/fonts/Roboto-Italic.eot");
-    src: url("assets/fonts/Roboto-Italic.eot?#iefix")
-            format("embedded-opentype"),
-        url("assets/fonts/Roboto-Italic.woff2") format("woff2"),
-        url("assets/fonts/Roboto-Italic.woff") format("woff"),
-        url("assets/fonts/Roboto-Italic.ttf") format("truetype");
+    src: url("assets/fonts/Roboto-Italic.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Roboto-Italic.woff2") format("woff2"), url("assets/fonts/Roboto-Italic.woff") format("woff"), url("assets/fonts/Roboto-Italic.ttf") format("truetype");
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -897,10 +893,7 @@ object {
 @font-face {
     font-family: "Roboto";
     src: url("assets/fonts/Roboto-Bold.eot");
-    src: url("assets/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
-        url("assets/fonts/Roboto-Bold.woff2") format("woff2"),
-        url("assets/fonts/Roboto-Bold.woff") format("woff"),
-        url("assets/fonts/Roboto-Bold.ttf") format("truetype");
+    src: url("assets/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Roboto-Bold.woff2") format("woff2"), url("assets/fonts/Roboto-Bold.woff") format("woff"), url("assets/fonts/Roboto-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -909,11 +902,7 @@ object {
 @font-face {
     font-family: "Roboto";
     src: url("assets/fonts/Roboto-Regular.eot");
-    src: url("assets/fonts/Roboto-Regular.eot?#iefix")
-            format("embedded-opentype"),
-        url("assets/fonts/Roboto-Regular.woff2") format("woff2"),
-        url("assets/fonts/Roboto-Regular.woff") format("woff"),
-        url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+    src: url("assets/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Roboto-Regular.woff2") format("woff2"), url("assets/fonts/Roboto-Regular.woff") format("woff"), url("assets/fonts/Roboto-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -922,11 +911,7 @@ object {
 @font-face {
     font-family: "Lora";
     src: url("assets/fonts/Lora-SemiBoldItalic.eot");
-    src: url("assets/fonts/Lora-SemiBoldItalic.eot?#iefix")
-            format("embedded-opentype"),
-        url("assets/fonts/Lora-SemiBoldItalic.woff2") format("woff2"),
-        url("assets/fonts/Lora-SemiBoldItalic.woff") format("woff"),
-        url("assets/fonts/Lora-SemiBoldItalic.ttf") format("truetype");
+    src: url("assets/fonts/Lora-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Lora-SemiBoldItalic.woff2") format("woff2"), url("assets/fonts/Lora-SemiBoldItalic.woff") format("woff"), url("assets/fonts/Lora-SemiBoldItalic.ttf") format("truetype");
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -935,10 +920,7 @@ object {
 @font-face {
     font-family: "Lora";
     src: url("assets/fonts/Lora-Bold.eot");
-    src: url("assets/fonts/Lora-Bold.eot?#iefix") format("embedded-opentype"),
-        url("assets/fonts/Lora-Bold.woff2") format("woff2"),
-        url("assets/fonts/Lora-Bold.woff") format("woff"),
-        url("assets/fonts/Lora-Bold.ttf") format("truetype");
+    src: url("assets/fonts/Lora-Bold.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Lora-Bold.woff2") format("woff2"), url("assets/fonts/Lora-Bold.woff") format("woff"), url("assets/fonts/Lora-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -947,11 +929,7 @@ object {
 @font-face {
     font-family: "Lora";
     src: url("assets/fonts/Lora-SemiBold.eot");
-    src: url("assets/fonts/Lora-SemiBold.eot?#iefix")
-            format("embedded-opentype"),
-        url("assets/fonts/Lora-SemiBold.woff2") format("woff2"),
-        url("assets/fonts/Lora-SemiBold.woff") format("woff"),
-        url("assets/fonts/Lora-SemiBold.ttf") format("truetype");
+    src: url("assets/fonts/Lora-SemiBold.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Lora-SemiBold.woff2") format("woff2"), url("assets/fonts/Lora-SemiBold.woff") format("woff"), url("assets/fonts/Lora-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -960,10 +938,7 @@ object {
 @font-face {
     font-family: "Lora";
     src: url("assets/fonts/Lora-Medium.eot");
-    src: url("assets/fonts/Lora-Medium.eot?#iefix") format("embedded-opentype"),
-        url("assets/fonts/Lora-Medium.woff2") format("woff2"),
-        url("assets/fonts/Lora-Medium.woff") format("woff"),
-        url("assets/fonts/Lora-Medium.ttf") format("truetype");
+    src: url("assets/fonts/Lora-Medium.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Lora-Medium.woff2") format("woff2"), url("assets/fonts/Lora-Medium.woff") format("woff"), url("assets/fonts/Lora-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -1005,7 +980,7 @@ span.wpcf7-not-valid-tip {
 
 .wpcf7-form-control-wrap {
     display: block;
-    margin-bottom: 27px;
+    margin-bottom: 30px;
     position: relative;
 }
 
@@ -1094,9 +1069,7 @@ select::-ms-expand {
 
 .form-input,
 .input-text,
-.select2-container--default
-    .select2-selection--single
-    .select2-selection__rendered,
+.select2-container--default .select2-selection--single .select2-selection__rendered,
 select {
     width: 100%;
     height: 37px;
@@ -1123,7 +1096,6 @@ select.form-input {
 .form-input.wpcf7-textarea {
     height: 101px;
     resize: none;
-    padding: 15px 0;
     display: block;
 }
 
@@ -1377,11 +1349,7 @@ input[type="number"]::-webkit-outer-spin-button {
     --black-color: #000000;
     --red-color: #ff0000;
     --input-color: #555555;
-    --gradient-color: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 1) 100%
-    );
+    --gradient-color: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
     --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
     --body-font: "Roboto";
     --title-font: "Lora";
@@ -1736,6 +1704,32 @@ a:hover {
     padding-right: calc(var(--gutter) / 2);
     padding-left: calc(var(--gutter) / 2);
 }
+
+.underline_link {
+    position: relative;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: 0.09px;
+    display: inline-block;
+    padding-bottom: 6px;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    transition: var(--transition);
+    margin-top: 13px;
+}
+
+.underline_link:hover {
+    color: var(--secondary-color);
+}
+
+.underline_link.underline_link_white {
+    color: var(--white-color);
+}
+
+.underline_link.underline_link_white:hover {
+    color: var(--secondary-color);
+}
 /*==========Common CSS End==========*/
 
 /*========== Modal Popup CSS Start ==========*/
@@ -1871,11 +1865,6 @@ button.close:hover {
 
 .slick-initialized .slick-slide {
     outline: none !important;
-}
-
-#sb_instagram #sbi_images .sbi_item.sbi_transition {
-    opacity: 1 !important;
-    max-height: unset !important;
 }
 
 .slick-arrow {
@@ -2034,10 +2023,7 @@ button.close:hover {
 
 .white-form .form-input,
 .white-form .input-text,
-.white-form
-    .select2-container--default
-    .select2-selection--single
-    .select2-selection__rendered,
+.white-form .select2-container--default .select2-selection--single .select2-selection__rendered,
 .white-form select {
     background: transparent;
     border-color: var(--white-color);
@@ -2195,7 +2181,8 @@ button.close:hover {
     color: var(--secondary-color);
 }
 
-.site-contact .contact-icon:hover,.footer-form .site-contact .contact-icon:hover {
+.site-contact .contact-icon:hover,
+.footer-form .site-contact .contact-icon:hover {
     background-color: var(--secondary-color);
 }
 
@@ -2220,10 +2207,6 @@ button.close:hover {
 
 #page.site {
     padding-left: var(--header-width);
-}
-
-a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
-    margin-right: 30px;
 }
 
 .sec-wp {
@@ -2255,12 +2238,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(
-        126deg,
-        rgba(0, 0, 0, 1),
-        rgba(11, 11, 11, 1),
-        rgba(255, 255, 255, 1)
-    );
+    background: linear-gradient(126deg, rgba(0, 0, 0, 1), rgba(11, 11, 11, 1), rgba(255, 255, 255, 1));
     opacity: 0.65;
     mix-blend-mode: multiply;
 }
@@ -2292,7 +2270,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 /*==========about CSS start==========*/
 .sec-about-us {
     position: relative;
-    padding: 180px 0 254px;
+    padding: 180px 0;
 }
 
 .sec-about-us::before {
@@ -2314,14 +2292,14 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 }
 
 .sec-about-us .about-brand {
-    width: 170px;
-    height: 170px;
+    --size: 170px;
 }
 
 .about-brand {
+    --size: 230px;
     border: 5px solid var(--secondary-color);
-    width: 230px;
-    height: 230px;
+    width: var(--size);
+    height: var(--size);
     border-radius: 50%;
     background-color: var(--white-color);
     position: absolute;
@@ -2365,21 +2343,12 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 29px;
 }
 
-.about-us-content a,
-.position-content a {
-    position: relative;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
-    letter-spacing: 0.09px;
-    display: inline-block;
-    padding-bottom: 6px;
-    border-bottom: 3px solid var(--secondary-color);
+.about-boxes-row {
+    padding-top: 120px;
 }
 
 .about-box {
     position: relative;
-    margin-top: 120px;
     height: 212px;
     border-radius: 20px;
     background-color: var(--light-yellow);
@@ -2410,16 +2379,16 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .main-service {
     position: relative;
     background-color: var(--primary-color);
-    padding: 100px 0 148px;
+    padding: 105px 0 145px;
     --mb: 75px;
-    margin-bottom: var(--mb);
+    margin-block: var(--mb);
 }
 
 .main-service::before {
     content: "";
     position: absolute;
     width: 100%;
-    height: 75px;
+    height: var(--mb);
     top: calc(var(--mb) * -1);
     left: 0;
     -webkit-mask-image: url("assets/images/service-path.svg");
@@ -2433,7 +2402,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     content: "";
     position: absolute;
     width: 100%;
-    height: 75px;
+    height: var(--mb);
     bottom: calc(var(--mb) * -1);
     left: 0;
     -webkit-mask-image: url("assets/images/service-bottom-path.svg");
@@ -2446,6 +2415,10 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .service-title .h2-title {
     margin-bottom: 8px;
     color: var(--secondary-color);
+}
+
+.service-title .h3-title {
+    font-weight: 500;
 }
 
 .service-tab {
@@ -2463,7 +2436,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 }
 
 .service-tab .active-gallery-tab {
-    color: var(--secondary-color);
+    font-weight: 700;
 }
 
 .service-tab li:last-child {
@@ -2498,29 +2471,13 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 78px;
 }
 
-.service-content a {
-    position: relative;
-    color: var(--white-color);
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
-    letter-spacing: 0.09px;
-    display: inline-block;
-    padding-bottom: 6px;
-    border-bottom: 3px solid var(--secondary-color);
-}
-
 .service-content .h3-title {
     margin-bottom: 15px;
 }
 
-.service-content a:hover {
-    color: var(--black-color);
-}
-
 .service-content p {
     color: var(--white-color);
-    margin-bottom: 30px;
+    margin-bottom: 21px;
 }
 
 .service-loader {
@@ -2559,7 +2516,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 /*==========store CSS start==========*/
 .store {
-    padding: 256px 0 275px;
+    padding: 180px 0 200px;
 }
 
 .store .about-brand {
@@ -2582,11 +2539,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 27px;
 }
 
-.about-us-content.store-content p {
-    margin-bottom: 31px;
-}
-
-.about-us-content.store-content a {
+.about-us-content.store-content .underline_link {
     margin-right: 35px;
 }
 /*==========store CSS End==========*/
@@ -2595,9 +2548,9 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .health {
     position: relative;
     background-color: var(--light-yellow);
-    padding: 145px 0;
+    padding: 145px 0 165px;
     --mb: 75px;
-    margin-bottom: var(--mb);
+    margin-block: var(--mb);
 }
 
 .health::before {
@@ -2647,7 +2600,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .health-list li {
     position: relative;
-    padding-left: 48px;
+    padding-left: 50px;
     font-size: 18px;
     line-height: 30px;
     color: var(--dark-color);
@@ -2657,14 +2610,14 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .health-list li::before {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 30px;
     height: 32px;
     background-image: url("assets/images/insect.svg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    top: 0;
-    left: 0;
+    background-size: 100%;
 }
 
 .health-img .img-box {
@@ -2708,6 +2661,11 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     position: absolute;
     top: -60px;
     right: -30px;
+    width: 110px;
+}
+
+.testimonial-box .testi-brand img {
+    width: 100%;
 }
 
 .testimonial-title .h2-title {
@@ -2753,12 +2711,13 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     background-size: cover;
 }
 
-.testimonial-content p {
-    color: var(--white-color);
-    margin-bottom: 20px;
+.testimonial-content .testimonial-text {
+    margin-bottom: 21px;
+    height: 150px;
 }
 
-.testimonial-content h3 {
+.testimonial-content h3,
+.testimonial-content h4 {
     font-size: 16px;
     line-height: 24px;
     font-family: var(--body-font);
@@ -2767,10 +2726,9 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 0px;
 }
 
-.testimonial-content span {
-    font-size: 16px;
-    line-height: 24px;
-    color: var(--white-color);
+.testimonial-content h4 {
+    font-weight: 400;
+    font-style: italic;
 }
 
 .slick-arrow {
@@ -2810,7 +2768,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 /*==========instagram CSS start==========*/
 .instagram {
-    padding: 182px 0 92px;
+    padding: 180px 0 104px;
 }
 
 .ig-title ul {
@@ -2842,38 +2800,96 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     width: 100%;
     height: 170px;
 }
+
+.instagram #sb_instagram {
+    padding-bottom: 0 !important;
+}
+
+#sb_instagram #sbi_images .sbi_item.sbi_transition {
+    opacity: 1 !important;
+    max-height: unset !important;
+}
+
+.instagram #sbi_images {
+    padding: 0 !important;
+}
+
+.instagram #sb_instagram .slick-list {
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+}
+
+.instagram #sb_instagram #sbi_images .sbi_item.slick-slide {
+    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+}
+
 /*==========instagram CSS end==========*/
 
 /*=========gallery CSS start==========*/
 .gallery-img .back-img {
-    height: 560px;
     width: 100%;
+    aspect-ratio: 1/0.728;
     border-radius: 20px;
 }
 
-.gallery .slick-list {
-    width: 83.3vw;
+.gallery-img-slider {
+    --gutter: 0px;
 }
 
-.gallery .slick-slide {
+.gallery-img-slider .slick-list {
+    border-radius: 20px 0 0 20px;
+    width: calc(100% + 146px);
+    max-width: unset;
+}
+
+.gallery-img-slider .slick-list .slick-slide {
     margin-right: 30px;
-    width: 770px;
 }
 
-.gallery .slick-arrow {
-    left: 66px;
+.gallery-img-slider .slick-list:before,
+.gallery-img-slider .slick-list:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 135px;
+    height: 100%;
+    display: block;
+    z-index: 2;
+    border-radius: 20px 0 0 20px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    mix-blend-mode: multiply;
+    pointer-events: none;
 }
 
-.gallery .slide-arrow.next-arrow.slick-arrow {
-    right: -231px;
+.gallery-img-slider .slick-list:after {
+    left: auto;
+    right: 125px;
+    border-radius: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.gallery-img-slider .slick-arrow {
+    bottom: auto;
+    transform: translate(0, -50%);
+    top: 50%;
+    width: 70px;
+    height: 32px;
+    background: transparent;
+    left: 30px;
+}
+
+.gallery-img-slider .slide-arrow.next-arrow.slick-arrow {
+    right: 15px;
     left: auto;
 }
 
-.gallery .slick-arrow::before {
+.gallery-img-slider .slick-arrow::before {
     content: "";
     position: absolute;
-    width: 70px;
-    height: 32px;
+    width: 100%;
+    height: 100%;
     -webkit-mask-image: url("assets/images/testi-arrow.svg");
     -webkit-mask-size: 100%;
     --webkit-mask-position: center;
@@ -2881,8 +2897,8 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     background-color: var(--white-color);
 }
 
-.gallery .next-arrow.slick-arrow::before {
-    transform: rotate(180deg);
+.gallery-img-slider .next-arrow.slick-arrow::before {
+    transform: scale(-1, 1);
 }
 /*=========gallery CSS end==========*/
 
@@ -2900,36 +2916,52 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 25px;
 }
 
-.career .about-us-content p {
-    margin-bottom: 31px;
-}
 /*=========career CSS end==========*/
 
 /*=========awards CSS start==========*/
 .awards {
     background-color: var(--light-yellow);
-    padding: 120px;
+    padding-block: 120px;
+}
+
+.awards-img-slider .slick-track {
+    display: flex;
+    gap: 60px;
+}
+
+.awards-img-slider .slick-track:before,
+.awards-img-slider .slick-track:after {
+    content: none;
+}
+
+.awards-img-slider .slick-slide {
+    height: auto;
+    align-self: center;
 }
 
 .awards-img {
     display: flex;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.awards .slick-slide{
-    margin-right: 60px;
+.awards-img a {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
 }
+
+.awards-img a img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 /*=========awards CSS end==========*/
 
 /*==========Footer CSS Start==========*/
-.footer-form h3{
-    font-size: 20px;
-    line-height: 30px;
-    color: var(--white-color);
-    margin-bottom: 23px;
-}
 
 .site-footer {
-    padding: 193px 0 140px;
+    padding: 180px 0 140px;
     position: relative;
     background-color: var(--light-green);
     --mb: 75px;
@@ -2970,18 +3002,24 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .footer-page a {
     line-height: 24px;
     text-decoration: underline !important;
+    display: inline-block;
 }
 
 .contact-info {
     margin-bottom: 27px;
 }
 
-.contact-info a {
-    font-family: var(--title-font);
+.contact-info li:not(:last-child) {
+    margin-bottom: 4px;
 }
 
-.contact-info .phone {
-    margin-bottom: 4px;
+.contact-info li a {
+    font-family: var(--title-font);
+    display: inline-block;
+}
+
+.contact-info li.email a {
+    font-family: var(--body-font);
 }
 
 .contact-info .callus {
@@ -2990,12 +3028,19 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     line-height: 30px;
 }
 
-.footer-add {
-    padding-left: 28px;
+.footer-form {
+    padding-top: 210px;
 }
 
-.footer-form {
-    padding-top: 206px;
+.footer-form h3 {
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--white-color);
+    margin-bottom: 23px;
+}
+
+.footer-add {
+    padding-left: 28px;
 }
 
 .footer-hour {
@@ -3022,6 +3067,11 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     color: var(--white-color);
     padding-bottom: 5px;
     transition: var(--transition);
+}
+
+.footer-loaction li a {
+    display: inline-block;
+    padding: 0;
 }
 
 .footer-loaction li a:hover {
@@ -3141,6 +3191,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     align-items: center;
     justify-content: center;
     padding: 41px 0;
+    text-align: center;
 }
 
 .about-sec .about-us-content .h2-title::before,
@@ -3154,7 +3205,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     background-image: url("assets/images/about-sec-shape.svg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
 
 .about-sec .about-us-content .h2-title::after {
@@ -3217,7 +3268,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .arborists-img .back-img {
     height: 400px;
-    width:100%;
+    width: 100%;
     border-radius: 20px;
 }
 
@@ -3249,30 +3300,35 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     border-bottom: 3px solid var(--secondary-color);
 }
 
+.arborists .slick-arrow {
+    top: 358px;
+    left: -385px;
+    bottom: auto;
+    width: 70px;
+    height: 32px;
+    background: transparent;
+}
+
 .arborists .slick-arrow::before {
     content: "";
     position: absolute;
-    width: 70px;
-    height: 32px;
-    -webkit-mask-image: url(assets/images/testi-arrow.svg);
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: url("assets/images/testi-arrow.svg");
     -webkit-mask-size: 100%;
     --webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
     background-color: var(--secondary-color);
 }
 
-.arborists .next-arrow.slick-arrow::before {
-    transform: rotate(180deg);
-}
-
-.arborists .slick-arrow {
-    top: 184px;
-    left: -357px;
-}
-
 .arborists .next-arrow.slick-arrow {
-    left: -258px;
+    left: -285px;
 }
+
+.arborists .next-arrow.slick-arrow::before {
+    transform: scale(-1, 1);
+}
+
 /*==========about-page-end==========*/
 
 /*==========service-detail-page-start==========*/
@@ -3401,10 +3457,11 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .who-sec::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 101%;
     height: 76px;
+    left: 50%;
+    transform: translate(-50%);
     top: calc(var(--mb) * -1);
-    left: 0;
     -webkit-mask-image: url("assets/images/who-before.svg");
     -webkit-mask-size: cover;
     --webkit-mask-position: top center;
@@ -3424,7 +3481,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 30px;
 }
 
-.dry-sec a {
+.dry-sec .underline_link {
     position: relative;
     font-size: 18px;
     line-height: 24px;
@@ -3438,7 +3495,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-top: 11px;
 }
 
-.dry-sec a:hover {
+.dry-sec .underline_link:hover {
     color: var(--secondary-color);
 }
 
@@ -3454,7 +3511,7 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
     margin-bottom: 20px;
 }
 
-.wood-slab .about-us-content a {
+.wood-slab .about-us-content .underline_link {
     margin-top: 11px;
 }
 
@@ -3464,10 +3521,6 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 
 .dry-sec .who-content p {
     margin-bottom: 20px;
-}
-
-.contact-link {
-    margin-left: 51%;
 }
 /*==========service-detail-page-end==========*/
 
@@ -3655,7 +3708,6 @@ a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready {
 .contact-form .sec-btn,
 .footer-form .sec-btn {
     width: 130px;
-    margin-top: 14px;
 }
 
 .contact-form .form-input {
@@ -4375,6 +4427,17 @@ a.prev.page-numbers {
 /*========== End of Blog CSS ==========*/
 
 /*==========Responsive Start==========*/
+
+@media screen and (min-width: 1200px) {
+    .gallery .container {
+        max-width: 100%;
+    }
+
+    .gallery .sec-wp {
+        padding-right: 0;
+    }
+}
+
 @media screen and (min-width: 1500px) {
     .container {
         max-width: 1200px;
@@ -4396,12 +4459,12 @@ a.prev.page-numbers {
     }
 }
 
-@media (max-width:1699px) {
+@media (max-width: 1649px) {
     .about-sec .about-brand {
         right: -50px;
     }
 
-    .arborists .slick-arrow {
+    /* .arborists .slick-arrow {
         left: -305px;
     }
 
@@ -4411,6 +4474,14 @@ a.prev.page-numbers {
 
     .arborists .next-arrow.slick-arrow {
         left: -135px;
+    } */
+
+    .arborists .slick-arrow {
+        left: clamp(-385px, -25vw, -341px);
+    }
+
+    .arborists .next-arrow.slick-arrow {
+        left: clamp(-285px, -25vw, -241px);
     }
 }
 
@@ -4433,8 +4504,7 @@ a.prev.page-numbers {
     }
 
     .about-brand {
-        width: 200px;
-        height: 200px;
+        --size: 200px;
     }
 
     .footer-content {
@@ -4452,11 +4522,7 @@ a.prev.page-numbers {
     .testimonial .next-arrow.slick-arrow {
         left: -210px;
     }
-
-    .gallery .slide-arrow.next-arrow.slick-arrow {
-        right: -30px;
-    }
-/* about-page */
+    /* about-page */
     .profestional {
         padding: 180px 0 200px;
     }
@@ -4519,10 +4585,6 @@ a.prev.page-numbers {
         padding: 100px 0;
     }
 
-    .awards-img {
-        gap: 40px;
-    }
-
     .instagram {
         padding: 120px 0 90px;
     }
@@ -4539,21 +4601,24 @@ a.prev.page-numbers {
         padding-right: 0px;
     }
 
-    .awards .slick-slide {
+    .awards-img-slider .slick-slide {
         margin-right: 45px;
+        max-width: 115px;
     }
     /* about-img */
-    .about-sec .about-us-content .h2-title, .profestional .about-us-content .h2-title{
+    .about-sec .about-us-content .h2-title,
+    .profestional .about-us-content .h2-title {
         font-size: 36px;
     }
 
-    .profestional .about-us-content .h2-title,.profestional .about-us-content p {
+    .profestional .about-us-content .h2-title,
+    .profestional .about-us-content p {
         margin-bottom: 12px;
     }
 
-    .arborists .slick-arrow {
+    /* .arborists .slick-arrow {
         left: -235px;
-    }
+    } */
 }
 
 @media screen and (max-width: 1199px) {
@@ -4575,7 +4640,7 @@ a.prev.page-numbers {
         display: block !important;
     }
 
-    .site-footer  .for-des {
+    .site-footer .for-des {
         display: block !important;
     }
 
@@ -4792,19 +4857,24 @@ a.prev.page-numbers {
     }
 
     .gallery .slick-list {
-        width: 100vw;
+        width: 1199px;
+    }
+
+    .gallery .slick-list:after {
+        right: 130px;
     }
 
     .about-brand {
-        width: 170px;
-        height: 170px;
+        --size: 170px;
     }
 
     .service-content .about-brand {
         right: -25px;
     }
 
-    .about-sec {
+    .about-sec,
+    .about-sec.lot-clearing,
+    .about-sec.lot-clearing.wood-slab {
         padding: 210px 0 260px;
     }
 
@@ -4820,8 +4890,17 @@ a.prev.page-numbers {
         padding: 120px 0;
     }
 
-    .profestional {
+    .profestional,
+    .profestional.tree-need {
         padding: 150px 0;
+    }
+
+    .arborists .slick-arrow {
+        left: -304px;
+    }
+
+    .arborists .next-arrow.slick-arrow {
+        left: -204px;
     }
 }
 
@@ -4855,8 +4934,7 @@ a.prev.page-numbers {
 
     .about-brand,
     .sec-about-us .about-brand {
-        width: 150px;
-        height: 150px;
+        --size: 150px;
     }
 
     .sec-about-us .about-brand {
@@ -4879,14 +4957,15 @@ a.prev.page-numbers {
     .about-box {
         height: auto;
         margin-top: 80px;
-        padding:24px 30px 40px;
+        padding: 24px 30px 40px;
     }
 
     .about-us-img .img-box,
     .service-img .img-box,
     .store-img .img-box,
     .health-img .img-box,
-    .gallery-img .back-img {
+    .gallery-img .back-img,
+    .tree-need .about-us-img .img-box {
         height: 400px;
     }
 
@@ -4901,7 +4980,7 @@ a.prev.page-numbers {
     .store .about-brand {
         bottom: -85px;
         top: auto;
-        right: -45px;
+        right: -30px;
     }
 
     .store .img-box::before {
@@ -4916,21 +4995,21 @@ a.prev.page-numbers {
 
     .health-list {
         column-count: unset;
-        margin:30px 0 50px;
+        margin: 30px 0 50px;
     }
 
     .health-img .img-box {
-        display:none;
+        display: none;
     }
 
-    .health-img.mob-img .img-box{
+    .health-img.mob-img .img-box {
         display: block;
-        margin-left:0px;
+        margin-left: 0px;
         margin-bottom: 0;
         height: 230px;
     }
 
-    .health-list li:last-child{
+    .health-list li:last-child {
         margin-bottom: 0;
     }
 
@@ -4988,11 +5067,11 @@ a.prev.page-numbers {
         text-align: left;
     }
 
-    .footer-add.for-mob{
+    .footer-add.for-mob {
         column-count: 2;
     }
 
-    .footer-form .site-contact .contact-icon{
+    .footer-form .site-contact .contact-icon {
         background-color: var(--white-color);
     }
 
@@ -5008,12 +5087,12 @@ a.prev.page-numbers {
         margin: 60px 0 10px;
     }
 
-    .footer-loaction{
+    .footer-loaction {
         max-width: 195px;
     }
 
-    .awards .slick-list{
-        width:95vw;
+    .awards .slick-list {
+        width: 95vw;
     }
 
     .site-footer {
@@ -5023,7 +5102,8 @@ a.prev.page-numbers {
         padding-left: 0;
     }
 
-    .health-wp,.health {
+    .health-wp,
+    .health {
         --space: 68px;
     }
 
@@ -5041,14 +5121,14 @@ a.prev.page-numbers {
 
     .testimonial .slick-arrow {
         bottom: -46px;
-    }    
+    }
 
     .gallery .slick-slide {
         width: 390px;
     }
 
     .gallery-img .back-img {
-        height:284px;
+        height: 284px;
         border-radius: 0;
     }
 
@@ -5056,16 +5136,12 @@ a.prev.page-numbers {
         padding: 59px 0 61px;
     }
 
-    .instagram .slick-list{
+    .instagram .slick-list {
         width: 100vw;
     }
 
-    #sb_instagram .sbi_photo{
+    #sb_instagram .sbi_photo {
         height: 170px !important;
-    }
-
-    a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready{
-        margin-right: 20px;
     }
 
     .testimonial-box .testi-brand {
@@ -5073,12 +5149,12 @@ a.prev.page-numbers {
         right: -15px;
     }
 
-    .testimonial-box .testi-brand img{
+    .testimonial-box .testi-brand img {
         width: 64px;
         height: 70px;
     }
 
-    .ig-title ul li{
+    .ig-title ul li {
         font-size: 18px;
     }
 
@@ -5087,10 +5163,10 @@ a.prev.page-numbers {
     }
 
     .main-service .slick-arrow {
-        left:30px;
-        top:-280px;    
+        left: 30px;
+        top: -280px;
     }
-    
+
     .main-service .slide-arrow.next-arrow.slick-arrow {
         right: 20px;
         left: auto;
@@ -5116,23 +5192,23 @@ a.prev.page-numbers {
         display: block !important;
     }
 
-    .site-footer  .for-des {
+    .site-footer .for-des {
         display: none !important;
     }
 
-    .service-img{
+    .service-img {
         padding-left: 10px;
     }
 
-    .main-service .slick-list{
+    .main-service .slick-list {
         overflow: visible;
     }
 
-    .main-service .slick-slide{
+    .main-service .slick-slide {
         opacity: 0;
     }
 
-    .main-service .slick-slide.slick-current{
+    .main-service .slick-slide.slick-current {
         opacity: 1;
     }
 
@@ -5140,6 +5216,67 @@ a.prev.page-numbers {
     .about-sec-img .img-box {
         margin-left: 0;
         height: 400px;
+    }
+
+    .about-us-content .h2-title {
+        margin-bottom: 0;
+    }
+
+    .about-sec,
+    .about-sec.lot-clearing,
+    .about-sec.lot-clearing.wood-slab {
+        padding: 200px 0 162px;
+    }
+
+    .who-sec,
+    .who-sec.tree-help {
+        padding: 100px 0 84px;
+    }
+
+    .who-title {
+        margin-bottom: 16px;
+    }
+
+    .profestional,
+    .profestional.tree-need {
+        padding: 100px 0;
+    }
+
+    .arborists-title {
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .arborists .slick-arrow {
+        left: calc(var(--bs-gutter-x) * 0.5);
+        top: auto;
+        bottom: -62px;
+    }
+
+    .arborists .next-arrow.slick-arrow {
+        left: auto;
+        right: calc(var(--bs-gutter-x) * 0.5);
+    }
+
+    .arborists {
+        padding-bottom: 162px;
+    }
+
+    .awards.cirty {
+        padding: 0 0 88px;
+    }
+
+    .about-sec .about-brand {
+        bottom: -90px;
+        right: -30px;
+    }
+
+    .tree-pruning-list {
+        column-count: 1;
+    }
+
+    .lot-gallery {
+        padding: 100px 0;
     }
 }
 
@@ -5180,30 +5317,30 @@ a.prev.page-numbers {
     }
 
     .banner-content .h3-title {
-        font-weight: 600;
         margin-bottom: 54px;
         font-size: 20px;
     }
 
-    .sec-btn{
+    .sec-btn {
         width: 195px;
     }
 
     .sec-about-us {
         padding: 60px 0 122px;
     }
-        
-    .about-us-img .img-box,.store-img .img-box{
+
+    .about-us-img .img-box,
+    .store-img .img-box {
         height: 230px;
     }
 
-    .service-img .img-box{
+    .service-img .img-box {
         height: 250px;
     }
 
-    .about-brand, .sec-about-us .about-brand {
-        width: 100px;
-        height: 100px;
+    .about-brand,
+    .sec-about-us .about-brand {
+        --size: 100px;
     }
 
     .sec-about-us .about-brand {
@@ -5212,12 +5349,12 @@ a.prev.page-numbers {
     }
 
     .img-box {
-        margin-bottom:40px;
-    }  
+        margin-bottom: 40px;
+    }
 
     .store .img-box {
-        margin-bottom:45px;
-    }  
+        margin-bottom: 45px;
+    }
 
     .about-us-content .h2-title {
         margin-bottom: 0;
@@ -5227,20 +5364,20 @@ a.prev.page-numbers {
         margin-bottom: 21px;
     }
 
-    .sec-about-us .about-us-content p{
+    .sec-about-us .about-us-content p {
         margin-bottom: 30px;
     }
 
     .about-box {
-        margin-top:20px;
+        margin-top: 20px;
     }
-    
-    .sec-about-us .about-us-content a{
+
+    .sec-about-us .about-us-content .underline_link {
         margin-bottom: 40px;
     }
 
     .main-service {
-        padding:26px 0 34px;
+        padding: 26px 0 34px;
     }
 
     .service-title .h2-title {
@@ -5254,7 +5391,7 @@ a.prev.page-numbers {
 
     .service-title {
         margin-bottom: 33px;
-    }   
+    }
 
     .service-content .h3-title {
         font-size: 20px;
@@ -5264,13 +5401,13 @@ a.prev.page-numbers {
     .service-img {
         margin-bottom: 46px;
         margin-bottom: 46px;
-    }   
-    
+    }
+
     .store {
         padding: 60px 0 120px;
     }
 
-    .about-us-content.store-content .h2-title{
+    .about-us-content.store-content .h2-title {
         line-height: 38px;
         max-width: 250px;
         margin-bottom: 25px;
@@ -5291,25 +5428,85 @@ a.prev.page-numbers {
     .store .about-brand {
         bottom: -45px;
         right: -25px;
-    }   
- 
+    }
+
     .testimonial-content {
         padding: 70px 30px;
     }
 
-    .awards .slick-slide {
-        width: 145px;
+    .awards-img-slider .slick-slide {
+        max-width: 145px;
         margin-right: 60px;
     }
 
-    .awards{
+    .awards {
         padding: 90px 0;
     }
 
     .instagram {
         padding: 60px 0;
     }
-    
+
+    .about-sec,
+    .about-sec.lot-clearing,
+    .about-sec.lot-clearing.wood-slab {
+        padding: 150px 0 115px;
+    }
+
+    .about-sec-img .img-box,
+    .profestional .about-us-img .img-box {
+        height: 230px;
+    }
+
+    .about-sec .about-brand {
+        bottom: -60px;
+    }
+
+    .h4-title {
+        font-size: 36px;
+        line-height: 54px;
+    }
+
+    .about-sec .about-us-content .h2-title,
+    .profestional .about-us-content .h2-title {
+        font-size: 26px;
+    }
+
+    .about-sec .about-us-content .h2-title {
+        padding: 28px 0;
+    }
+
+    .about-sec .about-us-content .h2-title::before,
+    .about-sec .about-us-content .h2-title::after {
+        width: 24px;
+        height: 21px;
+    }
+
+    .who-sec,
+    .who-sec.tree-help {
+        padding: 17px 0 0;
+    }
+
+    .profestional,
+    .profestional.tree-need {
+        padding: 60px 0;
+    }
+
+    .arborists-img .back-img {
+        height: 230px;
+    }
+
+    .arborists-title {
+        margin-bottom: 30px;
+    }
+
+    .arborists {
+        padding-bottom: 122px;
+    }
+
+    .awards.cirty {
+        padding: 0 0 41px;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -5349,7 +5546,7 @@ a.prev.page-numbers {
     }
 
     .about-box {
-        padding:24px 30px 22px;
+        padding: 24px 30px 22px;
     }
 }
 
@@ -5378,11 +5575,15 @@ a.prev.page-numbers {
     .menu-toggle {
         right: 15px;
     }
+    .mob-logo {
+        left: 15px;
+    }
+    .mob-call {
+        right: 83px;
+    }
     .form-input,
     .input-text,
-    .select2-container--default
-        .select2-selection--single
-        .select2-selection__rendered,
+    .select2-container--default .select2-selection--single .select2-selection__rendered,
     select {
         padding: 0 15px;
     }
@@ -5400,9 +5601,9 @@ a.prev.page-numbers {
         max-height: 75vh;
     }
 
-    .about-brand, .sec-about-us .about-brand{
-        width: 90px;
-        height: 90px;
+    .about-brand,
+    .sec-about-us .about-brand {
+        --size: 90px;
     }
 
     .main-banner {
@@ -5414,14 +5615,15 @@ a.prev.page-numbers {
         margin-right: 20px;
     }
 
-    .health-wp,.health {
+    .health-wp,
+    .health {
         --space: 40px;
-    }   
+    }
 
     .health {
         padding: 35px 0 90px;
     }
-    
+
     .testimonial {
         padding: 40px 0 90px;
     }
@@ -5433,8 +5635,9 @@ a.prev.page-numbers {
         height: 25px;
     }
 
-    .awards .slick-slide {
+    .awards-img-slider .slick-slide {
         margin-right: 20px;
+        max-width: 115px;
     }
 
     .awards {
@@ -5448,6 +5651,26 @@ a.prev.page-numbers {
     .site-footer {
         padding: 40px 0 60px;
     }
-   
+
+    .about-sec .about-brand {
+        right: -15px;
+    }
+
+    .arborists .slick-arrow {
+        width: 50px;
+        height: 25px;
+    }
+    .h4-title {
+        font-size: 34px;
+        line-height: 52px;
+    }
+
+    .footer-add.for-mob {
+        column-count: 1;
+    }
+
+    .footer-loaction {
+        margin-bottom: 15px;
+    }
 }
 /*==========Responsive End==========*/

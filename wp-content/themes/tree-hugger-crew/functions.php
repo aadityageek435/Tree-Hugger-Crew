@@ -255,7 +255,7 @@ function service_sec_tabbing() {
 					echo $home_our_services_content;
 
 					if($home_our_services_page_url){?>
-						<a href="<?php echo $home_our_services_page_url; ?>" title="<?php echo $home_our_services_title.", Learn More"; ?>">Learn More</a>
+						<a href="<?php echo $home_our_services_page_url; ?>" title="<?php echo $home_our_services_title.", Learn More"; ?>" class="underline_link underline_link_white">Learn More</a>
 						<?php
 					}?>
 				</div>

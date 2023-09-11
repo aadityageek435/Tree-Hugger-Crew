@@ -37,8 +37,6 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#primary" title="Skip to Content"><?php esc_html_e('Skip to content', 'tree-hugger-crew'); ?></a>
-
 		<!-- Header Start -->
 		<header id="masthead" class="site-header">
 			<div class="header-sidebar">
@@ -47,10 +45,12 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
 						<div class="site-branding for-des">
 							<?php the_custom_logo(); ?>
 						</div>
-						<?php 
+						<?php
 						if($tree_hugger_site_mobile_logo){?>
 							<div class="mob-logo for-mob">
+								<a href="<?php echo home_url(); ?>">
 								<img src="<?php echo $tree_hugger_site_mobile_logo['url']; ?>" alt="<?php echo $tree_hugger_site_mobile_logo['alt']; ?>" width="<?php echo $tree_hugger_site_mobile_logo['width']; ?>" height="<?php echo $tree_hugger_site_mobile_logo['height']; ?>">
+								</a>
 							</div>
 							<?php
 						}
