@@ -8,8 +8,8 @@
                 $lot_clearing_importance_heading = get_field("lot_clearing_importance_heading");
                 $lot_clearing_importance_points  = get_field("lot_clearing_importance_points");
                 if($lot_clearing_banner_title || $lot_clearing_importance_heading || $lot_clearing_importance_points){?>
-                    <div class="col-lg-6 align-self-center order-2 order-lg-1">
-                        <div class="about-us-content">
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="about-us-content wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if($lot_clearing_banner_title){?>
                                 <h1 class="h4-title"><?php echo $lot_clearing_banner_title; ?></h1>
@@ -55,7 +55,7 @@
                 $lot_clearing_banner_icon = get_field("lot_clearing_banner_icon");
                 if($lot_clearing_banner_image || $lot_clearing_banner_icon){?>
                     <div class="col-lg-6 order-1 order-lg-2">
-                        <div class="about-img-wp">
+                        <div class="about-img-wp wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <?php
                         if($lot_clearing_banner_icon){?>
                             <div class="about-brand">
@@ -89,10 +89,12 @@
             <div class="container">
                 <?php
                 if($lot_clearing_our_approach_title){?>
-                    <h2 class="h2-title"><?php echo $lot_clearing_our_approach_title; ?></h2>
+                    <div class="sec-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                        <h2 class="h2-title"><?php echo $lot_clearing_our_approach_title; ?></h2>
+                    </div>
                     <?php
                 }?>
-                <div class="row">
+                <div class="row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
                     <?php
                     foreach($lot_clearing_our_approach_content_rep as $content){?>
                         <div class="col-lg-6">
@@ -123,7 +125,7 @@
                 $lot_clearing_contact_image = get_field("lot_clearing_contact_image");
                 if($lot_clearing_contact_image){?>
                     <div class="col-lg-6">
-                        <div class="about-us-img">
+                        <div class="about-us-img wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <div class="back-img img-box" style="background-image: url('<?php echo $lot_clearing_contact_image; ?>');"></div>
                         </div>
                     </div>
@@ -135,8 +137,8 @@
                 $tree_hugger_phone_number        = get_field("tree_hugger_phone_number","option");
                 $service_conv_number             = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
                 if($lot_clearing_contact_title || $lot_clearing_contact_content || $tree_hugger_contact_free_quote_url || $tree_hugger_phone_number){?>
-                    <div class="col-lg-6 align-self-center">
-                        <div class="tree-content">
+                    <div class="col-lg-6">
+                        <div class="tree-content about-us-content wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if($lot_clearing_contact_title){?>
                                 <h2 class="h2-title"><?php echo $lot_clearing_contact_title; ?></h2>

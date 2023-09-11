@@ -8,8 +8,8 @@
                 $wood_slabs_banner_sub_title    = get_field("wood_slabs_banner_sub_title");
                 $tree_hugger_our_inventory_url  = get_field("tree_hugger_our_inventory_url","option");
                  if($wood_slabs_banner_title || $wood_slabs_banner_sub_title || $tree_hugger_our_inventory_url){?>
-                    <div class="col-lg-6 align-self-center order-2 order-lg-1">
-                        <div class="about-us-content">
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="about-us-content wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if($wood_slabs_banner_title){?>
                                 <h1 class="h4-title"><?php echo $wood_slabs_banner_title; ?></h1>
@@ -23,7 +23,7 @@
                             // lot clearing banner content
                             the_content();
                             if($tree_hugger_our_inventory_url){?>
-                                <a href="<?php echo $tree_hugger_our_inventory_url['url']; ?>" title="<?php echo $tree_hugger_our_inventory_url['title']; ?>" target="_blank"><?php echo $tree_hugger_our_inventory_url['title']; ?></a>
+                                <a href="<?php echo $tree_hugger_our_inventory_url['url']; ?>" title="<?php echo $tree_hugger_our_inventory_url['title']; ?>" target="_blank" class="underline_link"><?php echo $tree_hugger_our_inventory_url['title']; ?></a>
                                 <?php
                             }?>
                         </div>
@@ -34,7 +34,7 @@
                 $wood_slabs_banner_icon = get_field("wood_slabs_banner_icon");
                 if($wood_slabs_banner_image || $wood_slabs_banner_icon){?>
                     <div class="col-lg-6 order-1 order-lg-2">
-                        <div class="about-img-wp">
+                        <div class="about-img-wp wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <?php
                         if($wood_slabs_banner_icon){?>
                             <div class="about-brand">
@@ -69,10 +69,12 @@
             <div class="container">
                 <?php
                 if($wood_slabs_why_idry_title){?>
-                    <h2 class="h2-title"><?php echo $wood_slabs_why_idry_title; ?></h2>
+                    <div class="sec-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                        <h2 class="h2-title"><?php echo $wood_slabs_why_idry_title; ?></h2>
+                    </div>
                     <?php
                 }?>
-                <div class="row">
+                <div class="row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
                     <?php
                     foreach($wood_slabs_why_idry_content_rep as $content){?>
                         <div class="col-lg-6">
@@ -104,7 +106,7 @@ if ($wood_slabs_gallery_images) { ?>
     <section class="gallery lot-gallery">
         <div class="sec-wp">
             <div class="container">
-                <div class="gallery-img-slider">
+                <div class="gallery-img-slider wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                     <?php
                     $wood_gallery_index = 1;
                     foreach ($wood_slabs_gallery_images as $image) { ?>

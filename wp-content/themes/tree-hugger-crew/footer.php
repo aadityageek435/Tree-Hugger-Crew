@@ -18,7 +18,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<div class="footer-content">
+						<div class="footer-content wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
 							<img src="<?php echo home_url(); ?>/wp-content/themes/tree-hugger-crew/assets/images/good-shape.svg" alt="Footer Shape" width="70" height="76">
 							<?php
 							$tree_hugger_footer_title = get_field("tree_hugger_footer_title", "option");
@@ -109,7 +109,7 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="footer-form">
+						<div class="footer-form wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
 							<h3 class="for-mob">Contact Us</h3>
 							<?php echo
 							do_shortcode("[contact-form-7 id='53bcbd7' title='Footer Form']");
@@ -213,7 +213,7 @@
 		<div class="modal-content">
 			<div class="popup-title">
 				<h2 class="h2-title">Arborist Details :</h2>
-				<button type="button" class="close close-popup" data-bs-dismiss="modal"></button>
+				<button type="button" class="close close-popup" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
 			</div>
 			<div class="common-popup-overflow">
 				<div class="common-popup-text" data-simplebar>

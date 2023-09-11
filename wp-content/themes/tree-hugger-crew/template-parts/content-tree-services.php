@@ -3,8 +3,8 @@
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 align-self-center order-2 order-lg-1">
-                    <div class="about-us-content">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="about-us-content wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <h1 class="h4-title"><?php the_title(); ?></h1>
                         <?php
                         //service banner content
@@ -17,7 +17,7 @@
                 $tree_services_banner_image = get_field("tree_services_banner_image");
                 if($tree_services_banner_icon || $tree_services_banner_image){?>
                     <div class="col-lg-6 order-1 order-lg-2">
-                        <div class="about-img-wp">
+                        <div class="about-img-wp wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <?php
                         if($tree_services_banner_icon){?>
                             <div class="about-brand">
@@ -27,7 +27,7 @@
                         }
                         if($tree_services_banner_image){?>
                             <div class="about-sec-img">
-                                <div class="back-img img-box" style="background-image: url('<?php echo $tree_services_banner_image; ?>');"></div>
+                                <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $tree_services_banner_image; ?>');"></div>
                             </div>
                             <?php
                         }?>
@@ -53,12 +53,14 @@ if(have_rows("tree_services_how_we_content")){?>
                     $select_content_fields = get_sub_field("select_content_fields");
 
                     if($tree_services_main_heading){?>
-                        <h2 class="h2-title"><?php echo $tree_services_main_heading; ?></h2>
+                        <div class="sec-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <h2 class="h2-title"><?php echo $tree_services_main_heading; ?></h2>
+                        </div>
                         <?php
                     }
                     // title / content
                     if($select_content_fields === "title_content_rep"){?>
-                        <div class="row">
+                        <div class="row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
                             <?php
                             while(have_rows("tree_services_title_content")){ the_row();
                                 $tree_services_how_we_help_title   = get_sub_field("tree_services_how_we_help_title");
@@ -116,7 +118,7 @@ if(have_rows("tree_services_how_we_content")){?>
                 $tree_services_contact_image = get_field("tree_services_contact_image");
                 if($tree_services_contact_image){?>
                     <div class="col-lg-6">
-                        <div class="about-us-img">
+                        <div class="about-us-img wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <div class="back-img img-box" style="background-image: url('<?php echo $tree_services_contact_image; ?>');"></div>
                         </div>
                     </div>
@@ -128,8 +130,8 @@ if(have_rows("tree_services_how_we_content")){?>
                 $tree_hugger_phone_number        = get_field("tree_hugger_phone_number","option");
                 $service_conv_number             = preg_replace('/[^0-9.]/', '', $tree_hugger_phone_number);
                 if($tree_services_contact_title || $tree_services_contact_content || $tree_hugger_contact_free_quote_url || $tree_hugger_phone_number){?>
-                    <div class="col-lg-6 align-self-center">
-                        <div class="tree-content">
+                    <div class="col-lg-6">
+                        <div class="tree-content about-us-content wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if($tree_services_contact_title){?>
                                 <h2 class="h2-title"><?php echo $tree_services_contact_title; ?></h2>

@@ -1136,6 +1136,8 @@ span.wpcf7-list-item-label,
     padding-left: 30px;
 }
 
+
+
 .comment-form-cookies-consent label {
     padding-left: 10px;
 }
@@ -1248,6 +1250,10 @@ span.wpcf7-list-item,
     position: relative;
 }
 
+.wpcf7-list-item:first-child {
+    margin-left: 0;
+}
+
 .wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors {
     margin: 2em 0.5em 1em;
     padding: 0.2em 1em;
@@ -1294,11 +1300,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .form-box.form-input-file .input-file-icon {
     position: absolute;
-    top: 30px;
+    top: 0;
     left: 0;
     width: 76px;
     height: 73px;
-    background: var(--input-color);
+    background: var(--primary-color);
     border-radius: 13px;
     display: inline-block;
     cursor: pointer;
@@ -1313,12 +1319,12 @@ input[type="number"]::-webkit-outer-spin-button {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30px;
-    height: 1px;
-    background-color: var(--black-color);
+    height: 2px;
+    background-color: var(--white-color);
 }
 
 .form-box.form-input-file .input-file-icon:after {
-    width: 1px;
+    width: 2px;
     height: 30px;
 }
 
@@ -1331,9 +1337,10 @@ input[type="number"]::-webkit-outer-spin-button {
     left: 0;
 }
 
-.wpcf7 p:last-child {
+.wpcf7 p {
     margin-bottom: 0;
 }
+
 /*========== Form CSS End ==========*/
 
 /*==========Common CSS ==========*/
@@ -1475,25 +1482,6 @@ a:hover {
 .container {
     position: relative;
     z-index: 5;
-}
-
-.play-btn {
-    width: 60px;
-    height: 60px;
-    color: var(--primary-color);
-    background: var(--white-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 3px;
-    box-shadow: var(--box-shadow);
-    transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
-}
-
-.play-btn:hover {
-    background: var(--primary-color);
-    color: var(--white-color);
 }
 
 .back-img {
@@ -1777,6 +1765,8 @@ button.close {
     outline: none !important;
     z-index: 2;
     transition: 0.3s;
+    border: none;
+    font-size: 25px;
 }
 
 button.close:hover {
@@ -1875,7 +1865,7 @@ button.close:hover {
     height: 30px;
     padding: 0;
     border: none !important;
-    background: var(--primary-color);
+    background: transparent;
     outline: none !important;
     color: var(--white-color);
     font-weight: bold;
@@ -1892,7 +1882,7 @@ button.close:hover {
 }
 
 .slick-arrow:hover {
-    background: var(--dark-color);
+    background: transparent;
 }
 
 .slick-dots li:only-child {
@@ -2181,11 +2171,6 @@ button.close:hover {
     color: var(--secondary-color);
 }
 
-.site-contact .contact-icon:hover,
-.footer-form .site-contact .contact-icon:hover {
-    background-color: var(--secondary-color);
-}
-
 .site-contact .contact-icon {
     width: 30px;
     height: 30px;
@@ -2194,15 +2179,23 @@ button.close:hover {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
 }
 
 .site-contact .contact-icon i {
     color: var(--white-color);
 }
 
+.site-contact .contact-icon:hover,
+.footer-form .site-contact .contact-icon:hover {
+    background-color: var(--secondary-color);
+}
+
 .contact-header-btn .sec-btn {
     letter-spacing: 0.18px;
-    width: 215px;
+    width: 100%;
+    max-width: 215px;
 }
 
 #page.site {
@@ -2223,7 +2216,7 @@ button.close:hover {
 /*==========banner CSS start==========*/
 .main-banner {
     position: relative;
-    padding-top: 26.8vh;
+    padding-top: 20.8vh;
     height: 100vh;
 }
 
@@ -2309,6 +2302,7 @@ button.close:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
 }
 
 .about-brand img {
@@ -2333,6 +2327,10 @@ button.close:hover {
     height: 500px;
 }
 
+.about-us-content {
+    padding-top: 80px;
+}
+
 .about-us-content .h2-title {
     margin-bottom: 10px;
 }
@@ -2347,12 +2345,16 @@ button.close:hover {
     padding-top: 120px;
 }
 
+.about-boxes-row .row {
+    --bs-gutter-y: var(--gutter);
+}
+
 .about-box {
     position: relative;
-    height: 212px;
     border-radius: 20px;
     background-color: var(--light-yellow);
-    padding: 38px 30px 61px;
+    padding: 38px 30px 33px;
+    height: 100%;
 }
 
 .about-box::before {
@@ -2367,6 +2369,7 @@ button.close:hover {
     background-size: 196px;
     background-position: bottom right;
     opacity: 0.05;
+    pointer-events: none;
 }
 
 .about-box .h3-title {
@@ -2478,13 +2481,15 @@ button.close:hover {
 .service-content p {
     color: var(--white-color);
     margin-bottom: 21px;
+    max-width: 670px;
 }
 
 .service-loader {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 120%;
     height: 100%;
     background: rgba(44, 75, 46, 0.7);
     z-index: 5;
@@ -2557,7 +2562,7 @@ button.close:hover {
     content: "";
     position: absolute;
     width: 100%;
-    height: 75px;
+    height: var(--mb);
     top: calc(var(--mb) * -1);
     left: 0;
     -webkit-mask-image: url("assets/images/health-before.svg");
@@ -2571,7 +2576,7 @@ button.close:hover {
     content: "";
     position: absolute;
     width: 100%;
-    height: 75px;
+    height: var(--mb);
     bottom: calc(var(--mb) * -1);
     left: 0;
     z-index: 1;
@@ -2582,13 +2587,8 @@ button.close:hover {
     background-color: var(--light-yellow);
 }
 
-.health .sec-wp {
-    --space: -144px;
-    margin-bottom: var(--space);
-}
-
-.health-wp {
-    --space: 144px;
+.health-wp:not(:last-child) {
+    --space: 120px;
     margin-bottom: var(--space);
 }
 
@@ -2661,7 +2661,6 @@ button.close:hover {
     position: absolute;
     top: -60px;
     right: -30px;
-    width: 110px;
 }
 
 .testimonial-box .testi-brand img {
@@ -2731,22 +2730,28 @@ button.close:hover {
     font-style: italic;
 }
 
-.slick-arrow {
+/* .slick-arrow {
     top: 0;
     left: 0;
     width: auto;
     height: auto;
     background: transparent;
     color: transparent;
-}
+} */
 
 .testimonial .slick-arrow {
-    top: 71px;
-    left: -357px;
+    bottom: 127px;
+    top: auto;
+    left: auto;
+    width: 70px;
+    height: 32px;
+    right: var(--arrow);
+    --arrow: 143%;
 }
 
 .testimonial .next-arrow.slick-arrow {
-    left: -258px;
+    left: auto;
+    right: calc((var(--arrow) - 70px) - 30px);
 }
 
 .testimonial .next-arrow.slick-arrow::before {
@@ -2756,8 +2761,8 @@ button.close:hover {
 .testimonial .slick-arrow::before {
     content: "";
     position: absolute;
-    width: 70px;
-    height: 32px;
+    width: 100%;
+    height: 100%;
     -webkit-mask-image: url("assets/images/testi-arrow.svg");
     -webkit-mask-size: 100%;
     -webkit-mask-position: center;
@@ -2858,7 +2863,7 @@ button.close:hover {
     display: block;
     z-index: 2;
     border-radius: 20px 0 0 20px;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, transparent 100%);
     mix-blend-mode: multiply;
     pointer-events: none;
 }
@@ -2867,7 +2872,7 @@ button.close:hover {
     left: auto;
     right: 125px;
     border-radius: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .gallery-img-slider .slick-arrow {
@@ -2972,7 +2977,7 @@ button.close:hover {
     content: "";
     position: absolute;
     width: 100%;
-    height: 75px;
+    height: var(--mb);
     top: calc(var(--mb) * -1);
     left: 0;
     -webkit-mask-image: url(assets/images/footer-path.svg);
@@ -3088,7 +3093,7 @@ button.close:hover {
 
 .footer-bottom-box {
     position: relative;
-    padding: 30px 0;
+    padding: 25px 0;
 }
 
 .footer-bottom-text {
@@ -3104,7 +3109,7 @@ button.close:hover {
 
 .copy-right p,
 .footer-other-link p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 24px;
     margin-bottom: 0;
 }
@@ -3137,9 +3142,9 @@ button.close:hover {
 }
 
 .footer-bottom-link ul li a {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1;
-    color: var(--common-color);
+    color: var(--primary-color);
     transition: 0.3s;
 }
 
@@ -3166,7 +3171,7 @@ button.close:hover {
 /*==========about-page-start==========*/
 .about-sec {
     position: relative;
-    padding: 140px 0 274px;
+    padding: 140px 0 200px;
     overflow: hidden;
     background-image: url(assets/images/about-sec-path.svg);
     background-size: cover;
@@ -3182,18 +3187,6 @@ button.close:hover {
     margin-bottom: 40px;
 }
 
-.about-sec .about-us-content .h2-title {
-    position: relative;
-    font-weight: 600;
-    font-style: italic;
-    color: var(--secondary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 41px 0;
-    text-align: center;
-}
-
 .about-sec .about-us-content .h2-title::before,
 .about-sec .about-us-content .h2-title::after {
     position: absolute;
@@ -3206,6 +3199,18 @@ button.close:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
+}
+
+.about-sec .about-us-content .h2-title {
+    position: relative;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 41px 0;
+    text-align: center;
 }
 
 .about-sec .about-us-content .h2-title::after {
@@ -3289,24 +3294,18 @@ button.close:hover {
     margin-bottom: 20px;
 }
 
-.arborists-content a {
-    position: relative;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
-    letter-spacing: 0.09px;
-    display: inline-block;
-    padding-bottom: 6px;
-    border-bottom: 3px solid var(--secondary-color);
+.arborists-content .underline_link {
+    margin-top: 0;
 }
 
 .arborists .slick-arrow {
-    top: 358px;
-    left: -385px;
-    bottom: auto;
+    bottom: 172px;
+    top: auto;
+    left: auto;
     width: 70px;
     height: 32px;
-    background: transparent;
+    right: var(--arrow);
+    --arrow: 139.5%;
 }
 
 .arborists .slick-arrow::before {
@@ -3322,7 +3321,8 @@ button.close:hover {
 }
 
 .arborists .next-arrow.slick-arrow {
-    left: -285px;
+    left: auto;
+    right: calc((var(--arrow) - 70px) - 30px);
 }
 
 .arborists .next-arrow.slick-arrow::before {
@@ -3346,6 +3346,7 @@ button.close:hover {
 
 .tree-help .h3-title {
     margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .tree-help p {
@@ -3360,12 +3361,12 @@ button.close:hover {
     height: 500px;
 }
 
-.tree-content .h2-title {
+.tree-content.about-us-content .h2-title {
     max-width: 470px;
     margin-bottom: 25px;
 }
 
-.tree-content p {
+.tree-content.about-us-content p {
     margin-bottom: 31px;
 }
 
@@ -3382,6 +3383,8 @@ button.close:hover {
 
 .tree-pruning-list {
     column-count: 2;
+    --list-space: 24px;
+    margin-bottom: calc(var(--list-space) * -1);
 }
 
 .tree-pruning-list li {
@@ -3391,7 +3394,7 @@ button.close:hover {
     color: var(--white-color);
     padding-left: 45px;
     padding-top: 7px;
-    margin-bottom: 24px;
+    margin-bottom: var(--list-space);
 }
 
 .tree-pruning-list li::before {
@@ -3409,7 +3412,7 @@ button.close:hover {
 }
 
 .about-sec.lot-clearing {
-    padding: 140px 0 310px;
+    padding: 140px 0 220px;
 }
 
 .lot-clearing .about-sec-brand {
@@ -3419,7 +3422,8 @@ button.close:hover {
     z-index: 2;
 }
 
-.who-sec.approach-sec .h2-title {
+.who-sec.approach-sec .h2-title,
+.who-sec.employee .h2-title {
     margin-bottom: 26px;
 }
 
@@ -3436,21 +3440,26 @@ button.close:hover {
 }
 
 .lot-gallery {
-    padding: 178px 0 180px;
+    padding: 180px 0;
 }
 
 .lot-list li {
     display: flex;
+    align-items: center;
     gap: 24px;
     margin-bottom: 25px;
+}
+
+.lot-list li:last-child {
+    margin-bottom: 0;
 }
 
 .who-sec {
     position: relative;
     background-color: var(--primary-color);
-    padding: 146px 0 140px;
+    padding: 146px 0 132px;
     --mb: 75px;
-    margin-bottom: var(--mb);
+    margin-block: var(--mb);
 }
 
 .who-sec::before,
@@ -3458,7 +3467,7 @@ button.close:hover {
     content: "";
     position: absolute;
     width: 101%;
-    height: 76px;
+    height: calc(var(--mb) + 1px);
     left: 50%;
     transform: translate(-50%);
     top: calc(var(--mb) * -1);
@@ -3481,29 +3490,12 @@ button.close:hover {
     margin-bottom: 30px;
 }
 
-.dry-sec .underline_link {
-    position: relative;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
-    letter-spacing: 0.09px;
-    display: inline-block;
-    padding-bottom: 6px;
-    color: var(--white-color);
-    border-bottom: 3px solid var(--secondary-color);
-    transition: var(--transition);
-    margin-top: 11px;
-}
-
-.dry-sec .underline_link:hover {
-    color: var(--secondary-color);
-}
-
 .about-sec.lot-clearing.wood-slab {
     padding: 140px 0 324px;
 }
 
-.wood-slab .about-us-content .h4-title {
+.wood-slab .about-us-content .h4-title,
+.tree-career .about-us-content .h4-title {
     margin-bottom: 27px;
 }
 
@@ -3525,7 +3517,7 @@ button.close:hover {
 /*==========service-detail-page-end==========*/
 
 /*==========career-page-start==========*/
-.about-sec.lot-clearing.wood-slab.tree-career {
+.tree-career.about-sec {
     padding: 140px 0 273px;
 }
 
@@ -3549,32 +3541,56 @@ button.close:hover {
     max-width: 370px;
 }
 
-.employee .tree-pruning-list li {
-    margin-bottom: 27px;
+.employee .tree-pruning-list {
+    --list-space: 27px;
+}
+
+.play_btn_wp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.play_btn_wp:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black-color);
+    border-radius: 20px;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
 }
 
 .play-btn {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    height: 100px;
-    width: 100px;
-    background-color: transparent;
+    --size: 100px;
+    position: relative;
+    height: var(--size);
+    width: var(--size);
+    background-color: rgb(255 255 255 / 30%);
     border: 5px solid var(--white-color);
-    transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .play-btn:before {
-    position: absolute;
+    --x-width: 17px;
+    --top-width: 30px;
+    position: relative;
     content: "";
     width: 35px;
     height: 30px;
-    border-top: 30px solid var(--white-color);
-    border-left: 17px solid transparent;
-    border-right: 17px solid transparent;
+    border-top: var(--top-width) solid var(--white-color);
+    border-left: var(--x-width) solid transparent;
+    border-right: var(--x-width) solid transparent;
     transform: rotate(270deg);
     box-sizing: border-box;
 }
@@ -3615,6 +3631,10 @@ button.close:hover {
     padding-bottom: 20px;
 }
 
+.position-list ul li:last-child {
+    padding-bottom: 0;
+}
+
 .position-list ::marker {
     color: var(--dark-color);
 }
@@ -3629,6 +3649,10 @@ button.close:hover {
 /*==========career-page-end==========*/
 
 /*==========contact-page-start==========*/
+.about-sec.form-sec {
+    padding: 140px 0 104px;
+}
+
 .form-sec .about-us-content .h3-title {
     max-width: unset;
 }
@@ -3714,6 +3738,14 @@ button.close:hover {
     border-bottom: 1px solid rgba(16, 13, 17, 30%);
     color: var(--dark-color);
 }
+
+.form-sec .contact-form .wpcf7-form-control-wrap {
+    margin-bottom: 27px;
+}
+
+.contact-form label:not(.wpcf7-list-item label) {
+    margin-bottom: 10px;
+}
 /*==========contact-page-end==========*/
 
 /*==========Scroll To Top CSS Start==========*/
@@ -3746,10 +3778,12 @@ button.close:hover {
 
 /*========== Inner Page CSS end ==========*/
 .main-banner.inner-banner {
-    padding: 110px 0 90px;
+    padding: 110px 0 100px;
     position: relative;
     background-color: var(--primary-color);
     height: auto;
+    --mb: 50px;
+    margin-bottom: var(--mb);
 }
 
 .main-banner.inner-banner::before {
@@ -3769,13 +3803,14 @@ button.close:hover {
 .main-banner.inner-banner::after {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 76px;
-    bottom: -50px;
-    left: 0;
+    width: 101%;
+    height: var(--mb);
+    bottom: calc(var(--mb) * -1);
+    left: 50%;
+    transform: translate(-50%);
     -webkit-mask-image: url(assets/images/who-after.svg);
     -webkit-mask-size: cover;
-    --webkit-mask-position: bottom center;
+    -webkit-mask-position: bottom center;
     -webkit-mask-repeat: no-repeat;
     background-color: var(--primary-color);
     z-index: -1;
@@ -4445,7 +4480,13 @@ a.prev.page-numbers {
     }
 }
 
-@media (min-width: 2100px) {
+@media screen and (min-width: 1921px) {
+    .container {
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 2100px) {
     .container {
         max-width: 1400px;
     }
@@ -4459,29 +4500,9 @@ a.prev.page-numbers {
     }
 }
 
-@media (max-width: 1649px) {
+@media screen and (max-width: 1649px) {
     .about-sec .about-brand {
         right: -50px;
-    }
-
-    /* .arborists .slick-arrow {
-        left: -305px;
-    }
-
-    .arborists .next-arrow.slick-arrow {
-        left: -205px;
-    }
-
-    .arborists .next-arrow.slick-arrow {
-        left: -135px;
-    } */
-
-    .arborists .slick-arrow {
-        left: clamp(-385px, -25vw, -341px);
-    }
-
-    .arborists .next-arrow.slick-arrow {
-        left: clamp(-285px, -25vw, -241px);
     }
 }
 
@@ -4515,14 +4536,6 @@ a.prev.page-numbers {
         right: -70px;
     }
 
-    .testimonial .slick-arrow {
-        left: -310px;
-    }
-
-    .testimonial .next-arrow.slick-arrow {
-        left: -210px;
-    }
-    /* about-page */
     .profestional {
         padding: 180px 0 200px;
     }
@@ -4530,15 +4543,19 @@ a.prev.page-numbers {
     .arborists {
         padding-bottom: 180px;
     }
+
+    .testimonial .slick-arrow {
+        --arrow: 142%;
+    }
+
+    .arborists .slick-arrow {
+        --arrow: 138.5%;
+    }
 }
 
 @media screen and (max-width: 1399px) {
     .img-box {
         width: calc(100% - 50px);
-    }
-
-    .about-box {
-        height: 250px;
     }
 
     .sec-about-us {
@@ -4561,10 +4578,6 @@ a.prev.page-numbers {
         padding: 200px 0 240px;
     }
 
-    .contact-header-btn .sec-btn {
-        width: 200px;
-    }
-
     .testimonial {
         padding: 180px 0;
     }
@@ -4574,19 +4587,11 @@ a.prev.page-numbers {
     }
 
     .testimonial .slick-arrow {
-        left: -250px;
-    }
-
-    .testimonial .next-arrow.slick-arrow {
-        left: -150px;
+        --arrow: 141%;
     }
 
     .awards {
         padding: 100px 0;
-    }
-
-    .instagram {
-        padding: 120px 0 90px;
     }
 
     .site-footer {
@@ -4601,8 +4606,11 @@ a.prev.page-numbers {
         padding-right: 0px;
     }
 
+    .awards-img-slider .slick-track {
+        gap: 45px;
+    }
+
     .awards-img-slider .slick-slide {
-        margin-right: 45px;
         max-width: 115px;
     }
     /* about-img */
@@ -4616,9 +4624,27 @@ a.prev.page-numbers {
         margin-bottom: 12px;
     }
 
-    /* .arborists .slick-arrow {
-        left: -235px;
-    } */
+    .about-us-content {
+        padding-top: 50px;
+    }
+
+    .testimonial-title {
+        margin-top: 50px;
+    }
+
+    .arborists .slick-arrow {
+        --arrow: 137.5%;
+    }
+}
+
+@media screen and (max-width: 1299px) {
+    .testimonial .slick-arrow {
+        --arrow: 140%;
+    }
+
+    .arborists .slick-arrow {
+        --arrow: 135.5%;
+    }
 }
 
 @media screen and (max-width: 1199px) {
@@ -4714,12 +4740,13 @@ a.prev.page-numbers {
         width: calc(100% - 60px);
         height: 100vh;
         background: var(--white-color);
-        padding: 16.3vh 30px 30px 30px;
+        padding: 11vh 8vw 30px;
         overflow: auto;
         opacity: 0;
         scrollbar-color: transparent transparent;
         transition: 0.5s;
         z-index: 101;
+        box-shadow: 5px 0 10px 0 rgb(0 0 0 / 6%);
     }
     .toggled .header-mobile-menu {
         left: 0;
@@ -4825,6 +4852,7 @@ a.prev.page-numbers {
 
     .contact-header-btn .sec-btn {
         width: 215px;
+        max-width: 100%;
     }
 
     .site-contact ul {
@@ -4852,16 +4880,8 @@ a.prev.page-numbers {
         padding-inline: 0;
     }
 
-    .gallery-img .back-img {
-        height: 500px;
-    }
-
     .gallery .slick-list {
-        width: 1199px;
-    }
-
-    .gallery .slick-list:after {
-        right: 130px;
+        width: calc(100% + 600px);
     }
 
     .about-brand {
@@ -4874,7 +4894,9 @@ a.prev.page-numbers {
 
     .about-sec,
     .about-sec.lot-clearing,
-    .about-sec.lot-clearing.wood-slab {
+    .about-sec.lot-clearing.wood-slab,
+    .tree-career.about-sec,
+    .about-sec.form-sec {
         padding: 210px 0 260px;
     }
 
@@ -4895,12 +4917,25 @@ a.prev.page-numbers {
         padding: 150px 0;
     }
 
-    .arborists .slick-arrow {
-        left: -304px;
+    .gallery-img-slider .slick-list:before,
+    .gallery-img-slider .slick-list:after {
+        content: none;
     }
 
-    .arborists .next-arrow.slick-arrow {
-        left: -204px;
+    .testimonial .slick-arrow {
+        --arrow: 141%;
+    }
+
+    .contact-form {
+        padding: 70px 40px 80px;
+    }
+
+    .main-banner.inner-banner {
+        padding: 200px 0 100px;
+    }
+
+    .arborists .slick-arrow {
+        --arrow: 136.5%;
     }
 }
 
@@ -4928,7 +4963,7 @@ a.prev.page-numbers {
     }
 
     .img-box {
-        width: 100%;
+        width: calc(100% - 10px);
         margin-bottom: 60px;
     }
 
@@ -4939,7 +4974,7 @@ a.prev.page-numbers {
 
     .sec-about-us .about-brand {
         top: auto;
-        bottom: -90px;
+        bottom: -75px;
         right: -30px;
     }
 
@@ -4951,21 +4986,19 @@ a.prev.page-numbers {
     }
 
     .sec-about-us {
-        padding: 100px 0 180px;
+        padding: 80px 0;
     }
 
     .about-box {
-        height: auto;
-        margin-top: 80px;
-        padding: 24px 30px 40px;
+        padding: 28px 30px 30px;
     }
 
     .about-us-img .img-box,
     .service-img .img-box,
     .store-img .img-box,
     .health-img .img-box,
-    .gallery-img .back-img,
-    .tree-need .about-us-img .img-box {
+    .tree-need .about-us-img .img-box,
+    .profestional .about-us-img .img-box {
         height: 400px;
     }
 
@@ -4995,26 +5028,24 @@ a.prev.page-numbers {
 
     .health-list {
         column-count: unset;
-        margin: 30px 0 50px;
+        margin: 30px 0 0;
     }
 
     .health-img .img-box {
-        display: none;
-    }
-
-    .health-img.mob-img .img-box {
-        display: block;
-        margin-left: 0px;
+        margin-left: auto;
         margin-bottom: 0;
-        height: 230px;
     }
 
     .health-list li:last-child {
         margin-bottom: 0;
     }
 
-    .health .sec-wp {
-        --space: -100px;
+    .health-content {
+        margin-bottom: 60px;
+    }
+
+    .health-wp:not(:last-child) {
+        --space: 80px;
     }
 
     .health-wp {
@@ -5026,7 +5057,7 @@ a.prev.page-numbers {
     }
 
     .testimonial {
-        padding: 80px 0 180px;
+        padding: 80px 0 142px;
     }
 
     .testimonial-title .h3-title {
@@ -5034,18 +5065,14 @@ a.prev.page-numbers {
     }
 
     .testimonial .slick-arrow {
-        left: 40px;
+        left: 0;
         top: auto;
-        bottom: -50px;
+        bottom: -61px;
     }
 
     .testimonial .next-arrow.slick-arrow {
         left: auto;
-        right: 40px;
-    }
-
-    .career {
-        padding: 100px 0 120px;
+        right: 0;
     }
 
     .career .about-us-img {
@@ -5091,13 +5118,19 @@ a.prev.page-numbers {
         max-width: 195px;
     }
 
+    .awards {
+        padding: 80px 0;
+    }
+
     .awards .slick-list {
-        width: 95vw;
+        width: 991px;
     }
 
     .site-footer {
         padding: 100px 0 90px;
+        --mb: 50px;
     }
+
     .about-us-content.store-content {
         padding-left: 0;
     }
@@ -5107,40 +5140,34 @@ a.prev.page-numbers {
         --space: 68px;
     }
 
-    .health {
-        padding: 35px 0 61px;
-    }
-
     .testimonial-title {
         margin-top: 0px;
     }
 
-    .testimonial {
-        padding: 44px 0 122px;
-    }
-
-    .testimonial .slick-arrow {
-        bottom: -46px;
-    }
-
-    .gallery .slick-slide {
-        width: 390px;
+    .gallery .slick-list {
+        width: calc(100% + 600px);
     }
 
     .gallery-img .back-img {
-        height: 284px;
-        border-radius: 0;
+        aspect-ratio: 1/0.55;
+        border-radius: 10px;
     }
 
-    .career {
-        padding: 59px 0 61px;
+    .career,
+    .instagram {
+        padding: 80px 0;
     }
 
     .instagram .slick-list {
-        width: 100vw;
+        width: 991px;
+        padding-right: 192px;
+    }
+    .instagram #sb_instagram #sbi_images .sbi_item.slick-slide .sbi_photo_wrap {
+        width: 100%;
+        height: 100%;
     }
 
-    #sb_instagram .sbi_photo {
+    .instagram #sb_instagram #sbi_images .sbi_item.slick-slide .sbi_photo_wrap .sbi_photo {
         height: 170px !important;
     }
 
@@ -5163,8 +5190,11 @@ a.prev.page-numbers {
     }
 
     .main-service .slick-arrow {
+        --arrow: 400px;
         left: 30px;
-        top: -280px;
+        top: calc(var(--arrow) / 2);
+        transform: translate(0, -50%);
+        bottom: auto;
     }
 
     .main-service .slide-arrow.next-arrow.slick-arrow {
@@ -5198,6 +5228,7 @@ a.prev.page-numbers {
 
     .service-img {
         padding-left: 10px;
+        margin-bottom: 60px;
     }
 
     .main-service .slick-list {
@@ -5224,22 +5255,28 @@ a.prev.page-numbers {
 
     .about-sec,
     .about-sec.lot-clearing,
-    .about-sec.lot-clearing.wood-slab {
-        padding: 200px 0 162px;
+    .about-sec.lot-clearing.wood-slab,
+    .tree-career.about-sec,
+    .about-sec.form-sec {
+        padding: 170px 0 80px;
+    }
+
+    .who-sec,
+    .who-sec.tree-help,
+    .profestional,
+    .profestional.tree-need,
+    .lot-gallery,
+    .position {
+        padding: 80px 0;
     }
 
     .who-sec,
     .who-sec.tree-help {
-        padding: 100px 0 84px;
+        --mb: 50px;
     }
 
     .who-title {
         margin-bottom: 16px;
-    }
-
-    .profestional,
-    .profestional.tree-need {
-        padding: 100px 0;
     }
 
     .arborists-title {
@@ -5259,15 +5296,15 @@ a.prev.page-numbers {
     }
 
     .arborists {
-        padding-bottom: 162px;
+        padding-bottom: 142px;
     }
 
     .awards.cirty {
-        padding: 0 0 88px;
+        padding: 0 0 80px;
     }
 
     .about-sec .about-brand {
-        bottom: -90px;
+        bottom: -70px;
         right: -30px;
     }
 
@@ -5275,9 +5312,83 @@ a.prev.page-numbers {
         column-count: 1;
     }
 
-    .lot-gallery {
-        padding: 100px 0;
+    .about-us-content {
+        padding: 0;
     }
+
+    .about-boxes-row {
+        padding-top: 80px;
+    }
+
+    .main-service,
+    .health {
+        padding: 80px 0;
+        --mb: 50px;
+    }
+
+    .underline_link {
+        margin-top: 6px;
+    }
+
+    .store {
+        padding: 80px 0;
+    }
+
+    .about-us-img .img-box {
+        margin-left: auto;
+    }
+
+    .service-img .img-box:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 1;
+        border-radius: 20px;
+        mix-blend-mode: multiply;
+        background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(246, 41, 12, 0) 120px, rgba(240, 47, 23, 0) calc(100% - 120px), rgba(0, 0, 0, 1) 100%);
+        pointer-events: none;
+    }
+
+    .about-box::before {
+        background-size: 124px;
+    }
+
+    .about-sec-img .img-box.img-left-box {
+        margin-left: auto;
+    }
+
+    .gallery .slick-list {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .position-wp {
+        margin-bottom: 80px;
+    }
+
+    .about-sec.form-sec .about-us-content {
+        margin-top: 60px;
+    }
+
+    .inner-page-text {
+        padding: 80px 0;
+    }
+
+    .main-banner.inner-banner {
+        padding: 170px 0 80px;
+    }
+
+    .main-banner.inner-banner::after {
+        height: 51px;
+    }
+
+    .arborist-info-img {
+        margin-bottom: 30px;
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -5305,6 +5416,7 @@ a.prev.page-numbers {
 
     .h3-title {
         font-size: 18px;
+        line-height: 26px;
     }
 
     .main-banner {
@@ -5325,13 +5437,13 @@ a.prev.page-numbers {
         width: 195px;
     }
 
-    .sec-about-us {
-        padding: 60px 0 122px;
+    .about-us-img .img-box,
+    .health-img .img-box {
+        height: 230px;
     }
 
-    .about-us-img .img-box,
     .store-img .img-box {
-        height: 230px;
+        height: 240px;
     }
 
     .service-img .img-box {
@@ -5368,18 +5480,6 @@ a.prev.page-numbers {
         margin-bottom: 30px;
     }
 
-    .about-box {
-        margin-top: 20px;
-    }
-
-    .sec-about-us .about-us-content .underline_link {
-        margin-bottom: 40px;
-    }
-
-    .main-service {
-        padding: 26px 0 34px;
-    }
-
     .service-title .h2-title {
         margin-bottom: 0;
     }
@@ -5403,10 +5503,6 @@ a.prev.page-numbers {
         margin-bottom: 46px;
     }
 
-    .store {
-        padding: 60px 0 120px;
-    }
-
     .about-us-content.store-content .h2-title {
         line-height: 38px;
         max-width: 250px;
@@ -5415,10 +5511,6 @@ a.prev.page-numbers {
 
     .store .about-us-content.store-content p {
         margin-bottom: 27px;
-    }
-
-    .health {
-        padding: 35px 0 120px;
     }
 
     .health-list {
@@ -5436,21 +5528,11 @@ a.prev.page-numbers {
 
     .awards-img-slider .slick-slide {
         max-width: 145px;
-        margin-right: 60px;
     }
 
-    .awards {
-        padding: 90px 0;
-    }
-
-    .instagram {
+    .instagram,
+    .inner-page-text {
         padding: 60px 0;
-    }
-
-    .about-sec,
-    .about-sec.lot-clearing,
-    .about-sec.lot-clearing.wood-slab {
-        padding: 150px 0 115px;
     }
 
     .about-sec-img .img-box,
@@ -5482,11 +5564,6 @@ a.prev.page-numbers {
         height: 21px;
     }
 
-    .who-sec,
-    .who-sec.tree-help {
-        padding: 17px 0 0;
-    }
-
     .profestional,
     .profestional.tree-need {
         padding: 60px 0;
@@ -5506,6 +5583,46 @@ a.prev.page-numbers {
 
     .awards.cirty {
         padding: 0 0 41px;
+    }
+
+    .main-service .slick-arrow {
+        --arrow: 250px;
+    }
+
+    .gallery .slick-list {
+        width: calc(100% + 400px);
+    }
+
+    .gallery-img .back-img {
+        aspect-ratio: 1/0.73;
+    }
+
+    .about-sec,
+    .about-sec.lot-clearing,
+    .about-sec.lot-clearing.wood-slab,
+    .tree-career.about-sec,
+    .about-sec.form-sec {
+        padding: 150px 0 60px;
+    }
+
+    .play-btn {
+        --size: 80px;
+    }
+
+    .play-btn:before {
+        width: 28px;
+        height: 26px;
+        --x-width: 14px;
+        --top-width: 25px;
+    }
+
+    .contact-form {
+        padding: 40px 30px;
+    }
+
+    .main-banner.inner-banner .h1-title {
+        font-size: 40px;
+        line-height: 50px;
     }
 }
 
@@ -5548,6 +5665,83 @@ a.prev.page-numbers {
     .about-box {
         padding: 24px 30px 22px;
     }
+
+    .sec-about-us,
+    .main-service,
+    .store,
+    .awards,
+    .career,
+    .instagram,
+    .who-sec,
+    .who-sec.tree-help,
+    .profestional,
+    .profestional.tree-need,
+    .lot-gallery {
+        padding: 60px 0;
+    }
+
+    .about-boxes-row {
+        padding-top: 60px;
+    }
+
+    .main-service,
+    .health,
+    .who-sec,
+    .who-sec.tree-help {
+        --mb: 23px;
+    }
+
+    .health {
+        padding: 57px 0;
+    }
+
+    .health-wp:not(:last-child) {
+        --space: 60px;
+    }
+
+    .instagram #sb_instagram {
+        --bs-gutter-x: 20px;
+    }
+
+    .instagram .slick-list {
+        padding-right: 232px;
+    }
+
+    .awards-img-slider .slick-track {
+        gap: 60px;
+    }
+
+    .testimonial {
+        padding: 60px 0 122px;
+    }
+
+    .testimonial-content .testimonial-text {
+        height: 235px;
+    }
+
+    .site-footer {
+        --mb: 23px;
+        padding: 57px 0 85px;
+    }
+
+    .gallery .slick-list {
+        width: calc(100% + 70px);
+        padding-right: 70px;
+    }
+
+    .about-sec .about-brand {
+        right: -15px;
+    }
+
+    .main-banner.inner-banner {
+        --mb: 23px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .service-title {
+        margin-bottom: 50px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -5579,16 +5773,7 @@ a.prev.page-numbers {
         left: 15px;
     }
     .mob-call {
-        right: 83px;
-    }
-    .form-input,
-    .input-text,
-    .select2-container--default .select2-selection--single .select2-selection__rendered,
-    select {
-        padding: 0 15px;
-    }
-    .form-input.wpcf7-textarea {
-        padding: 15px;
+        right: 70px;
     }
     .form-element i {
         right: 10px;
@@ -5608,6 +5793,31 @@ a.prev.page-numbers {
 
     .main-banner {
         padding: 160px 0 200px;
+    }
+
+    .about-us-img .img-box,
+    .health-img .img-box,
+    .service-img .img-box,
+    .store-img .img-box,
+    .about-sec-img .img-box,
+    .profestional .about-us-img .img-box,
+    .arborists-img .back-img {
+        height: 180px;
+    }
+
+    .main-service .slick-arrow {
+        --arrow: 180px;
+    }
+
+    .about-box {
+        padding: 20px 15px;
+    }
+
+    .sec-about-us .about-brand,
+    .service-content .about-brand,
+    .store .about-brand,
+    .about-sec .about-brand {
+        right: -10px;
     }
 
     .gallery .slick-slide {
@@ -5640,22 +5850,6 @@ a.prev.page-numbers {
         max-width: 115px;
     }
 
-    .awards {
-        padding: 80px 0 60px;
-    }
-
-    .instagram {
-        padding: 60px 0 40px;
-    }
-
-    .site-footer {
-        padding: 40px 0 60px;
-    }
-
-    .about-sec .about-brand {
-        right: -15px;
-    }
-
     .arborists .slick-arrow {
         width: 50px;
         height: 25px;
@@ -5671,6 +5865,47 @@ a.prev.page-numbers {
 
     .footer-loaction {
         margin-bottom: 15px;
+    }
+
+    .instagram #sb_instagram #sbi_images .sbi_item.slick-slide .sbi_photo_wrap .sbi_photo {
+        height: 140px !important;
+    }
+
+    .instagram .slick-list {
+        padding-right: 352px;
+    }
+
+    .awards-img-slider .slick-track {
+        gap: 30px;
+    }
+
+    .about-sec .about-us-content .h2-title,
+    .profestional .about-us-content .h2-title {
+        font-size: 20px;
+    }
+
+    .about-sec .about-brand {
+        bottom: -45px;
+    }
+
+    .play-btn {
+        --size: 60px;
+    }
+
+    .play-btn:before {
+        width: 23px;
+        height: 21px;
+        --x-width: 11px;
+        --top-width: 22px;
+    }
+
+    .contact-form {
+        padding: 30px 15px;
+    }
+
+    .popup-title .h2-title {
+        font-size: 25px;
+        line-height: 35px;
     }
 }
 /*==========Responsive End==========*/

@@ -16,21 +16,21 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                         <div class="banner-content">
                             <?php
                             if ($home_banner_title) { ?>
-                                <h1 class="h1-title"><?php echo $home_banner_title; ?></h1>
+                                <h1 class="h1-title wow right-animation"><?php echo $home_banner_title; ?></h1>
                             <?php
                             }
                             if ($home_banner_sub_title) { ?>
-                                <h3 class="h3-title"><?php echo $home_banner_sub_title; ?></h3>
+                                <h3 class="h3-title wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s" ><?php echo $home_banner_sub_title; ?></h3>
                             <?php
                             } ?>
-                            <div class="banner-btn">
+                            <div class="banner-btn wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
                                 <?php
                                 if ($tree_hugger_contact_free_quote_url) { ?>
                                     <a href="<?php echo $tree_hugger_contact_free_quote_url['url']; ?>" title="<?php echo $tree_hugger_contact_free_quote_url['title']; ?>" class="sec-btn"><?php echo $tree_hugger_contact_free_quote_url['title']; ?></a>
                                 <?php
                                 }
                                 if ($home_tree_hugger_phone_number && $home_conv_number) { ?>
-                                    <a href="tel:<?php echo $home_conv_number; ?>" title="Call <?php echo $home_tree_hugger_phone_number; ?>" class="sec-btn  white-outline-btn">Call&nbsp;<span class="for-des call"><?php echo $home_tree_hugger_phone_number; ?></span><span class="for-mob">us</span></a>
+                                    <a href="tel:<?php echo $home_conv_number; ?>" title="Call <?php echo $home_tree_hugger_phone_number; ?>" class="sec-btn  white-outline-btn">Call&nbsp;<span class="for-des call"><?php echo $home_tree_hugger_phone_number; ?></span><span class="for-mob">Us Today</span></a>
                                 <?php
                                 } ?>
                             </div>
@@ -54,7 +54,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                 $home_about_accredited_image = get_field("home_about_accredited_image");
                 if ($home_about_image) { ?>
                     <div class="col-lg-6">
-                        <div class="about-img-wp">
+                        <div class="about-img-wp wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if ($home_about_accredited_image) { ?>
                                 <div class="about-brand">
@@ -75,8 +75,8 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                 $home_about_page_url  = get_field("home_about_page_url");
                 $home_about_content   = get_field("home_about_content");
                 if ($home_about_title || $home_about_sub_title || $home_about_page_url || $home_about_content) { ?>
-                    <div class="col-lg-6 align-self-center">
-                        <div class="about-us-content">
+                    <div class="col-lg-6">
+                        <div class="about-us-content wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if ($home_about_title) { ?>
                                 <h2 class="h2-title"><?php echo $home_about_title; ?></h2>
@@ -100,7 +100,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
             </div>
             <?php
             if (have_rows("home_about_points")) { ?>
-            <div class="about-boxes-row">
+            <div class="about-boxes-row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
                 <div class="row">
                     <?php
                     while (have_rows("home_about_points")) {
@@ -142,7 +142,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
             $our_services_title     = get_field("our_services_title");
             $our_services_sub_title = get_field("our_services_sub_title");
             if ($our_services_title || $our_services_sub_title) { ?>
-                <div class="service-title">
+                <div class="service-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                     <?php
                     if ($our_services_title) { ?>
                         <h2 class="h2-title">Our Services</h2>
@@ -157,7 +157,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
             }
             //main services repeater
             if (have_rows("our_services")) { ?>
-                <div class="row">
+                <div class="row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
                     <div class="col-lg-4">
                         <div class="service-tab">
                             <ul>
@@ -236,7 +236,7 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                 $home_tree_hugger_image = get_field("home_tree_hugger_image");
                 if ($home_tree_award_image || $home_tree_hugger_image) { ?>
                     <div class="col-lg-6">
-                        <div class="about-img-wp">
+                        <div class="about-img-wp wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if ($home_tree_award_image) { ?>
                                 <div class="about-brand">
@@ -259,8 +259,8 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
                 $home_tree_hugger_page_url      = get_field("home_tree_hugger_page_url");
                 $tree_hugger_our_inventory_url = get_field("tree_hugger_our_inventory_url", "option");
                 if ($home_tree_hugger_title || $home_tree_hugger_page_url || $tree_hugger_our_inventory_url || $home_tree_hugger_content) { ?>
-                    <div class="col-lg-6 align-self-center">
-                        <div class="about-us-content store-content">
+                    <div class="col-lg-6">
+                        <div class="about-us-content store-content wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if ($home_tree_hugger_title) { ?>
                                 <h2 class="h2-title"><?php echo $home_tree_hugger_title; ?></h2>
@@ -307,16 +307,16 @@ if (have_rows("health_care_details")) { ?>
                             <div class="row">
                                 <?php
                                 if ($home_health_care_image) { ?>
-                                    <div class="col-lg-6">
-                                        <div class="health-img even">
+                                    <div class="col-lg-6 order-lg-1 order-2">
+                                        <div class="health-img even wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                                             <div class="back-img img-box" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
                                         </div>
                                     </div>
                                 <?php
                                 }
                                 if ($home_health_care_title || $home_health_care_content) { ?>
-                                    <div class="col-lg-6 align-self-center">
-                                        <div class="about-us-content store-content health-content even">
+                                    <div class="col-lg-6 order-lg-2 order-1">
+                                        <div class="about-us-content store-content health-content even wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                                             <?php
                                             if ($home_health_care_title) { ?>
                                                 <h2 class="h2-title"><?php echo $home_health_care_title; ?></h2>
@@ -337,8 +337,8 @@ if (have_rows("health_care_details")) { ?>
                             <div class="row">
                                 <?php
                                 if ($home_health_care_title || $home_health_care_content || $health_care_points) { ?>
-                                    <div class="col-lg-6 align-self-center">
-                                        <div class="about-us-content store-content health-content">
+                                    <div class="col-lg-6">
+                                        <div class="about-us-content store-content health-content wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                                             <?php
                                             if ($home_health_care_title) { ?>
                                                 <h2 class="h2-title"><?php echo $home_health_care_title; ?></h2>
@@ -366,7 +366,7 @@ if (have_rows("health_care_details")) { ?>
                                 }
                                 if ($home_health_care_image) { ?>
                                     <div class="col-lg-6">
-                                        <div class="health-img mob-img">
+                                        <div class="health-img wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                                             <div class="back-img img-box img-left-box" style="background-image: url('<?php echo $home_health_care_image; ?>');"></div>
                                         </div>
                                     </div>
@@ -388,7 +388,7 @@ if (have_rows("health_care_details")) { ?>
 <section class="testimonial">
     <div class="sec-wp">
         <div class="container">
-            <div class="row">
+            <div class="row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                 <?php
                 $home_testimonials_title     = get_field("home_testimonials_title");
                 $home_testimonials_sub_title = get_field("home_testimonials_sub_title");
@@ -464,7 +464,7 @@ if ($home_gallery_images) { ?>
     <section class="gallery">
         <div class="sec-wp">
             <div class="container">
-                <div class="gallery-img-slider row">
+                <div class="gallery-img-slider row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                     <?php
                     $gallery_index = 1;
                     foreach ($home_gallery_images as $image) { ?>
@@ -493,7 +493,7 @@ if ($home_gallery_images) { ?>
                 $home_careers_image = get_field("home_careers_image");
                 if ($home_careers_image) { ?>
                     <div class="col-lg-6">
-                        <div class="about-us-img">
+                        <div class="about-us-img wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <div class="back-img img-box" style="background-image: url('<?php echo $home_careers_image; ?>');"></div>
                         </div>
                     </div>
@@ -506,8 +506,8 @@ if ($home_gallery_images) { ?>
                 $home_careers_content   = get_field("home_careers_content");
 
                 if ($home_careers_title || $home_careers_sub_title || $home_careers_page_url || $home_careers_image || $home_careers_content) { ?>
-                    <div class="col-lg-6 align-self-center">
-                        <div class="about-us-content">
+                    <div class="col-lg-6">
+                        <div class="about-us-content wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if ($home_careers_title) { ?>
                                 <h2 class=" h2-title"><?php echo $home_careers_title; ?></h2>

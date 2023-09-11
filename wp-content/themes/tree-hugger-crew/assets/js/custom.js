@@ -41,9 +41,6 @@ jQuery(document).ready(function ($) {
         jQuery(".main-service .service-content").hide();
         jQuery(".main-service .service-content:eq(0)").show();
 
-        // jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
-        // jQuery(".service-tab li:eq(0)").addClass("active-gallery-tab");
-
         jQuery(".service-tab li").on("click", function () {
             // Check if the clicked tab is already active
             if (!jQuery(this).hasClass("active-gallery-tab")) {
@@ -81,7 +78,7 @@ jQuery(document).ready(function ($) {
         rows: 0,
         dots: false,
         arrows: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
         nextArrow: '<button class="slide-arrow next-arrow"></button>',
@@ -100,6 +97,13 @@ jQuery(document).ready(function ($) {
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
         nextArrow: '<button class="slide-arrow next-arrow"></button>',
         responsive: [
+            {
+                breakpoint: 1650,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                },
+            },
             {
                 breakpoint: 992,
                 settings: {
@@ -129,7 +133,7 @@ jQuery(document).ready(function ($) {
         infinite: true,
         dots: false,
         arrows: true,
-        autoplay: false,
+        autoplay: true,
         rows: 0,
         autoplaySpeed: 2000,
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
@@ -140,7 +144,17 @@ jQuery(document).ready(function ($) {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    arrows: true,
+                    arrows: false,
+                    infinite: true,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
                     infinite: true,
                     dots: false,
                 },
@@ -155,7 +169,7 @@ jQuery(document).ready(function ($) {
         dots: false,
         arrows: true,
         rows: 0,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         prevArrow: '<button class="slide-arrow prev-arrow"></button>',
         nextArrow: '<button class="slide-arrow next-arrow"></button>',
@@ -188,7 +202,7 @@ jQuery(document).ready(function ($) {
             rows: 0,
             swipeToSlide: true,
             dots: false,
-            arrows: true,
+            arrows: false,
             autoplay: true,
             autoplaySpeed: 2000,
             infinite: true,
@@ -198,7 +212,7 @@ jQuery(document).ready(function ($) {
                 {
                     breakpoint: 1200,
                     settings: {
-                        slidesToShow: 4,
+                        slidesToShow: 5,
                         slidesToScroll: 1,
                         infinite: true,
                         dots: false,
@@ -208,23 +222,13 @@ jQuery(document).ready(function ($) {
                 {
                     breakpoint: 992,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 4,
                         slidesToScroll: 1,
                         infinite: true,
                         dots: false,
                         arrows: false,
                     },
-                },
-                {
-                    breakpoint: 401,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false,
-                        arrows: false,
-                    },
-                },
+                }
             ],
         });
     }, 1000);
@@ -284,7 +288,7 @@ jQuery(document).ready(function ($) {
     });
 
     //Adding Team Member Content in Modal
-    jQuery(".arborists-content .arborist-learn-more").on("click", function () {
+    jQuery(".arborists-content a").on("click", function () {
         var PopupContent = jQuery(this).next(".popup-content").html();
         jQuery("#arborist_modal .arborist-info").html(PopupContent);
     });
@@ -338,31 +342,3 @@ jQuery(document).ready(function ($) {
         },
     });
 });
-
-// mobileOnlySlider(".service-slider", true, false, 991);
-
-// function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
-//   var slider = jQuery($slidername);
-//   var settings = {
-//     mobileFirst: true,
-//     dots: $dots,
-//     arrows: $arrows,
-//     responsive: [
-//       {
-//         breakpoint: $breakpoint,
-//         settings: "unslick"
-//       }
-//     ]
-//   };
-
-//   slider.slick(settings);
-
-//   jQuery(window).on("resize", function () {
-//     if ($(window).width() > $breakpoint) {
-//       return;
-//     }
-//     if (!slider.hasClass("slick-initialized")) {
-//       return slider.slick(settings);
-//     }
-//   });
-// } // Mobile Only Slider

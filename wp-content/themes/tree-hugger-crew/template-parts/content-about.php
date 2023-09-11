@@ -3,8 +3,8 @@
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 align-self-center order-2 order-lg-1">
-                    <div class="about-us-content">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="about-us-content wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <h1 class="h4-title"><?php the_title(); ?></h1>
                         <?php
                         //about banner content
@@ -22,7 +22,7 @@
                 $tree_hugger_about_image = get_field("tree_hugger_about_image");
                 if($tree_hugger_about_icon || $tree_hugger_about_image){?>
                     <div class="col-lg-6 order-1 order-lg-2">
-                        <div class="about-img-wp">
+                        <div class="about-img-wp wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <?php
                         if($tree_hugger_about_icon){?>
                             <div class="about-brand">
@@ -56,10 +56,10 @@
             <div class="container">
                 <?php
                 if($tree_hugger_who_we_title){?>
-                    <h2 class="h2-title"><?php echo $tree_hugger_who_we_title; ?></h2>
+                    <h2 class="h2-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s"><?php echo $tree_hugger_who_we_title; ?></h2>
                     <?php
                 }?>
-                <div class="row">
+                <div class="row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
                     <?php
                     foreach($tree_hugger_who_we_content_rep as $content){?>
                         <div class="col-lg-6">
@@ -93,14 +93,14 @@
                     <?php
                     if($tree_hugger_work_with_image){?>
                         <div class="col-lg-6">
-                            <div class="about-us-img">
+                            <div class="about-us-img wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                                 <div class="back-img img-box" style="background-image: url('<?php echo $tree_hugger_work_with_image; ?>');"></div>
                             </div>
                         </div>
                         <?php
                     }?>
-                    <div class="col-lg-6 align-self-center">
-                        <div class="about-us-content">
+                    <div class="col-lg-6">
+                        <div class="about-us-content wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <?php
                             if($tree_hugger_work_with_title){?>
                                 <h2 class="h2-title"><?php echo $tree_hugger_work_with_title; ?></h2>
@@ -121,7 +121,7 @@
 <section class="arborists">
     <div class="sec-wp">
         <div class="container">
-            <div class="row">
+            <div class="row wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                 <?php
                 $tree_hugger_meet_arborists_title = get_field("tree_hugger_meet_arborists_title");
                 $tree_hugger_meet_arborists_content = get_field("tree_hugger_meet_arborists_content");
@@ -168,13 +168,15 @@
                                             <p><?php echo $arborist_exp; ?></p>
                                             <?php
                                         }?>
-                                        <a href="javascript:void(0);" title="<?php echo $arborist_name.", Learn More"; ?>" class="arborist-learn-more" data-bs-toggle="modal" data-bs-target="#arborist_modal" data-arborist-id="<?php echo get_the_ID(); ?>">Learn More</a>
+                                        <a href="javascript:void(0);" title="<?php echo $arborist_name.", Learn More"; ?>" class="underline_link" data-bs-toggle="modal" data-bs-target="#arborist_modal" data-arborist-id="<?php echo get_the_ID(); ?>">Learn More</a>
                                         <div class="popup-content" style="display:none;">
                                             <div class="row">
                                                 <?php
                                                 if($arborist_profile_image){?>
                                                     <div class="col-lg-4">
+                                                        <div class="arborist-info-img">
                                                         <img src="<?php echo $arborist_profile_image; ?>" alt="<?php echo $arborist_name;  ?>">
+                                                        </div>
                                                     </div>
                                                     <?php
                                                 }

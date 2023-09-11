@@ -48,8 +48,8 @@ $tree_hugger_contact_free_quote_url = get_field("tree_hugger_contact_free_quote_
 						<?php
 						if($tree_hugger_site_mobile_logo){?>
 							<div class="mob-logo for-mob">
-								<a href="<?php echo home_url(); ?>">
-								<img src="<?php echo $tree_hugger_site_mobile_logo['url']; ?>" alt="<?php echo $tree_hugger_site_mobile_logo['alt']; ?>" width="<?php echo $tree_hugger_site_mobile_logo['width']; ?>" height="<?php echo $tree_hugger_site_mobile_logo['height']; ?>">
+								<a href="<?php echo home_url(); ?>" title="Tree Hugger Crew">
+									<img src="<?php echo $tree_hugger_site_mobile_logo['url']; ?>" alt="<?php echo $tree_hugger_site_mobile_logo['alt']; ?>" width="<?php echo $tree_hugger_site_mobile_logo['width']; ?>" height="<?php echo $tree_hugger_site_mobile_logo['height']; ?>">
 								</a>
 							</div>
 							<?php
